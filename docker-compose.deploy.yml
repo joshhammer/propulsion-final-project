@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:12.1
+    env_file:
+      - ./envs/prod.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  backend:
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-10-november-2019/final-projects/razzpay:master
+    env_file:
+      - ./envs/prod.env
+    command: "sh ../scripts/run.sh"  # notice the different script and env files for development and production
+    depends_on:
+      - postgres
+    volumes:
+      - media-files:/media-files
+      - static-files:/static-files
+
+  nginx:
+    image: nginx:1.17.6
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - static-files:/static-files
+      - media-files:/media-files
+      - /etc/letsencrypt:/etc/letsencrypt
+
+
+
+volumes:
+  postgres:
+  static-files:
+  media-files:
