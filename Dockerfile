@@ -25,10 +25,10 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 RUN mkdir -p /backend
 COPY ./backend/requirements.yml /backend/requirements.yml
 RUN /opt/conda/bin/conda env create -f /backend/requirements.yml
-# ENV PATH /opt/conda/envs/taurus-env/bin:$PATH    copied from previous project
+ENV PATH /opt/conda/envs/django-models-livecoding/bin:$PATH    
 
 ENV PYTHONDONTWRITEBYTECODE 1
-# RUN echo "source activate taurus-env" >~/.bashrc  copied from previous project
+RUN echo "source activate django-models-livecoding" >~/.bashrc  
 
 COPY ./scripts /scripts
 RUN chmod +x ./scripts*
