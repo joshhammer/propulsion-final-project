@@ -1,0 +1,24 @@
+from django.conf import settings
+from django.db import models
+
+
+class AdminProfile(models.Model):
+
+    user = models.OneToOneField(
+        verbose_name='user',
+        on_delete=models.CASCADE,
+        related_name='adminprofile',
+        to=settings.AUTH_USER_MODEL
+    )
+
+    date_created = models.DateTimeField(
+        verbose_name='date created',
+        auto_now_add=True,
+    )
+
+    date_modified = models.DateTimeField(
+        verbose_name='date modified',
+        auto_now=True,
+    )
+
+    # one to one relationship with Company

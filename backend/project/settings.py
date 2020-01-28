@@ -25,7 +25,8 @@ SECRET_KEY = 'r+fag(pmhk7(y3gxozfb9pz^q88hvt2dq#=r%7!2-60(-$6krs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['razzpay.propulsion-learn.ch']
+# Change this later!
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # TODO make sure all apps are registered
+    'fullurl',
+    'user',
+    'registration',
+    'adminprofile',
+    'company',
+    'emails',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +133,13 @@ STATIC_ROOT = '/static-files/'
 
 MEDIA_URL = '/media-files/'
 MEDIA_ROOT = '/media-files/'
+
+AUTH_USER_MODEL = 'user.User'
+
+# Email settings
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
