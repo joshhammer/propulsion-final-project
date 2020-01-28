@@ -11,3 +11,10 @@ dependencies:
       - Pillow==6.2.1
       - flake8
       - gunicorn
+      - django-cors-headers
+      - pywebcopy
+      - beautifulsoup4==4.7.1
+      - django-cors-headers
+      - webpreview==1.6.0
+      - django-extensions==2.2.5
+      - django-fullurl==1.0

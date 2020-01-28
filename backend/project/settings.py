@@ -1,4 +1,3 @@
-# Testing gitlab connection
 """
 Django settings for project project.
 
@@ -26,7 +25,8 @@ SECRET_KEY = 'r+fag(pmhk7(y3gxozfb9pz^q88hvt2dq#=r%7!2-60(-$6krs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['razzpay.propulsion-learn.ch']
+# Change this later!
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # TODO make sure all apps are registered
+    'user',
+    'registration',
+    'adminprofile',
+    'company',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +129,5 @@ STATIC_ROOT = '/static-files/'
 
 MEDIA_URL = '/media-files/'
 MEDIA_ROOT = '/media-files/'
+
+AUTH_USER_MODEL = 'user.User'
