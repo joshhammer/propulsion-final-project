@@ -25,7 +25,7 @@ SECRET_KEY = 'r+fag(pmhk7(y3gxozfb9pz^q88hvt2dq#=r%7!2-60(-$6krs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['razzpay.propulsion-learn.ch']
 
 
 # Application definition
