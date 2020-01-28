@@ -1,3 +1,4 @@
+# Testing gitlab connection
 """
 Django settings for project project.
 
