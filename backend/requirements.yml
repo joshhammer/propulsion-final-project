@@ -1,4 +1,4 @@
-name: django-models-livecoding
+name: razzpay
 dependencies:
   - python=3.6
   - psycopg2
