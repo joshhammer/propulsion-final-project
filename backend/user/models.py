@@ -45,7 +45,7 @@ class User(AbstractUser):
 
     is_active = models.BooleanField(
         verbose_name='is active',
-        default=True,
+        default=False,
     )
 
     date_created = models.DateTimeField(

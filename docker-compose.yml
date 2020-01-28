@@ -7,8 +7,8 @@ services:
     restart: always
     env_file:
       - ./envs/dev.env
-    #command: 'python manage.py send_mail'
-    command: "tail -f /dev/null"
+    command: 'python manage.py send_mail'
+    #command: "tail -f /dev/null"
     volumes:
       - ./backend:/backend
       - ./media-files:/media-files

@@ -38,12 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # TODO make sure all apps are registered
+    'fullurl',
     'user',
     'registration',
     'adminprofile',
     'company',
+    'emails',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +135,11 @@ MEDIA_URL = '/media-files/'
 MEDIA_ROOT = '/media-files/'
 
 AUTH_USER_MODEL = 'user.User'
+
+# Email settings
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
