@@ -1,9 +1,10 @@
 import React from "react";
-import Company from "./Company/Company";
-
+import Employee from './Employee/Employee';
 
 const AppContainer = (props) => {
-    return <Company/>
+    return (
+        <Employee />
+    )
 }
 
 
