@@ -3,3 +3,28 @@
     background-color: var(--mainBlue);
     color: var(--mainWhite);
 }
+
+.company-logo {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    color: var(--mainBlue);
+    border: 2px solid var(--mainBlue);
+    border-radius: 8px;
+    padding: 5px;
+    &:hover {
+        background-color: var(--mainBlue);
+        color: var(--mainWhite);
+    }
+}
+
+.sidebar-placeholder {
+    height: 15%;
+}

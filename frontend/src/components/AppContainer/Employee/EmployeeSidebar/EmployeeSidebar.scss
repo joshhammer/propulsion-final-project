@@ -7,11 +7,11 @@
     background-color: var(--mainGreen);
 }
 
-.company-logo {
-    height: 25%;
-    display: flex;
-    justify-content: center;
-}
+// .company-logo {
+//     height: 25%;
+//     display: flex;
+//     justify-content: center;
+// }
 
 .employee-sidebar-link-container {
     display: flex;
@@ -21,21 +21,21 @@
     justify-content: space-evenly;
 }
 
-.sidebar-link {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    color: var(--mainBlue);
-    border: 2px solid var(--mainBlue);
-    border-radius: 8px;
-    padding: 5px;
-    &:hover {
-        background-color: var(--mainBlue);
-        color: var(--mainWhite);
-    }
-}
+// .sidebar-link {
+//     text-decoration: none;
+//     display: flex;
+//     justify-content: center;
+//     width: 50%;
+//     color: var(--mainBlue);
+//     border: 2px solid var(--mainBlue);
+//     border-radius: 8px;
+//     padding: 5px;
+//     &:hover {
+//         background-color: var(--mainBlue);
+//         color: var(--mainWhite);
+//     }
+// }
 
-.sidebar-placeholder {
-    height: 15%;
-}
+// .sidebar-placeholder {
+//     height: 15%;
+// }

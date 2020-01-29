@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../../../../assets/logo_blue-white.png';
 import { Link } from "react-router-dom";
 import './EmployeeSidebar.scss';
+import '../../AppContainer.scss';
 
 const EmployeeSidebar = () => {
     return (
