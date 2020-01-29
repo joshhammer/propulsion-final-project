@@ -1,0 +1,19 @@
+.tablerow-container {
+    border-bottom: solid 1px var(--mainWhite);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    & h3 {
+        color: var(--mainWhite)
+    }
+}
+
+.tablerow-name {
+    width: 30%;
+}
+
+.tablerow-role {
+    width: 30%;
+}
