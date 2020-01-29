@@ -147,6 +147,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/static-files/')
 STATIC_URL = '/static-files/'
 MEDIA_URL = '/media-files/'
 
+AUTH_USER_MODEL = 'user.User'
+
 
 # Email settings
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
