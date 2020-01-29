@@ -1,10 +1,10 @@
 import React from "react";
-import './AuthInput.scss';
+import './InputField.scss';
 
-const AuthInput = (props) => {
+const InputField = (props) => {
     return (
         <input className="auth-inputfield" placeholder={props.content}></input>
     )
 }
 
-export default AuthInput
+export default InputField
