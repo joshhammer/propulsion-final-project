@@ -138,13 +138,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# STATIC_URL = '/static-files/'
+# STATIC_ROOT = '/static-files/'
+
+# MEDIA_URL = '/media-files/'
+# MEDIA_ROOT = '/media-files/'
+
+# AUTH_USER_MODEL = 'user.User'
+
 STATIC_URL = '/static-files/'
-STATIC_ROOT = '/static-files/'
-
 MEDIA_URL = '/media-files/'
-MEDIA_ROOT = '/media-files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static-files/')
 
-AUTH_USER_MODEL = 'user.User'
 
 # Email settings
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
@@ -153,3 +159,20 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+    # This would require users to be logged in for everything, NOT what we want
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=5)
+}
