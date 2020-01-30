@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
 
+from adminprofile.models import AdminProfile
 from emails.models import Email
 from registration.models import Registration
 
@@ -55,6 +56,12 @@ class RegistrationSerializer(serializers.Serializer):
             is_active=False,
         )
         new_user.save()
+
+        # Create new adminprofile instance
+        new_adminprofile = AdminProfile(
+            user=new_user
+        )
+        new_adminprofile.save()
 
         registration = Registration(
             user=new_user,
