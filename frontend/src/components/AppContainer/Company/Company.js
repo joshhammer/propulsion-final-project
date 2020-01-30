@@ -6,6 +6,8 @@ import './Company.scss';
 import CompanyPeople from "./CompanyPeople/CompanyPeople";
 import CompanyRunPayroll from "./CompanyRunPayroll/CompanyRunPayroll";
 import CompanyDetails from "./CompanyDetails/CompanyDetails";
+import CompanyDocuments from "./CompanyDocuments/CompanyDocuments";
+import CompanyReports from "./CompanyReports/CompanyReports";
 
 
 const Company = (props) => {
@@ -17,6 +19,8 @@ const Company = (props) => {
                 <Route exact={true} path="/company/people" component={CompanyPeople}/>
                 <Route exact={true} path="/company/payroll" component={CompanyRunPayroll}/>
                 <Route exact={true} path="/company/details" component={CompanyDetails}/>
+                <Route exact={true} path="/company/documents" component={CompanyDocuments}/>
+                <Route exact={true} path="/company/reports" component={CompanyReports}/>
             </div>
         </>
     )

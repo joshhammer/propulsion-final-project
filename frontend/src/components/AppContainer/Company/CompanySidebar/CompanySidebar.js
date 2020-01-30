@@ -16,7 +16,7 @@ const CompanySidebar = () => {
                 <Link className="sidebar-link" to="/company/payroll">Run Payroll</Link>
                 <Link className="sidebar-link" to="/company/details">Company Info</Link>
                 <Link className="sidebar-link" to="/company/documents">Documents</Link>
-                <Link className="sidebar-link" to="/company/records">Records</Link>
+                <Link className="sidebar-link" to="/company/reports">Reports</Link>
             </div>
             <div className="sidebar-placeholder"></div>
         </div>
