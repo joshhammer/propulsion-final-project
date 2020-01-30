@@ -99,3 +99,7 @@ class Company(models.Model):
 
     # record - foreign key for Record model, "1 Company has many Records; 1 Record is assigned to 1 Company"
 
+    def __str__(self):
+        return f'{self.adminprofile.user.email},  {self.name}  {self.date_created} {self.date_modified}'
+
+

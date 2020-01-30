@@ -41,6 +41,10 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+
+        .input-span {
+            height: 15px;
+        }
     }
 }
 
@@ -58,6 +62,9 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        .input-span {
+            height: 15px;
+        }
     }
 }
 
@@ -83,3 +90,5 @@
         width: 50%;
     }
 }
+
+
