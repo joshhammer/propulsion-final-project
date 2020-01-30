@@ -1,7 +1,8 @@
-from django.core.exceptions import ValidationError
+#from django.core.exceptions import ValidationError
 from rest_framework.exceptions import PermissionDenied
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 from adminprofile.models import AdminProfile
 from company.models import Company
@@ -24,3 +25,27 @@ class CreateCompany(CreateAPIView):
             return company
         except:
             raise PermissionDenied({"message" :'You have already created a company with this administrator account'})
+
+
+class GetMyCompany(ListCreateAPIView):
+    """
+    get:
+    Logged in adminprofile can get (view) company info
+    post:
+    Logged in adminprofile user can update company info
+    """
+    serializer_class = CompanySerializer
+    queryset = Company.objects.all()
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        ap = AdminProfile.objects.get(user=self.request.user)
+        queryset = Company.objects.filter(adminprofile=ap)
+        return queryset
+
+    def post(self, request, **kwargs):
+        ap = AdminProfile.objects.get(user=self.request.user)
+        company = Company.objects.filter(adminprofile=ap)
+        company.update(**request.data)
+        return Response('Profile updated')
+
