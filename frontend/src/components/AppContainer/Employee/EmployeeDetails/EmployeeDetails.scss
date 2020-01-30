@@ -44,6 +44,7 @@
         font-size: 1rem;
         box-shadow: 0 0 10px black;
     }
+    // not editable input field
     & input {
         outline: none;
         border: none;
@@ -54,6 +55,55 @@
         font-size: 1rem;
         box-shadow: 0 0 10px black;
         background: var(--mainWhite);
+    }
+}
+
+// editable input field
+#editable-input {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding-left: .5rem;
+    height: 35px;
+    width: 300px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px black;
+    background: rgb(255, 96, 234);
+}
+
+
+.profile-edit-btn {
+    border: 1px solid var(--mainGreen);
+    background: var(--mainBlue);
+    color: var(--mainWhite);
+    height: 35px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 11rem;
+    transition: all .3s;
+    &:hover {
+        background: var(--mainGreen);
+        color: var(--mainBlue);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.profile-save-btn {
+    border: none;
+    background: var(--mainGreen);
+    color: var(--mainBlue);
+    height: 35px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 11rem;
+    transition: all .3s;
+    &:hover {
+        background: var(--mainGreen);
+        color: var(--mainBlue);
+    }
+    &:focus {
+        outline: none;
     }
 }
 
