@@ -10,8 +10,6 @@ class EmployeeDetails extends React.Component {
         this.state = {
             readonly: true,
         }
-
-        this.emptyState = {}
     }
 
     handleChange = (event) => {
@@ -29,7 +27,9 @@ class EmployeeDetails extends React.Component {
 
     cancelEdit = () => {
         console.log('canceled..')
-        this.setState(this.emptyState)
+        this.setState({
+            readonly: !this.state.readonly,
+        })
     }
 
     saveAndUpdate = () => {
@@ -61,8 +61,11 @@ class EmployeeDetails extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    console.log('State from EmployeeDetails ', state)
-}
+// const mapStateToProps = (state) => {
+//     console.log('State from EmployeeDetails ', state)
+//     return {
+//         user: state.userReducer,
+//     }
+// }
 
-export default connect(mapStateToProps)(EmployeeDetails)
+export default connect()(EmployeeDetails)
