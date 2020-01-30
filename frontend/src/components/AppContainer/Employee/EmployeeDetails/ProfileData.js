@@ -11,15 +11,15 @@ class ProfileData extends React.Component {
 
     render() {
         const {inputState, readonly, saveData} = this.props
-        const {firstname, lastname, phone} = inputState
+        const {firstname, lastname, phone, ahv, email, street, city, postal_code} = inputState
         const user = this.props.user
         return(
             <div className='employee-profile-data-container'>
                 <div className='profile-table-element'>
                     <p>Firstname</p>
                     <input name="firstname" type="text" value={readonly ? user.first_name : firstname} readOnly={readonly} 
-                    onChange={saveData}
-                    id={readonly ? '' : 'editable-input'}/>
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'}/>
                 </div>
                 <div className='profile-table-element'>
                     <p>Lastname</p>
@@ -29,33 +29,39 @@ class ProfileData extends React.Component {
                 </div>
                 <div className='profile-table-element'>
                     <p>AHV Number</p>
-                    <input type="text" value='13.45679.13' readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='ahv' type="text" value={readonly ? user.ahv : ahv} readOnly={readonly} 
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
                 <div className='profile-table-element'>
                     <p>Phone</p>
-                    <input type="text" value={readonly ? user.phone : phone} readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='phone' type="text" value={readonly ? user.phone : phone} readOnly={readonly}
+                        onChange={saveData} 
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
                 <div className='profile-table-element'>
                     <p>Email</p>
-                    <input type="text" value='chad@johnson.com' readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='email' type="text" value={readonly ? user.email : email} readOnly={readonly} 
+                        onChange={saveData} 
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
                 <div className='profile-table-element'>
                     <p>Street</p>
-                    <input type="text" value='Minervastr. 25' readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='street' type="text" value={readonly ? user.street : street} readOnly={readonly} 
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
                 <div className='profile-table-element'>
                     <p>Postal Code</p>
-                    <input type="text" value='8008' readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='postal_code' type="text" value={readonly ? user.postal_code : postal_code} readOnly={readonly}
+                        onChange={saveData} 
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
                 <div className='profile-table-element'>
                     <p>City</p>
-                    <input type="text" value='Zürich' readOnly={readonly} 
-                    id={readonly ? '' : 'editable-input'} />
+                    <input name='city' type="text" value={readonly ? user.city : city} readOnly={readonly}
+                        onChange={saveData} 
+                        id={readonly ? '' : 'editable-input'} />
                 </div>
             </div>
         )
