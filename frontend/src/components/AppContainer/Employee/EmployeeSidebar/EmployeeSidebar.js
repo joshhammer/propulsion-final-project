@@ -13,7 +13,7 @@ const EmployeeSidebar = () => {
             <div className="employee-sidebar-link-container">
                 <Link className="sidebar-link" to="/employee/dashboard">Dashboard</Link>
                 <Link className="sidebar-link" to="/employee/payslips">Payslips</Link>
-                <Link className="sidebar-link" to="/employee/profile">Profile</Link>
+                <Link className="sidebar-link" to="/employee/details">Profile</Link>
                 <Link className="sidebar-link" to="/employee/job">Job & Pay</Link>
                 <Link className="sidebar-link" to="/employee/documents">Documents</Link>
             </div>
