@@ -1,3 +1,44 @@
 .company-dashboard {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
 
+.company-dashboard-content {
+    border: 1px solid red;
+    width: 70%;
+}
+
+.company-dashboard-user {
+    border: 1px solid red;
+    margin-top: 20%;
+
+    & h1 {
+        font-family: var(--mainFontFamily);
+        color: var(--mainWhite);
+    }
+}
+
+.company-dashboard-bottom {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-top: 10%;
+
+    & h2 {
+        color: var(--mainWhite);
+    }
+
+    &-left {
+        border: 1px solid red;
+        width: 45%;
+        height: 40%;
+    }
+
+    &-right {
+        border: 1px solid red;
+        width: 45%;
+        height: 40%;
+
+    }
 }

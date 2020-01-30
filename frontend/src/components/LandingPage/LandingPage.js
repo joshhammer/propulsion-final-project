@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './LandingPage.scss';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
-import AuthInput from "../reusable-components/input-fields/AuthInput";
+import InputField from "../reusable-components/input-fields/InputField";
 import logo from '../../assets/logo_blue-white.png';
 
 const LandingPage = () => {
@@ -15,14 +15,17 @@ const LandingPage = () => {
             <div className="authentication-container">
                 <div className="register">
                     <form className="register-form">
-                        <AuthInput content={"Email"}/>
+                        <InputField content={"Email"}/>
+                        <span className="input-span"></span>
                         <AuthenticationButton content={"Register"}/>
                     </form>
                 </div>
                 <div className="login">
                     <form>
-                        <AuthInput content={"Email"}/>
-                        <AuthInput content={"Password"}/>
+                        <InputField content={"Email"}/>
+                        <span className="input-span"></span>
+                        <InputField content={"Password"}/>
+                        <span className="input-span"></span>
                         <AuthenticationButton content={"Login"}/>
                     </form>
                 </div>

@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'corsheaders',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
@@ -146,6 +145,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, '/static-files/')
 
 STATIC_URL = '/static-files/'
 MEDIA_URL = '/media-files/'
+
+AUTH_USER_MODEL = 'user.User'
 
 
 # Email settings
