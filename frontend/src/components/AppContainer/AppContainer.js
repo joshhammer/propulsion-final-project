@@ -1,9 +1,11 @@
 import React from "react";
-import Company from "./Company/Company";
-
+import Employee from './Employee/Employee';
 
 const AppContainer = (props) => {
-    return <Company/>
+    // here we need a condition to determine if company or employee gets rendered
+    return (
+        <Employee />
+    )
 }
 
 
