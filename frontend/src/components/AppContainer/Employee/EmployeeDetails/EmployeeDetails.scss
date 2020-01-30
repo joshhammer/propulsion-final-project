@@ -6,7 +6,7 @@
 .employee-details-content {
     width: 80%;
     padding-top: 4rem;
-    
+    margin-left: 20%;
 }
 
 .employee-profile-title-box {
@@ -16,21 +16,22 @@
     // margin: 2rem 0 0 1rem;
     & img {
         border-radius: 50%;
-        border: 2px solid white;
-        background: white;
+        background: var(--mainWhite);
         box-shadow: 0 0 10px black;
     }
     & h1 {
         margin-left: 1rem;
         text-shadow: 0 0 10px black;
+        padding-bottom: .75rem;
+        border-bottom: 1px solid var(--mainWhite);
+        letter-spacing: 1px;
     }
 }
 
 .profile-table-element {
     display: flex;
-    align-items: center;;
+    align-items: center;
     margin-bottom: 2rem;
-    height: 25px;
     & p {
         width: 200px;
         height: 35px;
@@ -43,6 +44,7 @@
         align-items: center;
         font-size: 1rem;
         box-shadow: 0 0 10px black;
+        letter-spacing: 1px;
     }
     // not editable input field
     & input {
@@ -53,6 +55,7 @@
         height: 35px;
         width: 300px;
         font-size: 1rem;
+        letter-spacing: 1px;
         box-shadow: 0 0 10px black;
         background: var(--mainWhite);
     }
@@ -67,6 +70,7 @@
     height: 35px;
     width: 300px;
     font-size: 1rem;
+    letter-spacing: 1px;
     box-shadow: 0 0 10px black;
     background: rgb(255, 96, 234);
 }
@@ -79,7 +83,7 @@
     height: 35px;
     width: 50px;
     border-radius: 25px;
-    margin-left: 11rem;
+    margin-left: 10rem;
     transition: all .3s;
     &:hover {
         background: var(--mainGreen);
@@ -96,7 +100,24 @@
     height: 35px;
     width: 50px;
     border-radius: 25px;
-    margin-left: 11rem;
+    margin-left: 6rem;
+    transition: all .3s;
+    &:hover {
+        background: var(--mainGreen);
+        color: var(--mainBlue);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.profile-cancel-btn {
+    border: none;
+    background: var(--mainGreen);
+    color: var(--mainBlue);
+    height: 35px;
+    width: 50px;
+    border-radius: 25px;
+    margin-left: 1rem;
     transition: all .3s;
     &:hover {
         background: var(--mainGreen);
