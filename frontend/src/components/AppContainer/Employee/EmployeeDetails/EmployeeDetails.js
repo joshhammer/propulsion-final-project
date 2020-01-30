@@ -1,6 +1,7 @@
 import React from 'react';
-import './EmployeeDetails.scss';
+import { connect } from 'react-redux'
 import ProfileData from './ProfileData'
+import './EmployeeDetails.scss';
 
 class EmployeeDetails extends React.Component {
     constructor(props) {
@@ -9,13 +10,31 @@ class EmployeeDetails extends React.Component {
         this.state = {
             readonly: true,
         }
+
+        this.emptyState = {}
+    }
+
+    handleChange = (event) => {
+        console.log('changing...')
+        this.setState({
+            [event.target.name]: event.target.value,
+        })
     }
 
     toggleEdit = (event) => {
         this.setState({
             readonly: !this.state.readonly,
         })
-        console.log(this.state.readonly)
+    }
+
+    cancelEdit = () => {
+        console.log('canceled..')
+        this.setState(this.emptyState)
+    }
+
+    saveAndUpdate = () => {
+        this.toggleEdit()
+        console.log('DoSomethingElse')
     }
 
     render() {
@@ -28,12 +47,13 @@ class EmployeeDetails extends React.Component {
                         <h1>Chad Johnson</h1>
                         {this.state.readonly ? 
                             <button className='profile-edit-btn' onClick={this.toggleEdit}>edit</button> :
-                            <button className='profile-save-btn' onClick={this.toggleEdit}>save</button> 
-                            }
+                            <button className='profile-save-btn' onClick={this.saveAndUpdate}>save</button>
+                        }
+                        {this.state.readonly ? '' : <button className='profile-cancel-btn' onClick={this.cancelEdit}>cancel</button>}
                         
                     </div>
                     
-                    <ProfileData readonly={this.state.readonly}/>
+                    <ProfileData readonly={this.state.readonly} saveData={this.handleChange} inputState={this.state}/>
 
                 </div>
             </div>
@@ -41,4 +61,8 @@ class EmployeeDetails extends React.Component {
     }
 }
 
-export default EmployeeDetails
+const mapStateToProps = (state) => {
+    console.log('State from EmployeeDetails ', state)
+}
+
+export default connect(mapStateToProps)(EmployeeDetails)
