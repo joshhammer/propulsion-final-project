@@ -40,7 +40,7 @@ COPY ./backend /backend
 ENV PYTHONDONTWRITEBYTECODE 1
 
 
-COPY ./scripts/* /scripts
+COPY ./scripts/* /scripts/
 RUN chmod +x ./scripts/*
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs && apt-get install -y npm
