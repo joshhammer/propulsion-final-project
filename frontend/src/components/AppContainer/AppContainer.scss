@@ -11,18 +11,27 @@
 }
 
 .sidebar-link {
-    text-decoration: none;
     display: flex;
     justify-content: center;
-    width: 50%;
+    align-items: center;
+    width: 70%;
+    height: 45px;
+    font-size: 1.25rem;
+    text-decoration: none;
     color: var(--mainBlue);
     border: 2px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
+    transition: all 0.3s;
     &:hover {
         background-color: var(--mainBlue);
         color: var(--mainWhite);
     }
+}
+
+#active-sidebar-link {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
 }
 
 .sidebar-placeholder {

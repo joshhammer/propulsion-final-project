@@ -1,0 +1,76 @@
+.employee-payslips-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.employee-payslips-container {
+    height: 100%;
+    width: 80%;
+    padding-top: 2rem;
+    padding: 0 1rem;
+}
+
+.employee-payslips-title-box {
+    padding-left: 1rem;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    & h1 {
+        text-shadow: 0 0 10px black;
+        padding-bottom: .75rem;
+        // border-bottom: 1px solid var(--mainWhite);
+        letter-spacing: 1px;
+        margin-left: 1rem;
+    }
+    & svg {
+        color: var(--mainWhite);
+        width: 40px;
+        height: 40px;
+        color: var(--mainGreen);
+    }
+}
+
+.payslips-title-and-logo {
+    display: flex;
+    border-bottom: 1px solid var(--mainGreen);
+    padding-top: 1rem;
+}
+
+.employee-payslips-content {
+    height: 80%;
+    padding: 3rem 1rem;
+    overflow: scroll;
+    position: relative;
+}
+
+
+.single-payslip-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--mainWhite);
+    color: var(--mainBlue);
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
+    padding: 0 2rem;
+    box-shadow: 0 0 10px black;
+    & svg {
+    color: var(--mainBlue);
+    width: 25px;
+    height: 25px;
+    }
+}
+
+
+
+#payslip-table-head {
+    background: var(--mainGreen);
+    margin-bottom: 2.5rem;
+}
+
+.payslip-helper-div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
