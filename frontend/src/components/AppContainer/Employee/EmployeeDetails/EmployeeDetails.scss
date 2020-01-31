@@ -4,16 +4,18 @@
 }
 
 .employee-details-content {
+    height: 100%;
     width: 80%;
-    padding-top: 4rem;
-    margin-left: 20%;
+    padding-top: 2rem;
+    padding: 0 1rem;
+    overflow: scroll;
 }
 
 .employee-profile-title-box {
+    padding-left: 1rem;
+    height: 25%;
     display: flex;
     align-items: center;
-    margin-bottom: 4rem;
-    // margin: 2rem 0 0 1rem;
     & img {
         border-radius: 50%;
         background: var(--mainWhite);
@@ -26,6 +28,20 @@
         border-bottom: 1px solid var(--mainWhite);
         letter-spacing: 1px;
     }
+}
+
+.employee-profile-data-container {
+    padding: 1rem 1rem 5rem 1rem;
+    height: 75%;
+    overflow: scroll;
+}
+
+.profile-data-section-title {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px black;
+    color: var(--mainWhite);
+    letter-spacing: 1px;;
 }
 
 .profile-table-element {

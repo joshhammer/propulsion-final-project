@@ -11,10 +11,12 @@ class ProfileData extends React.Component {
 
     render() {
         const {inputState, readonly, saveData} = this.props
-        const {firstname, lastname, phone, ahv, email, street, city, postal_code} = inputState
+        const {firstname, lastname, phone, ahv, email, street, city, postal_code, house_number, bank_name, 
+            iban, bic} = inputState
         const user = this.props.user
         return(
             <div className='employee-profile-data-container'>
+                <h3 className='profile-data-section-title'>Personal Information</h3>
                 <div className='profile-table-element'>
                     <p>Firstname</p>
                     <input name="firstname" type="text" value={readonly ? user.first_name : firstname} readOnly={readonly} 
@@ -45,9 +47,18 @@ class ProfileData extends React.Component {
                         onChange={saveData} 
                         id={readonly ? '' : 'editable-input'} />
                 </div>
+
+                <h3 className='profile-data-section-title'>Address</h3>
+
                 <div className='profile-table-element'>
                     <p>Street</p>
                     <input name='street' type="text" value={readonly ? user.street : street} readOnly={readonly} 
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'} />
+                </div>
+                <div className='profile-table-element'>
+                    <p>House Number</p>
+                    <input name='house_number' type="text" value={readonly ? user.house_number : house_number} readOnly={readonly}
                         onChange={saveData}
                         id={readonly ? '' : 'editable-input'} />
                 </div>
@@ -61,6 +72,27 @@ class ProfileData extends React.Component {
                     <p>City</p>
                     <input name='city' type="text" value={readonly ? user.city : city} readOnly={readonly}
                         onChange={saveData} 
+                        id={readonly ? '' : 'editable-input'} />
+                </div>
+
+                <h3 className='profile-data-section-title'>Bank Account</h3>
+
+                <div className='profile-table-element'>
+                    <p>Bank Name</p>
+                    <input name='bank_name' type="text" value={readonly ? user.bank_name : bank_name} readOnly={readonly}
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'} />
+                </div>
+                <div className='profile-table-element'>
+                    <p>IBAN</p>
+                    <input name='iban' type="text" value={readonly ? user.iban : iban} readOnly={readonly}
+                        onChange={saveData}
+                        id={readonly ? '' : 'editable-input'} />
+                </div>
+                <div className='profile-table-element'>
+                    <p>BIC</p>
+                    <input name='bic' type="text" value={readonly ? user.bic : bic} readOnly={readonly}
+                        onChange={saveData}
                         id={readonly ? '' : 'editable-input'} />
                 </div>
             </div>
