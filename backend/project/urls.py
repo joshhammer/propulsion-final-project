@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from PDF.pdf import payslip_pdf
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
@@ -23,4 +24,5 @@ urlpatterns = [
     path('api/auth/', include('registration.urls')),
     path('api/adminprofile/', include('adminprofile.urls')),
     path('api/company/', include('company.urls')),
+    path('api/pdf/', payslip_pdf, name="create-pdf"),
 ]

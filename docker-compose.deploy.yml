@@ -11,7 +11,7 @@ services:
     volumes:
       - ./backend:/backend
       - ./media-files:/media-files
-      - ./static-files:/static-files
+      - ./static:/static
     depends_on:
       - postgres
       - backend
@@ -32,7 +32,7 @@ services:
       - postgres
     volumes:
       - media-files:/media-files
-      - static-files:/static-files
+      - static:/static
 
   nginx:
     image: nginx:1.17.6
@@ -42,7 +42,7 @@ services:
       - "443:443"
     volumes:
       - ./nginx:/etc/nginx/conf.d
-      - static-files:/static-files
+      - static:/static
       - media-files:/media-files
       - /etc/letsencrypt:/etc/letsencrypt
 
