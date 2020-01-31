@@ -33,11 +33,12 @@
 .payslips-title-and-logo {
     display: flex;
     border-bottom: 1px solid var(--mainGreen);
+    padding-top: 1rem;
 }
 
 .employee-payslips-content {
     height: 80%;
-    padding: 1rem 1rem;
+    padding: 3rem 1rem;
     overflow: scroll;
     position: relative;
 }
