@@ -32,6 +32,6 @@ class RetrieveUpdateDestroySalary(RetrieveUpdateDestroyAPIView):
 
     # Returns single salary by id
     # TODO return salary by user id!
-    lookup_url_kwarg = 'id'
+    lookup_url_kwarg = 'user_id'
 
 
