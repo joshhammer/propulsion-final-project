@@ -77,5 +77,8 @@
         letter-spacing: 1px;
         box-shadow: 0 0 10px black;
         background: var(--mainWhite);
+        &:hover {
+            cursor: default;
+        }
     }
 }
