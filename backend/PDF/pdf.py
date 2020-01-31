@@ -17,6 +17,7 @@ User = get_user_model()
 
 def payslip_pdf(request):
     payslip = get_object_or_404(User, pk=1)
+    # salary = get_object_or_404(User, pk=1)
     response = HttpResponse(content_type="application/pdf")
     response['Content-Disposition'] = "inline; filename={date}-{name}-payslip.pdf".format(
         date=payslip.date_created.strftime('%Y-%m-%d'),
@@ -25,7 +26,8 @@ def payslip_pdf(request):
     html = render_to_string(
         template_name="payslip_pdf.html", 
         context={'payslip': payslip,
-    })
+                 # 'salary': salary,
+                    })
 
     host_url = request.META.get('wsgi.url_scheme') + '://' + request.META['HTTP_HOST']
     css = CSS(host_url + settings.STATIC_ROOT + 'payslip_pdf.css')
