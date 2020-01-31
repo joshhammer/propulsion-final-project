@@ -1,0 +1,20 @@
+.card-content {
+    color: var(--mainBlue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1% auto;
+    max-height: 150px;
+    overflow: hidden;
+    width: 95%;
+    transition: max-height 0.5s ease-in-out;
+
+    &.hidden {
+        max-height: 0;
+    }
+}
+
+.card-content-row {
+    width: 100%;
+}
