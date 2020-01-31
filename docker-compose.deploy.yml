@@ -57,3 +57,4 @@ volumes:
   postgres:
   static-files:
   media-files:
+  frontend:
