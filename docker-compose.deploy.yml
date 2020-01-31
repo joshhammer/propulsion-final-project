@@ -33,6 +33,9 @@ services:
     volumes:
       - media-files:/media-files
       - static:/static
+      - frontend:/frontend-build
+      - ./scripts:/scripts
+
 
   nginx:
     image: nginx:1.17.6
@@ -45,6 +48,7 @@ services:
       - static:/static
       - media-files:/media-files
       - /etc/letsencrypt:/etc/letsencrypt
+      - frontend:/frontend
 
 
 
@@ -52,3 +56,4 @@ volumes:
   postgres:
   static-files:
   media-files:
+  frontend:

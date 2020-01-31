@@ -1,11 +1,15 @@
 from django.contrib.auth import get_user_model
 from rest_framework import status
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView, CreateAPIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from registration.serializers import RegistrationSerializer, RegistrationValidationSerializer
+from adminprofile.models import AdminProfile
+from registration.models import Registration
+from registration.serializers import RegistrationSerializer, RegistrationValidationSerializer, \
+    RegistrationEmployeeSerializer
 from user.serializers import UserSerializer
 
 User = get_user_model()
@@ -65,5 +69,24 @@ class RegistrationValidationView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(serializer.validated_data)
         return Response(status=status.HTTP_200_OK)
+
+
+class RegistrationEmployee(GenericAPIView):
+    """
+    post:
+    Create an active "EP" (i.e. EmployeeProfile) user with company the same as admin.
+    Invite employee to create employee account by email.
+    Create an instance of salary for employee.
+    """
+    serializer_class = RegistrationEmployeeSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(serializer.validated_data)
+        return Response(status=status.HTTP_200_OK)
+
+
+
 
 
