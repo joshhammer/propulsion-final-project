@@ -22,19 +22,15 @@ const CompanyPeople = () => {
             <div className="company-people-table-container">
                 <div className="company-people-table-header">
                     <h2>Name</h2>
-                    <h2>Role</h2>
+                    <h2 id="table-role">Role</h2>
                 </div>
                 <div className="company-people-table-content">
                     <TableRow name={"Alfred Meier"} role={"Scientist"}/>
                     <TableRow name={"Piotr Schawinski"} role={"House Keeping"}/>
                     <TableRow name={"Matt Damon"} role={"Actor"}/>
-                    <TableRow name={"Alfred Meier"} role={"Scientist"}/>
-                    <TableRow name={"Piotr Schawinski"} role={"House Keeping"}/>
-                    <TableRow name={"Matt Damon"} role={"Actor"}/> <TableRow name={"Alfred Meier"} role={"Scientist"}/>
-                    <TableRow name={"Piotr Schawinski"} role={"House Keeping"}/>
-                    <TableRow name={"Matt Damon"} role={"Actor"}/> <TableRow name={"Alfred Meier"} role={"Scientist"}/>
-                    <TableRow name={"Piotr Schawinski"} role={"House Keeping"}/>
-                    <TableRow name={"Matt Damon"} role={"Actor"}/>
+                    <TableRow name={"David"} role={"Pupil"}/>
+                    <TableRow name={"Peter Meier"} role={"Assistant to Assistant"}/>
+                    <TableRow name={"RazzPay"} role={"Full-Stuck"}/> <TableRow name={"Alfred Meier"} role={"Scientist"}/>
                 </div>
             </div>
         </div>

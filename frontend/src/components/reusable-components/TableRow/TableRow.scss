@@ -1,19 +1,34 @@
 .tablerow-container {
-    border-bottom: solid 1px var(--mainWhite);
+    border: solid 1px var(--mainWhite);
+    background-color: var(--mainWhite);
+    border-radius: 8px;
+    height: 40px;
+    margin-bottom: 1%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
 
+    &:hover {
+        background-color: var(--mainGreen);
+    }
+
     & h3 {
-        color: var(--mainWhite)
+        color: var(--mainBlue);
+
+        &:hover {
+            color: var(--mainBlue);
+
+        }
     }
 }
 
 .tablerow-name {
+    margin-left: 10%;
     width: 30%;
 }
 
 .tablerow-role {
+    margin-left: 10%;
     width: 30%;
 }
