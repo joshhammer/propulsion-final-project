@@ -1,0 +1,81 @@
+.job-page-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.employee-job-content {
+    height: 100%;
+    width: 80%;
+    padding-top: 2rem;
+    padding: 0 1rem;
+}
+
+.employee-job-title-box {
+    padding-left: 1rem;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    & svg {
+        width: 40px;
+        height: 40px;
+        color: var(--mainGreen);
+        text-shadow: 0 0 10px black;
+    }
+    & h1 {
+        margin-left: 1rem;
+        text-shadow: 0 0 10px black;
+        padding-bottom: .75rem;
+        letter-spacing: 1px;
+    }
+}
+
+.job-title-and-logo {
+    display: flex;
+    border-bottom: 1px solid var(--mainGreen);
+    padding-top: 1rem;
+}
+
+.employee-job-details-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 5rem 1rem;
+    height: 80%;
+    overflow: scroll;
+}
+
+.job-details-box {
+    margin-bottom: 2rem;
+}
+
+.job-table-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    & p {
+        width: 200px;
+        height: 35px;
+        margin-right: 1rem;
+        background: var(--mainGreen);
+        color: var(--mainBlue);
+        border-radius: 5px;
+        padding-left: .5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        box-shadow: 0 0 10px black;
+        letter-spacing: 1px;
+    }
+    // not editable input field
+    & input {
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding-left: .5rem;
+        height: 35px;
+        width: 400px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        box-shadow: 0 0 10px black;
+        background: var(--mainWhite);
+    }
+}
