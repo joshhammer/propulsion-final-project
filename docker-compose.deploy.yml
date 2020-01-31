@@ -54,7 +54,6 @@ services:
 
 volumes:
   postgres:
-  static-files:
   static:
   media-files:
   frontend:
