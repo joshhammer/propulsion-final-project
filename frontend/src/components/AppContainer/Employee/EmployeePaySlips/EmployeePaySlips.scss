@@ -1,0 +1,58 @@
+.employee-payslips-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.employee-payslips-container {
+    height: 100%;
+    width: 80%;
+    padding-top: 2rem;
+    padding: 0 1rem;
+}
+
+.employee-payslips-title-box {
+    padding-left: 1rem;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    & h1 {
+        text-shadow: 0 0 10px black;
+        padding-bottom: .75rem;
+        border-bottom: 1px solid var(--mainWhite);
+        letter-spacing: 1px;
+    }
+}
+
+.employee-payslips-content {
+    height: 80%;
+    padding: 1rem 1rem;
+    overflow: scroll;
+    position: relative;
+}
+
+
+.single-payslip-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--mainWhite);
+    color: var(--mainBlue);
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+
+}
+
+
+
+#payslip-table-head {
+    background: var(--mainGreen);
+    margin-bottom: 2rem;
+}
+
+.payslip-helper-div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
