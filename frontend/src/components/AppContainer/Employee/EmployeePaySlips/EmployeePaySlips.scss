@@ -18,9 +18,21 @@
     & h1 {
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        border-bottom: 1px solid var(--mainWhite);
+        // border-bottom: 1px solid var(--mainWhite);
         letter-spacing: 1px;
+        margin-left: 1rem;
     }
+    & svg {
+        color: var(--mainWhite);
+        width: 40px;
+        height: 40px;
+        color: var(--mainGreen);
+    }
+}
+
+.payslips-title-and-logo {
+    display: flex;
+    border-bottom: 1px solid var(--mainGreen);
 }
 
 .employee-payslips-content {
@@ -44,9 +56,9 @@
     box-shadow: 0 0 10px black;
     & svg {
     color: var(--mainBlue);
-    width: 20px;
-    height: 20px;
-}
+    width: 25px;
+    height: 25px;
+    }
 }
 
 
