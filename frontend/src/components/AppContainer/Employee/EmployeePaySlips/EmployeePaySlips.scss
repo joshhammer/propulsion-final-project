@@ -39,16 +39,21 @@
     color: var(--mainBlue);
     height: 50px;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     padding: 0 2rem;
-
+    box-shadow: 0 0 10px black;
+    & svg {
+    color: var(--mainBlue);
+    width: 20px;
+    height: 20px;
+}
 }
 
 
 
 #payslip-table-head {
     background: var(--mainGreen);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .payslip-helper-div {
