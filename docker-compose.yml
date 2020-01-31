@@ -12,7 +12,7 @@ services:
     volumes:
       - ./backend:/backend
       - ./media-files:/media-files
-      - ./static:/static
+      - ./static-files-files-files-files:/static-files-files-files-files
     depends_on:
       - postgres
       - backend
@@ -43,7 +43,7 @@ services:
     volumes:
       - ./backend:/backend
       - ./media-files:/media-files
-      - ./static:/static
+      - ./static-files-files-files-files:/static-files-files-files-files
 
 
   # no need for nginx and gunicorn for local development environment (see docker-compose.deploy.yml)

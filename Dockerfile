@@ -23,7 +23,7 @@ COPY ./backend/requirements.yml /backend/requirements.yml
 RUN /opt/miniconda/bin/conda env create -f /backend/requirements.yml 
 
 RUN mkdir /scripts
-RUN mkdir /static
+RUN mkdir /static-files
 RUN mkdir /nginx
 # we set the path were all the python pacakages are
 ENV PATH /opt/miniconda/envs/razzpay/bin:$PATH
