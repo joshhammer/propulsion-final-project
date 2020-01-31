@@ -1,22 +1,11 @@
 from django.core.exceptions import ValidationError
-from django.http import HttpResponse
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from rest_framework.response import Response
 
 from record.models import Record
 
 
 User = get_user_model()
-
-
-
-class RecordSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Record
-        fields = ['id', 'date_paid', 'payperiod_start', 'payperiod_end', 'user', 'company']
-        #read_only_fields = ['user', 'company']
 
 
 class RecordPayrollSerializer(serializers.Serializer):
