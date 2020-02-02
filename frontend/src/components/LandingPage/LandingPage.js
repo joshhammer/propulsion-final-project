@@ -1,16 +1,22 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import './LandingPage.scss';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
-import logo from '../../assets/logo_blue-white.png';
+import instagram from '../../assets/svg/instagram.svg';
+import facebook from '../../assets/svg/facebook.svg';
+import twitter from '../../assets/svg/twitter.svg';
+import linkedin from '../../assets/svg/linkedin.svg';
+import './LandingPage.scss';
 
 const LandingPage = () => {
     return (
         <div className="landingpage-container">
             <div className="landingpage-header">
-                <img src={logo} alt="logo"/>
-                <h3>Manage your payroll easily</h3>
+                {/* <img src={logo} alt="logo"/> */}
+
+                    <h1 id='razzpay-main-title'>Razzpay</h1>
+
+                <h3 id='main-subtitle'>Introducing the people platform for small businesses. <br/>
+                    One place to run payroll, manage benefits, <br/> and support your team.</h3>
             </div>
             <div className="authentication-container">
                 <div className="register">
@@ -24,7 +30,7 @@ const LandingPage = () => {
                     <form>
                         <InputField content={"Email"}/>
                         <span className="input-span"></span>
-                        <InputField content={"Password"}/>
+                        <InputField content={"Password"} type={"password"}/>
                         <span className="input-span"></span>
                         <AuthenticationButton content={"Login"}/>
                     </form>
@@ -32,17 +38,17 @@ const LandingPage = () => {
             </div>
             <div className="footer">
                 <div className="footer-left">
-                    <Link>About</Link>
-                    <Link>Services</Link>
-                    <Link>Pricing</Link>
-                    <Link>Jobs</Link>
+                    <p>About</p>
+                    <p>Services</p>
+                    <p>Pricing</p>
+                    <p>Jobs</p>
                 </div>
                 <div className="footer-spaceholder"></div>
                 <div className="footer-right">
-                    <p>Icon1</p>
-                    <p>Icon1</p>
-                    <p>Icon1</p>
-                    <p>Icon1</p>
+                    <img src={instagram} alt="instagram"/>
+                    <img src={facebook} alt="facebook"/>
+                    <img src={twitter} alt="twitter"/>
+                    <img src={linkedin} alt="linkedin"/>
                 </div>
             </div>
         </div>

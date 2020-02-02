@@ -1,7 +1,17 @@
 .auth-button {
     height: 35px;
     width: 150px;
+    border: none;
     border-radius: 8px;
     background-color: var(--mainGreen);
     font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px black;
+    transition: all .1s;
+    &:hover {
+        background: var(--lightGreen); 
+    }
+    &:active {
+        box-shadow: 0 0 0 black;
+    }
 }

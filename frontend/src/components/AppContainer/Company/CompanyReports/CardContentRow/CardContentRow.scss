@@ -1,0 +1,34 @@
+.cardcontentrow-container {
+    border: solid 1px var(--mainWhite);
+    background-color: var(--mainWhite);
+    border-radius: 8px;
+    height: 30px;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    //&:hover {
+    //    background-color: var(--mainGreen);
+    //}
+
+    & h3 {
+        color: var(--mainBlue);
+
+        &:hover {
+            color: var(--mainBlue);
+
+        }
+    }
+}
+
+.cardcontentrow-name {
+    margin-left: 5%;
+    width: 33%;
+}
+
+.cardcontentrow-role {
+    margin-left: 5%;
+    width: 33%;
+}

@@ -1,0 +1,33 @@
+.company-documents-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.company-documents-manager {
+    border-bottom: 3px solid var(--mainWhite);
+    padding-bottom: 2%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+
+}
+
+.company-documents-share {
+    border-bottom: 1px solid var(--mainWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 90%;
+    margin-bottom: 2%;
+    & h3 {
+        width: 25%;
+    }
+}
+
+//.company-documents-private {
+//    border: 1px solid red;
+//    height: 30%;
+//    width: 100%;
+//}

@@ -1,0 +1,22 @@
+.dropzone-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.dropzone-files-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.dropzone-field {
+    width: 50%;
+}
+
+.dropzone-files {
+    width: 50%;
+}
+

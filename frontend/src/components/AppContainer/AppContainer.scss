@@ -11,18 +11,29 @@
 }
 
 .sidebar-link {
-    text-decoration: none;
     display: flex;
     justify-content: center;
-    width: 50%;
+    align-items: center;
+    width: 60%;
+    height: 45px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgb(51, 51, 51);
     color: var(--mainBlue);
-    border: 2px solid var(--mainBlue);
+    border: 1px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
+    transition: all 0.3s;
     &:hover {
         background-color: var(--mainBlue);
         color: var(--mainWhite);
     }
+}
+
+#active-sidebar-link {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
 }
 
 .sidebar-placeholder {
