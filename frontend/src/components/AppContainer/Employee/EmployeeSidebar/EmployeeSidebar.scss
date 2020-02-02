@@ -13,4 +13,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 15%;
 }
+
+.company-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin-top: 15%;
+    background: var(--mainBlue);
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+    transition: all .5s ease-in-out;
+    &:hover {
+        transform: rotate(360deg);
+        box-shadow: 0 0 15px black;
+    }
+}
+
+.company-logo-title {
+    color: var(--mainWhite);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 5rem;
+}
+
