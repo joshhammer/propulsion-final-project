@@ -14,3 +14,39 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.company-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background: var(--mainBlue);
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+    transition: all .5s ease-in-out;
+    &:hover {
+        // animation-name: example;
+        // animation-duration: 2s;
+        // animation-timing-function: ease-in-out;
+        transform: rotate(360deg);
+        box-shadow: 0 0 15px black;
+    }
+}
+
+.company-logo-title {
+    color: var(--mainWhite);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+// @keyframes example {
+//     0% { transform: rotate(0deg);}
+//     100% { transform: rotate(360deg);}
+// }

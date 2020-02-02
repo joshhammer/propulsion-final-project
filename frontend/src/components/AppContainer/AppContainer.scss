@@ -14,12 +14,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 60%;
     height: 45px;
     font-size: 1.25rem;
     text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgb(51, 51, 51);
     color: var(--mainBlue);
-    border: 2px solid var(--mainBlue);
+    border: 1px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
     transition: all 0.3s;

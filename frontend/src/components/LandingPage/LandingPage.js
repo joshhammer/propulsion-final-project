@@ -1,5 +1,4 @@
 import React from 'react';
-import './LandingPage.scss';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
 import logo from '../../assets/logo_blue-white.png';
@@ -7,13 +6,18 @@ import instagram from '../../assets/svg/instagram.svg';
 import facebook from '../../assets/svg/facebook.svg';
 import twitter from '../../assets/svg/twitter.svg';
 import linkedin from '../../assets/svg/linkedin.svg';
+import './LandingPage.scss';
 
 const LandingPage = () => {
     return (
         <div className="landingpage-container">
             <div className="landingpage-header">
-                <img src={logo} alt="logo"/>
-                <h3>Manage your payroll easily</h3>
+                {/* <img src={logo} alt="logo"/> */}
+
+                    <h1 id='razzpay-main-title'>Razzpay</h1>
+
+                <h3 id='main-subtitle'>Introducing the people platform for small businesses. <br/>
+                    One place to run payroll, manage benefits, <br/> and support your team.</h3>
             </div>
             <div className="authentication-container">
                 <div className="register">

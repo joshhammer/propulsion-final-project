@@ -11,7 +11,10 @@ const EmployeeSidebar = (props) => {
     return (
         <div className="employee-sidebar-container">
             <div className="company-logo">
-                <img src={logo} alt="logo" />
+                {/* <img src={logo} alt="logo" /> */}
+                <div className='logo-circle'>
+                    <h1 className='company-logo-title'>R</h1> 
+                </div>
             </div>
             <div className="employee-sidebar-link-container">
                 <Link className="sidebar-link" to="/employee/dashboard" id={path === '/employee/dashboard' ? 'active-sidebar-link' : ''}>Dashboard</Link>
