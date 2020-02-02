@@ -23,7 +23,7 @@ const EmployeeSidebar = (props) => {
                 <Link className="sidebar-link" to="/employee/job" id={path === '/employee/job' ? 'active-sidebar-link' : ''}>Job & Pay</Link>
                 <Link className="sidebar-link" to="/employee/documents" id={path === '/employee/documents' ? 'active-sidebar-link' : ''}>Documents</Link>
             </div>
-            <div className="sidebar-placeholder"></div>
+            {/* <div className="sidebar-placeholder"></div> */}
         </div>
     )
 }
