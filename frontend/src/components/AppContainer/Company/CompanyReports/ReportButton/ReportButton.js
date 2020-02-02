@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import './ReportButton.scss';
-import info from '../../../../../assets/svg/info.svg'
+import { ReactComponent as Info} from '../../../../../assets/svg/folder-plus.svg';
 
 const ReportButton = (props) => {
     return (
         <div className="toggle-button">
             <button onClick={props.toggle} className="report-button">
-                <img src={info} alt="info"/>
+                <Info width={25} height={25}/>
                 <p>{props.content}</p>
             </button>
         </div>
