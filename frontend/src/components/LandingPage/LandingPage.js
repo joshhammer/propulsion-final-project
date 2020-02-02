@@ -1,7 +1,6 @@
 import React from 'react';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
-import logo from '../../assets/logo_blue-white.png';
 import instagram from '../../assets/svg/instagram.svg';
 import facebook from '../../assets/svg/facebook.svg';
 import twitter from '../../assets/svg/twitter.svg';

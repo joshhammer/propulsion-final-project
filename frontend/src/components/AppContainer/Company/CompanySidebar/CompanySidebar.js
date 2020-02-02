@@ -1,5 +1,4 @@
 import React from "react";
-import logo from '../../../../assets/logo_blue-white.png';
 import {Link} from "react-router-dom";
 import './CompanySidebar.scss';
 import '../../AppContainer.scss';

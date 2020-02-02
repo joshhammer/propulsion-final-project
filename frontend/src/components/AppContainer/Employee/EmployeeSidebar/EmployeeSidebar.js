@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import logo from '../../../../assets/logo_blue-white.png';
 import './EmployeeSidebar.scss';
 import '../../AppContainer.scss';
 
