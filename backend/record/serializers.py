@@ -7,6 +7,11 @@ from record.models import Record
 
 User = get_user_model()
 
+class RecordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Record
+        fields = '__all__'
+
 
 class RecordPayrollSerializer(serializers.Serializer):
     date_paid = serializers.DateField(label='Date paid')
