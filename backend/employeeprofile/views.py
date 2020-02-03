@@ -70,21 +70,21 @@ class ListEmployees(ListAPIView):
         return queryset
 
 
-class RetrieveUpdateDestroyEmployee(RetrieveUpdateDestroyAPIView):
-    """
-    Admin has limited access to employee information and cannot change employee's password
-    get:
-    Get the details of an employee by providing the id of the employee (admin only)
-    patch:
-    Admin updates employee info
-    delete:
-    Admin deletes Employee user instance
-    """
-    queryset = User.objects.all()
-    serializer_class = UserLimitedSerializer
-    #permission_classes = [IsAdmin]
-
-    lookup_url_kwarg = 'id'
+# class RetrieveUpdateDestroyEmployeeUser(RetrieveUpdateDestroyAPIView):
+#     """
+#     Admin has limited access to employee information and cannot change employee's password
+#     get:
+#     Get the details of an employee by providing the id of the employee (admin only)
+#     patch:
+#     Admin updates employee info
+#     delete:
+#     Admin deletes Employee user instance
+#     """
+#     queryset = User.objects.all()
+#     serializer_class = UserLimitedSerializer
+#     permission_classes = [IsAdmin]
+#
+#     lookup_url_kwarg = 'id'
 
 
 
