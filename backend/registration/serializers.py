@@ -7,7 +7,7 @@ from company.models import Company
 from company.serializers import CompanySerializer
 from emails.models import Email
 from employeeprofile.models import EmployeeProfile
-from registration.models import Registration
+from registration.models import Registration, code_generator
 from salary.models import Salary
 
 User = get_user_model()
@@ -176,6 +176,49 @@ class RegistrationEmployeeSerializer(serializers.Serializer):
                       content=f'Here is your validation code: {registration.code}')
         email.save(request=self.context['request'])
         return new_user
+
+
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField(label='Password Reset E-Mail Address', validators=[email_does_exist])
+
+    def send_password_reset_email(self):
+        email = self.validated_data.get('email')
+        user = User.objects.get(email=email)
+        user.registration.code = code_generator()
+        user.registration.code_used = False
+        user.registration.code_type = 'PR'
+        user.registration.save()
+        email = Email(to=email, subject='Reset your password for RazzPay',
+                      content=f'Here is your RazzPay password reset code: {user.registration.code}')
+        email.save(request=self.context['request'])
+
+
+class PasswordResetValidationSerializer(serializers.Serializer):
+    code = serializers.CharField(label='Validation code', write_only=True, validators=[code_is_valid])
+    email = serializers.EmailField(label='Registration E-Mail Address', validators=[email_does_exist])
+    password = serializers.CharField(label='password', write_only=True)
+    password_repeat = serializers.CharField(label='password_repeat', write_only=True)
+
+    def validate(self, data):
+        code = data.get('code')
+        email = data.get('email')
+        user = User.objects.get(email=email)
+        registration = Registration.objects.get(code=code)
+        if registration != user.registration:
+            raise ValidationError(message='The code does not belong to this email!')
+        if data.get('password') != data.get('password_repeat'):
+            raise ValidationError(message='Passwords do not match!')
+        return data
+
+    def save(self, validated_data):
+        code = validated_data.get('code')
+        user = Registration.objects.get(code=code).user
+        user.set_password(validated_data.get('password'))
+        user.registration.code_used = True
+        user.save()
+        user.registration.save()
+        #post_user_password_reset_validation.send(sender=User, user=user)
+        return user
 
 
 
