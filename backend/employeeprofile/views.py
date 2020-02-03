@@ -1,10 +1,10 @@
-from rest_framework.generics import ListCreateAPIView, GenericAPIView, get_object_or_404, UpdateAPIView
+from rest_framework.generics import ListCreateAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from salary.permissions import IsAdmin
 from user.models import User
-from user.serializers import UserSerializer
+from user.serializers import UserSerializer, UserLimitedSerializer
 
 
 class GetMyEmployeeProfile(ListCreateAPIView):
@@ -22,48 +22,21 @@ class GetMyEmployeeProfile(ListCreateAPIView):
         return Response('Profile updated')
 
 
-class DeactivateEmployeeTest(GenericAPIView):
+class ListEmployees(ListAPIView):
     """
     get:
-    toggle deactivate employee
+    List all employees of admin
     """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserLimitedSerializer
     permission_classes = [IsAdmin]
 
-    lookup_field = 'user_id'
+    def get_queryset(self):
+        company_not_null = User.objects.filter(company_id__isnull=False)
+        queryset = company_not_null.filter(company_id=self.request.user.company_id)
+        return queryset
 
 
 
-
-class DeactivateEmployee(GenericAPIView):
-    serializer_class = UserSerializer
-    queryset = User.objects.all()
-    permission_classes = [IsAdmin]
-
-    lookup_field = 'user_id'
-
-    def post(self, request, **kwargs):
-        #user = User.objects.filter(user_id=lookup_field)
-        #TODO
-        pass
-
-
-#  POST: Toggle activate an employee
-class ToggleDeactivateEmployee(GenericAPIView):
-
-    serializer_class = UserSerializer
-    permission_classes = [IsAdmin]
-    queryset = User.objects.all()
-
-    # the method which activates or deactivates an employee
-    def post(self, request, user_id):
-        employee = get_object_or_404(User, user_id=user_id)
-        if User in employee.is_active.all():
-            employee.is_active.remove(User)
-        else:
-            employee.is_active.add(User)
-        return Response(self.get_serializer(instance=employee).data)
 
 
 
