@@ -2,10 +2,14 @@ import React from "react";
 import './TablerowPayroll.scss';
 
 const TableRowPayroll = (props) => {
+
+    const deductions = props.salary - props.net_salary;
+    const subtotal = props.salary + deductions;
+
     return (
         <div className="tablerowpayroll-container">
             <div>
-                <h3>{props.name}</h3>
+                <h3>{props.firstName} {props.lastName}</h3>
             </div>
             <div>
                 <h3>{props.role}</h3>
@@ -14,10 +18,10 @@ const TableRowPayroll = (props) => {
                 <h3>{props.salary}</h3>
             </div>
             <div>
-                <h3>{props.pension}</h3>
+                <h3>{deductions}</h3>
             </div>
             <div>
-                <h3>{props.subtotal}</h3>
+                <h3>{subtotal}</h3>
             </div>
         </div>
     )

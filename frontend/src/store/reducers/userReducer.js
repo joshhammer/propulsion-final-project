@@ -1,4 +1,4 @@
-import { GET_SINGLE_USER } from '../actionTypes';
+import {GET_ALL_USERS, GET_SINGLE_USER} from '../actionTypes';
 
 const initialState = {
     user: {
@@ -19,6 +19,12 @@ export const userReducer = (state=initialState, action) => {
         return {
             ...state,
             user: action.payload,
+        }
+    }
+    if (action.type === GET_ALL_USERS){
+        return {
+            ...state,
+            users: action.payload,
         }
     }
     return state
