@@ -130,4 +130,4 @@ class User(AbstractUser):
     )
 
     def __str__(self):
-        return f'{self.email}  {self.first_name} {self.last_name} {self.date_created} {self.date_modified}'
+        return f'id: {self.id} {self.email}  {self.first_name} {self.last_name} {self.date_created} {self.date_modified}'

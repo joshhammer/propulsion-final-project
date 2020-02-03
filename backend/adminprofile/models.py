@@ -24,4 +24,4 @@ class AdminProfile(models.Model):
     # one to one relationship with Company
 
     def __str__(self):
-        return f'{self.user.email},  {self.date_created} {self.date_modified}'
+        return f'id: {self.id} {self.user.email},  {self.date_created} {self.date_modified}'
