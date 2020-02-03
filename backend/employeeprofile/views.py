@@ -4,23 +4,57 @@ from rest_framework.response import Response
 
 from salary.permissions import IsAdmin
 from user.models import User
-from user.serializers import UserSerializer, UserLimitedSerializer
+from user.serializers import UserSerializer, UserLimitedSerializer, UserTestSerializer
 
 
-class GetMyEmployeeProfile(ListCreateAPIView):
+# Old method returned employee profile as array rather than object
+# class GetMyEmployeeProfile(ListCreateAPIView):
+#     serializer_class = UserSerializer
+#     queryset = User.objects.all()
+#     permission_classes = [IsAuthenticated]
+#
+#     def get_queryset(self):
+#         queryset = User.objects.filter(id=self.request.user.id)
+#         return queryset
+#
+#     def post(self, request, **kwargs):
+#         user = User.objects.filter(id=self.request.user.id)
+#         user.update(**request.data)
+#         return Response('Profile updated')
+
+
+class GetMyEmployeeProfile(RetrieveUpdateDestroyAPIView):
+    """
+    get:
+    Logged in employee can view user profile
+    post:
+    Logged in employee can update user profile
+    """
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        queryset = User.objects.filter(id=self.request.user.id)
-        return queryset
+    def retrieve(self, request, *args, **kwargs):
+        instance = User.objects.get(id=self.request.user.id)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
 
-    def post(self, request, **kwargs):
-        user = User.objects.filter(id=self.request.user.id)
-        user.update(**request.data)
-        return Response('Profile updated')
+    def update(self, request, *args, **kwargs):
+        partial = kwargs.pop('partial', False)
+        #instance = self.get_object()
+        # ap = AdminProfile.objects.get(user=self.request.user)
+        # instance = Company.objects.get(adminprofile=ap)
+        instance = User.objects.get(id=self.request.user.id)
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
 
+        if getattr(instance, '_prefetched_objects_cache', None):
+            # If 'prefetch_related' has been applied to a queryset, we need to
+            # forcibly invalidate the prefetch cache on the instance.
+            instance._prefetched_objects_cache = {}
+
+        return Response(serializer.data)
 
 class ListEmployees(ListAPIView):
     """
@@ -36,21 +70,21 @@ class ListEmployees(ListAPIView):
         return queryset
 
 
-class RetrieveUpdateDestroyEmployee(RetrieveUpdateDestroyAPIView):
-    """
-    Admin has limited access to employee information and cannot change employee's password
-    get:
-    Get the details of an employee by providing the id of the employee (admin only)
-    patch:
-    Admin updates employee info
-    delete:
-    Admin deletes Employee user instance
-    """
-    queryset = User.objects.all()
-    serializer_class = UserLimitedSerializer
-    #permission_classes = [IsAdmin]
-
-    lookup_url_kwarg = 'id'
+# class RetrieveUpdateDestroyEmployeeUser(RetrieveUpdateDestroyAPIView):
+#     """
+#     Admin has limited access to employee information and cannot change employee's password
+#     get:
+#     Get the details of an employee by providing the id of the employee (admin only)
+#     patch:
+#     Admin updates employee info
+#     delete:
+#     Admin deletes Employee user instance
+#     """
+#     queryset = User.objects.all()
+#     serializer_class = UserLimitedSerializer
+#     permission_classes = [IsAdmin]
+#
+#     lookup_url_kwarg = 'id'
 
 
 

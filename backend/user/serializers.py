@@ -20,3 +20,8 @@ class UserLimitedSerializer(serializers.ModelSerializer):
         fields = ['salary', 'email', 'first_name', 'last_name', 'bank_name', 'ahv', 'iban', 'house_number', 'street',
                   'city', 'postal_code', 'country', 'company']
 
+
+class UserTestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        exclude = ['email']

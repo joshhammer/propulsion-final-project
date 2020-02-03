@@ -1,9 +1,9 @@
-.landingpage-container {
+.signuppage-container {
     background-color: var(--mainGreen);
     height: 100%;
 }
 
-.landingpage-header {
+.signuppage-header {
     height: 40%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     text-shadow: 0 0 5px var(--mainBlue);
 }
 
-#main-subtitle {
+#signup-subtitle {
     font-family: var(--secondaryFontFamily);
     font-weight: 300;
     font-style: italic;
@@ -39,7 +39,7 @@
     text-shadow: 0 0 5px var(--mainBlue);
 }
 
-.authentication-container {
+.signupauthentication-container {
     background-color: var(--mainBlue);
     height: 80%;
     display: flex;
