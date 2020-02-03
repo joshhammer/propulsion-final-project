@@ -1,10 +1,12 @@
-from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+from record.models import Record
+from record.serializers import RecordSerializer
 from salary.permissions import IsAdmin
 from user.models import User
-from user.serializers import UserSerializer, UserLimitedSerializer, UserTestSerializer
+from user.serializers import UserSerializer, UserLimitedSerializer
 
 
 # Old method returned employee profile as array rather than object
@@ -56,6 +58,7 @@ class GetMyEmployeeProfile(RetrieveUpdateDestroyAPIView):
 
         return Response(serializer.data)
 
+
 class ListEmployees(ListAPIView):
     """
     get:
@@ -70,21 +73,19 @@ class ListEmployees(ListAPIView):
         return queryset
 
 
-# class RetrieveUpdateDestroyEmployeeUser(RetrieveUpdateDestroyAPIView):
-#     """
-#     Admin has limited access to employee information and cannot change employee's password
-#     get:
-#     Get the details of an employee by providing the id of the employee (admin only)
-#     patch:
-#     Admin updates employee info
-#     delete:
-#     Admin deletes Employee user instance
-#     """
-#     queryset = User.objects.all()
-#     serializer_class = UserLimitedSerializer
-#     permission_classes = [IsAdmin]
-#
-#     lookup_url_kwarg = 'id'
+class ListRecords(ListAPIView):
+    """
+    get:
+    List all records of employee
+    """
+    serializer_class = RecordSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        queryset = Record.objects.filter(user=self.request.user)
+        return queryset
+
+
 
 
 
