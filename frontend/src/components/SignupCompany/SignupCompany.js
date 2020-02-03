@@ -17,7 +17,7 @@ const SignupCompany = () => {
 
                 <h3 id='signup-subtitle'>Fill in the SignUp form to complete the registration <br/> *All fields are mandatory</h3>
             </div>
-            <div className="signupauthentication-container">
+            <div className="signupauthentication-container ">
                 <div className="signupadmin">
                 <form className="signupadmin-form">
                         <InputField content={"*Name"} required={true}/>
