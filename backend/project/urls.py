@@ -26,4 +26,5 @@ urlpatterns = [
     path('api/employee/', include('employeeprofile.urls')),
     path('api/record/', include('record.urls')),
     path('api/salary/', include('salary.urls')),
+    path('api/employees/', include('user.urls')),
 ]
