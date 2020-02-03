@@ -9,15 +9,15 @@ import './SignupEmployee.scss';
 
 const SignupEmployee = () => {
     return (
-        <div className="landingpage-container">
-            <div className="landingpage-header">
+        <div className="signuppage-container">
+            <div className="signuppage-header">
                 {/* <img src={logo} alt="logo"/> */}
 
                     <h1 id='razzpay-main-title'>Razzpay</h1>
 
-                <h3 id='main-subtitle'>Fill in the SignUp form to complete the registration <br/>*All fields are mandatory</h3>
+                <h3 id='signup-subtitle'>Fill in the SignUp form to complete the registration <br/>*All fields are mandatory</h3>
             </div>
-            <div className="authentication-container">
+            <div className="signupauthentication-container">
                 <div className="signupemployee">
                 <form className="signupemployee-form">
                         <InputField content={"*Name"} required={true}/>
