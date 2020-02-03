@@ -1,6 +1,7 @@
 import React from "react";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
+import {connect} from "react-redux";
 
 const CompanyDashboard = (props) => {
     return (
@@ -30,4 +31,11 @@ const CompanyDashboard = (props) => {
     )
 }
 
-export default CompanyDashboard
+const mapStateToProps = (state) => {
+    console.log('State from CompanyDashboard ', state)
+    return {
+        user: state.userReducer,
+    }
+}
+
+export default connect()(CompanyDashboard)

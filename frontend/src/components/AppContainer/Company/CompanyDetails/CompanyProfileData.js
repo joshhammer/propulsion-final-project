@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import './CompanyDetails.scss'
+import {getCompanyAction} from "../../../../store/actions/getCompanyAction";
 
 class CompanyProfileData extends React.Component {
 
     componentDidMount() {
-        // const userId = this.props.match.params.id
-        // this.props.dispatch(getUserAction(userId))
+        this.props.dispatch(getCompanyAction())
     }
 
     render() {
@@ -101,7 +101,6 @@ class CompanyProfileData extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('State from CompanyDetails ', state)
     return {
         company: state.companyReducer.company,
     }

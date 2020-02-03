@@ -17,3 +17,4 @@ export const getUserAction = (id) => async (dispatch, getState) => {
     }
     dispatch(action)
 }
+
