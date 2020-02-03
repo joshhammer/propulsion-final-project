@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, ListAPIView
+from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -35,6 +35,22 @@ class ListEmployees(ListAPIView):
         queryset = company_not_null.filter(company_id=self.request.user.company_id)
         return queryset
 
+
+class RetrieveUpdateDestroyEmployee(RetrieveUpdateDestroyAPIView):
+    """
+    Admin has limited access to employee information and cannot change employee's password
+    get:
+    Get the details of an employee by providing the id of the employee (admin only)
+    patch:
+    Admin updates employee info
+    delete:
+    Admin deletes Employee user instance
+    """
+    queryset = User.objects.all()
+    serializer_class = UserLimitedSerializer
+    #permission_classes = [IsAdmin]
+
+    lookup_url_kwarg = 'id'
 
 
 
