@@ -57,7 +57,7 @@ class GetMyCompany(RetrieveUpdateDestroyAPIView):
     """
     get:
     Logged in adminprofile can get (view) company info
-    post:
+    patch:
     Logged in adminprofile user can update company info
     """
     serializer_class = CompanySerializer
