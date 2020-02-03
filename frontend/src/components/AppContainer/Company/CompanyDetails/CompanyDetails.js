@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import CompanyProfileData from './CompanyProfileData';
+import {patchCompanyAction} from "../../../../store/actions/patchCompanyAction";
 
 class CompanyDetails extends React.Component {
     constructor(props) {
@@ -33,7 +34,10 @@ class CompanyDetails extends React.Component {
 
     saveAndUpdate = () => {
         this.toggleEdit()
-        console.log('DoSomethingElse')
+        console.log('submitted! ', this.state)
+        const new_state = this.state;
+        console.log('new state: ', new_state)
+        this.props.dispatch(patchCompanyAction(new_state))
     }
 
     render() {
@@ -43,7 +47,7 @@ class CompanyDetails extends React.Component {
                     <div className='company-profile-title-box'>
                         <img src=""
                             alt="" height='50px' width='50px'/>
-                        <h1>ABC Company AG</h1>
+                        <h1>Your company profile.</h1>
                         {this.state.readonly ?
                             <button className='profile-edit-btn' onClick={this.toggleEdit}>edit</button> :
                             <button className='profile-save-btn' onClick={this.saveAndUpdate}>save</button>

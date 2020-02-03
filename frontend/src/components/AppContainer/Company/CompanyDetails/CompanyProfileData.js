@@ -10,9 +10,9 @@ class CompanyProfileData extends React.Component {
     }
 
     render() {
-        const {inputState, readonly, saveData} = this.props
+        const {inputState, readonly, saveData} = this.props;
         const {name, house_number, street, city, country, postal_code, legal_number, poc_name, poc_email, bank_name, iban, bic} = inputState
-        const company = this.props.company
+        const company = this.props.company;
         return (
             <div className='company-profile-data-container'>
                 <div className='profile-table-element'>

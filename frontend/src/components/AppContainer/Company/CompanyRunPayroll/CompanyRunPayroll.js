@@ -1,7 +1,6 @@
 import React from "react";
 import './CompanyRunPayroll.scss';
 import TableRowPayroll from "./TablerowPayroll/TablerowPayroll";
-import TableRow from "../../../reusable-components/TableRow/Tablerow";
 import AuthenticationButton from "../../../reusable-components/buttons/AuthenticationButton";
 
 const CompanyRunPayroll = () => {

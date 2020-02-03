@@ -31,11 +31,4 @@ const CompanyDashboard = (props) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    console.log('State from CompanyDashboard ', state)
-    return {
-        user: state.userReducer,
-    }
-}
-
 export default connect()(CompanyDashboard)
