@@ -13,7 +13,6 @@ class CompanyDetails extends React.Component {
     }
 
     handleChange = (event) => {
-        console.log('changing...')
         this.setState({
             [event.target.name]: event.target.value,
         })
@@ -26,7 +25,6 @@ class CompanyDetails extends React.Component {
     }
 
     cancelEdit = () => {
-        console.log('canceled..')
         this.setState({
             readonly: !this.state.readonly,
         })
@@ -34,10 +32,7 @@ class CompanyDetails extends React.Component {
 
     saveAndUpdate = () => {
         this.toggleEdit()
-        console.log('submitted! ', this.state)
-        const new_state = this.state;
-        console.log('new state: ', new_state)
-        this.props.dispatch(patchCompanyAction(new_state))
+        this.props.dispatch(patchCompanyAction(this.state))
     }
 
     render() {
@@ -49,11 +44,10 @@ class CompanyDetails extends React.Component {
                             alt="" height='50px' width='50px'/>
                         <h1>Your company profile.</h1>
                         {this.state.readonly ?
-                            <button className='profile-edit-btn' onClick={this.toggleEdit}>edit</button> :
-                            <button className='profile-save-btn' onClick={this.saveAndUpdate}>save</button>
+                            <button className='profile-edit-btn' onClick={this.toggleEdit}>Edit</button> :
+                            <button className='profile-save-btn' onClick={this.saveAndUpdate}>Save</button>
                         }
-                        {this.state.readonly ? '' : <button className='profile-cancel-btn' onClick={this.cancelEdit}>cancel</button>}
-
+                        {this.state.readonly ? '' : <button className='profile-cancel-btn' onClick={this.cancelEdit}>Cancel</button>}
                     </div>
                     <CompanyProfileData readonly={this.state.readonly} saveData={this.handleChange} inputState={this.state}/>
                 </div>
