@@ -1,8 +1,9 @@
 from django.urls import path
 
-from employeeprofile.views import GetMyEmployeeProfile, ToggleDeactivateEmployee
+from employeeprofile.views import GetMyEmployeeProfile, ListEmployees
 
 urlpatterns = [
     path('', GetMyEmployeeProfile.as_view(), name="my-employeeprofile"),
-    path('deactivate/<int:user_id>/', ToggleDeactivateEmployee.as_view(), name="deactivate-employee"),
+    path('all/', ListEmployees.as_view(), name="list-employees"),
+
 ]
