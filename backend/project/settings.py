@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'emails',
     'employeeprofile',
     'salary',
+    'record',
     'rest_framework',
 ]
 
