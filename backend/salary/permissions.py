@@ -1,7 +1,7 @@
 from rest_framework import permissions
 
 
-class IsAdminOrReadOnly(permissions.BasePermission):
+class IsAdmin(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
 
         # If user requesting is admin of the same company employee works at
