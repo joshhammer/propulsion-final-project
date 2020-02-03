@@ -19,7 +19,7 @@ class JobAndPay extends React.Component {
                         <div className='job-details-box'>
                             <div className='job-table-element'>
                                 <p>Job Title</p>
-                                <input name="" type="text" value='Chief of HTML to PDF'/>
+                                <input name="" type="text" value='Developer'/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Pensum</p>

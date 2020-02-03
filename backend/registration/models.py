@@ -55,6 +55,6 @@ class Registration(TimeStampedModel):
     )
 
     def __str__(self):
-        return f'{self.user.email}, {self.code} {self.profile_type} {self.date_created} {self.date_modified}'
+        return f'id: {self.id}  {self.user.email}, {self.code} {self.profile_type} {self.date_created} {self.date_modified}'
 
 

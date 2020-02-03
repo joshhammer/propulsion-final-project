@@ -43,4 +43,4 @@ class Record(models.Model):
     )
 
     def __str__(self):
-        return f'{self.user.email} {self.user.first_name} {self.user.last_name} Company: {self.company.name} Date Paid: {self.date_paid}  Payperiod Start: {self.payperiod_start}  Payperiod End: {self.payperiod_end}'
+        return f'id: {self.id}  {self.user.email} {self.user.first_name} {self.user.last_name} Company: {self.company.name} Date Paid: {self.date_paid}  Payperiod Start: {self.payperiod_start}  Payperiod End: {self.payperiod_end}'
