@@ -2,7 +2,7 @@ from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from salary.models import Salary
-from salary.permissions import IsAdminOrReadOnly
+from salary.permissions import IsAdmin
 from salary.serializers import SalarySerializer
 
 
@@ -19,7 +19,7 @@ class GetMySalary(ListAPIView):
 class RetrieveUpdateDestroySalary(RetrieveUpdateDestroyAPIView):
     """
     get:
-    Get the details of a salary by providing the id of the restaurant (admin only)
+    Get the details of a salary by providing the id of the salary (admin only)
     patch:
     Admin updates salary
     delete:
@@ -27,11 +27,16 @@ class RetrieveUpdateDestroySalary(RetrieveUpdateDestroyAPIView):
     """
     queryset = Salary.objects.all()
     serializer_class = SalarySerializer
-    permission_classes = [IsAdminOrReadOnly]
+    permission_classes = [IsAdmin]
     #permission_classes = [IsAuthenticated]
 
     # Returns single salary by id
     # TODO return salary by user id!
-    lookup_url_kwarg = 'user_id'
+    lookup_field = 'user_id'
+    #lookup_url_kwarg = 'user_id'
+
+    # def get_queryset(self):
+    #     queryset = Salary.objects.get(user_id=self.lookup_url_kwarg)
+    #     return queryset
 
 
