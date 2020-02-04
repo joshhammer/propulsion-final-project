@@ -1,6 +1,7 @@
 from rest_framework.generics import CreateAPIView, ListAPIView
 
 from record.models import Record
+from record.permissions import IsAdminList
 from record.serializers import RecordPayrollSerializer, RecordSalaryEmployeeSerializer
 
 from rest_framework import status
@@ -27,8 +28,10 @@ class RecordRunpayroll(CreateAPIView):
 
 class ListRecordsByPaymentDate(ListAPIView):
     serializer_class = RecordSalaryEmployeeSerializer
+    permission_classes = [IsAdminList]
 
     def get_queryset(self):
+        #adminprofile = self.request.user.adminprofile
         # If no search string passed in url returns all records of admin's company
         if not self.request.query_params.get('search', None):
             return Record.objects.filter(company_id=self.request.user.company_id)
@@ -41,7 +44,7 @@ class ListRecordsByPaymentDate(ListAPIView):
 
 class ListRecordsByEmployee(ListAPIView):
     serializer_class = RecordSalaryEmployeeSerializer
-    permission_classes = [IsAdmin]
+    permission_classes = [IsAdminList]
 
     def get_queryset(self):
         # If no search string passed in url returns all records of admin's company
