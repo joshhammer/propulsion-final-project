@@ -47,5 +47,7 @@ class Salary(models.Model):
     )
 
     def __str__(self):
-        return f'{self.user.email} {self.user.first_name} {self.user.last_name} Gross: {self.gross_month} Net: {self.net} {self.position}'
+        return f'id: {self.id}  {self.user.email} {self.user.first_name} {self.user.last_name} Gross: {self.gross_month} Net: ' \
+               f'' \
+               f'{self.net} {self.position}'
 

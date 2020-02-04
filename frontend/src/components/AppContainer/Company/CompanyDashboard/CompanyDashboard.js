@@ -1,6 +1,7 @@
 import React from "react";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
+import {connect} from "react-redux";
 
 const CompanyDashboard = (props) => {
     return (
@@ -12,9 +13,17 @@ const CompanyDashboard = (props) => {
                 <div className="company-dashboard-bottom">
                     <div className="company-dashboard-bottom-left">
                         <h2>Todo's</h2>
+                        <ul>
+                            <li>Run Payroll for the period from Jan-Feb 20.</li>
+                            <li>Info: RazzPay has pushed your employees tax statements to their accounts.</li>
+                        </ul>
                     </div>
                     <div className="company-dashboard-bottom-right">
-                        <h2>Reminders</h2>
+                        <h2>Recent Info</h2>
+                        <ul>
+                            <li>You've received a new documents of category 'Medical Certificate' in your DocZone.</li>
+                            <li>RazzPay has pushed your employees tax statements to their accounts.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -22,4 +31,4 @@ const CompanyDashboard = (props) => {
     )
 }
 
-export default CompanyDashboard
+export default connect()(CompanyDashboard)
