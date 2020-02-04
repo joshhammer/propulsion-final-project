@@ -5,6 +5,8 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import LandingPage from './components/LandingPage/LandingPage';
 import {store} from "./store";
 import AppContainer from "./components/AppContainer/AppContainer";
+import SignupCompany from "./components/SignupCompany/SignupCompany";
+import SignupEmployee from "./components/SignupEmployee/SignupEmployee"
 
 const App = () => {
     return (
@@ -14,6 +16,8 @@ const App = () => {
                     <Route exact={true} path="/" component={LandingPage}/>
                     <Route path="/company" component={AppContainer}/>
                     <Route path="/employee" component={AppContainer}/>
+                    <Route path="/signup" component={SignupCompany}/>
+                    <Route path="/signupemployee" component={SignupEmployee}/>
 
                 </Switch>
             </BrowserRouter>

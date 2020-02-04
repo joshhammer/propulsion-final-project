@@ -1,6 +1,7 @@
 import React from "react";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
+import {connect} from "react-redux";
 
 const CompanyDashboard = (props) => {
     return (
@@ -30,4 +31,4 @@ const CompanyDashboard = (props) => {
     )
 }
 
-export default CompanyDashboard
+export default connect()(CompanyDashboard)

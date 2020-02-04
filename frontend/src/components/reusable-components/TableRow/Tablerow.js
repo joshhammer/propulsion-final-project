@@ -5,10 +5,10 @@ const TableRow = (props) => {
     return (
         <div className="tablerow-container">
             <div className="tablerow-name">
-                <h3>{props.name}</h3>
+                <h3>{props.firstName} {props.lastName}</h3>
             </div>
             <div className="tablerow-role">
-                <h3>{props.role}</h3>
+                <h3>{props.salary}</h3>
             </div>
         </div>
     )

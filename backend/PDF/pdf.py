@@ -12,11 +12,17 @@ from weasyprint.fonts import FontConfiguration
 
 from project import settings
 
+from salary.models import Salary
+from record.models import Record
+from user.models import User
+
 User = get_user_model()
 
 
 def payslip_pdf(request):
-    payslip = get_object_or_404(User, pk=1)
+    payslip = get_object_or_404(User, pk=3)
+    salary = get_object_or_404(Salary, user=payslip)
+    record = get_object_or_404(Record, user=payslip)
     response = HttpResponse(content_type="application/pdf")
     response['Content-Disposition'] = "inline; filename={date}-{name}-payslip.pdf".format(
         date=payslip.date_created.strftime('%Y-%m-%d'),
@@ -24,7 +30,7 @@ def payslip_pdf(request):
     )
     html = render_to_string(
         template_name="payslip_pdf.html", 
-        context={'payslip': payslip,
+        context={'payslip': payslip, 'salary': salary, 'record': record,
                     })
 
     host_url = request.META.get('wsgi.url_scheme') + '://' + request.META['HTTP_HOST']
