@@ -1,18 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import './CompanyDetails.scss'
+import {getCompanyAction} from "../../../../store/actions/getCompanyAction";
 
 class CompanyProfileData extends React.Component {
 
     componentDidMount() {
-        // const userId = this.props.match.params.id
-        // this.props.dispatch(getUserAction(userId))
+        this.props.dispatch(getCompanyAction())
     }
 
     render() {
-        const {inputState, readonly, saveData} = this.props
+        const {inputState, readonly, saveData} = this.props;
         const {name, house_number, street, city, country, postal_code, legal_number, poc_name, poc_email, bank_name, iban, bic} = inputState
-        const company = this.props.company
+        const company = this.props.company;
         return (
             <div className='company-profile-data-container'>
                 <div className='profile-table-element'>
@@ -101,7 +101,6 @@ class CompanyProfileData extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('State from CompanyDetails ', state)
     return {
         company: state.companyReducer.company,
     }

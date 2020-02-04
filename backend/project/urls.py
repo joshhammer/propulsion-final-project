@@ -26,4 +26,7 @@ urlpatterns = [
     path('api/company/', include('company.urls')),
     path('api/pdf/', payslip_pdf, name="create-pdf"),
     path('api/employee/', include('employeeprofile.urls')),
+    path('api/record/', include('record.urls')),
+    path('api/salary/', include('salary.urls')),
+    path('api/employees/', include('user.urls')),
 ]

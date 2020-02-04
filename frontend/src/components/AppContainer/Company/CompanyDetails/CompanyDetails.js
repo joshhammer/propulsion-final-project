@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import CompanyProfileData from './CompanyProfileData';
+import {patchCompanyAction} from "../../../../store/actions/patchCompanyAction";
 
 class CompanyDetails extends React.Component {
     constructor(props) {
@@ -12,7 +13,6 @@ class CompanyDetails extends React.Component {
     }
 
     handleChange = (event) => {
-        console.log('changing...')
         this.setState({
             [event.target.name]: event.target.value,
         })
@@ -25,7 +25,6 @@ class CompanyDetails extends React.Component {
     }
 
     cancelEdit = () => {
-        console.log('canceled..')
         this.setState({
             readonly: !this.state.readonly,
         })
@@ -33,7 +32,7 @@ class CompanyDetails extends React.Component {
 
     saveAndUpdate = () => {
         this.toggleEdit()
-        console.log('DoSomethingElse')
+        this.props.dispatch(patchCompanyAction(this.state))
     }
 
     render() {
@@ -43,13 +42,12 @@ class CompanyDetails extends React.Component {
                     <div className='company-profile-title-box'>
                         <img src=""
                             alt="" height='50px' width='50px'/>
-                        <h1>ABC Company AG</h1>
+                        <h1>Your company profile.</h1>
                         {this.state.readonly ?
-                            <button className='profile-edit-btn' onClick={this.toggleEdit}>edit</button> :
-                            <button className='profile-save-btn' onClick={this.saveAndUpdate}>save</button>
+                            <button className='profile-edit-btn' onClick={this.toggleEdit}>Edit</button> :
+                            <button className='profile-save-btn' onClick={this.saveAndUpdate}>Save</button>
                         }
-                        {this.state.readonly ? '' : <button className='profile-cancel-btn' onClick={this.cancelEdit}>cancel</button>}
-
+                        {this.state.readonly ? '' : <button className='profile-cancel-btn' onClick={this.cancelEdit}>Cancel</button>}
                     </div>
                     <CompanyProfileData readonly={this.state.readonly} saveData={this.handleChange} inputState={this.state}/>
                 </div>

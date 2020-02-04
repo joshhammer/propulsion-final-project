@@ -10,21 +10,30 @@
     padding: 0 1rem;
 }
 
-.employee-profile-title-box {
+.employee-profile-header {
     padding-left: 1rem;
+    padding-right: 1rem;
     height: 20%;
+    width: 80%;
     display: flex;
     align-items: center;
-    & img {
-        border-radius: 50%;
-        background: var(--mainWhite);
-        box-shadow: 0 0 10px black;
+    justify-content: space-between;
+    
+}
+
+.employee-profile-title-box {
+    display: flex;
+    width: 70%;
+    & svg {
+        width: 50px;
+        height: 50px;
+        color: var(--mainWhite);
     }
     & h1 {
         margin-left: 1rem;
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        border-bottom: 1px solid var(--mainWhite);
+        border-bottom: 1px solid var(--mainGreen);
         letter-spacing: 1px;
     }
 }
@@ -32,6 +41,7 @@
 .employee-profile-data-container {
     padding: 1rem 1rem 5rem 1rem;
     height: 80%;
+    width: 80%;
     overflow: scroll;
 }
 
@@ -48,7 +58,7 @@
     align-items: center;
     margin-bottom: 2rem;
     & p {
-        width: 200px;
+        width: 30%;
         height: 35px;
         margin-right: 1rem;
         background: var(--mainGreen);
@@ -66,9 +76,10 @@
         outline: none;
         border: none;
         border-radius: 5px;
+        margin-left: 4rem;
         padding-left: .5rem;
         height: 35px;
-        width: 300px;
+        width: 70%;
         font-size: 1rem;
         letter-spacing: 1px;
         box-shadow: 0 0 10px black;
@@ -98,7 +109,7 @@
     height: 35px;
     width: 50px;
     border-radius: 25px;
-    margin-left: 10rem;
+    // margin-left: 10rem;
     transition: all .3s;
     &:hover {
         background: var(--mainGreen);
