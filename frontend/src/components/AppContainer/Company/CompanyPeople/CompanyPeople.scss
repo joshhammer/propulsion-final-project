@@ -76,3 +76,15 @@
         color: var(--mainWhite)
     }
 }
+
+.company-people-modal-content {
+    width: 75%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 5;
+    overflow: auto;
+}
