@@ -3,7 +3,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
 from record.models import Record
-
+from user.serializers import UserLimitedSerializer, UserSerializer
 
 User = get_user_model()
 
@@ -11,6 +11,15 @@ class RecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
         fields = '__all__'
+
+
+class RecordSalaryEmployeeSerializer(serializers.ModelSerializer):
+    user = UserLimitedSerializer()
+
+    class Meta:
+        model = Record
+        fields = ['user', 'id','date_paid', 'payperiod_start', 'payperiod_end', 'company']
+
 
 
 class RecordPayrollSerializer(serializers.Serializer):
