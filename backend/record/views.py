@@ -2,7 +2,7 @@ from rest_framework.generics import CreateAPIView, ListAPIView
 
 from record.models import Record
 from record.permissions import IsAdminList
-from record.serializers import RecordPayrollSerializer, RecordSalaryEmployeeSerializer
+from record.serializers import RecordPayrollSerializer, RecordSalaryEmployeeSerializer, RecordDatesPaidSerializer
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -56,6 +56,15 @@ class ListRecordsByEmployee(ListAPIView):
         query_param = self.request.query_params['user_id']
         queryset = queryset.filter(user_id=query_param, company_id=self.request.user.company_id).order_by('date_paid')
         return queryset
+
+
+class ListDatesPaid(ListAPIView):
+    serializer_class = RecordDatesPaidSerializer
+    # Test later
+    #permission_classes = [IsAdminList]
+
+    def get_queryset(self):
+        return Record.objects.filter(company_id=self.request.user.company_id).order_by('date_paid').distinct('date_paid')
 
 
 
