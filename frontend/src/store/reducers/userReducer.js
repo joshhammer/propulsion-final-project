@@ -16,7 +16,6 @@ const initialState = {
 
 export const userReducer = (state=initialState, action) => {
     if(action.type === GET_SINGLE_USER){
-        console.log('Hello from userReducer: ', action.payload)
         return {
             ...state,
             user: action.payload,

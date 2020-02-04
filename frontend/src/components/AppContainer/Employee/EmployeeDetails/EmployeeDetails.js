@@ -64,11 +64,4 @@ class EmployeeDetails extends React.Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     console.log('State from EmployeeDetails ', state)
-//     return {
-//         user: state.userReducer,
-//     }
-// }
-
 export default connect()(EmployeeDetails)
