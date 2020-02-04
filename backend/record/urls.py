@@ -7,5 +7,5 @@ urlpatterns = [
 
     # Returns all payments of admin's company
     # If search string passed (i.e. api/?search=<str:date_paid>  ) returns search results of date_paid field
-    path('', ListRecordsByPaymentDate.as_view(), name="list-records-by-payment-date"),
+    path('list/', ListRecordsByPaymentDate.as_view(), name="list-records-by-payment-date"),
 ]
