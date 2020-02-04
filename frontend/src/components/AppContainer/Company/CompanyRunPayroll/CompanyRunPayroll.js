@@ -6,7 +6,6 @@ import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
 
 const CompanyRunPayroll = (props) => {
-    console.log(props)
     useEffect(() => {
         props.dispatch(getAllUsersAction())
     }, []);
