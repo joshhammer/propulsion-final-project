@@ -1,7 +1,6 @@
 import {PATCH_COMPANY} from "../actionTypes";
 
 export const patchCompanyAction = (new_state) => async (dispatch, getState) => {
-    console.log('body in da action: ', new_state)
     const token = localStorage.getItem("access");
     const url = 'https://razzpay.propulsion-learn.ch/api/company/';
     const headers = new Headers({

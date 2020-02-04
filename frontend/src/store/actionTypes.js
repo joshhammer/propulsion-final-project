@@ -3,3 +3,4 @@ export const GET_ALL_USERS = 'GET_ALL_USERS';
 export const GET_SINGLE_COMPANY = 'GET_SINGLE_COMPANY';
 export const LOGIN_USER = 'LOGIN_USER';
 export const PATCH_COMPANY = 'PATCH_COMPANY';
+export const CREATE_EMPLOYEE = 'CREATE_EMPLOYEE';
