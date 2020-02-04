@@ -1,6 +1,7 @@
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 
-from record.serializers import RecordPayrollSerializer
+from record.models import Record
+from record.serializers import RecordPayrollSerializer, RecordSalaryEmployeeSerializer
 
 from rest_framework import status
 from rest_framework.response import Response
@@ -20,5 +21,20 @@ class RecordRunpayroll(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(serializer.validated_data)
         return Response(status=status.HTTP_200_OK)
+
+
+class ListRecordsByPaymentDate(ListAPIView):
+    serializer_class = RecordSalaryEmployeeSerializer
+
+    def get_queryset(self):
+        # If no search string passed in url returns all records of admin's company
+        if not self.request.query_params.get('search', None):
+            return Record.objects.filter(company_id=self.request.user.company_id)
+
+        # If string passed in url is <   search  >    : searches date_paid field using search parameter
+        query_param = self.request.query_params['search']
+        queryset = Record.objects.filter(date_paid=query_param, company_id=self.request.user.company_id)
+        return queryset
+
 
 
