@@ -1,3 +1,6 @@
+rm -rf /frontend-build/*
+cp -r /frontend/build/* /frontend-build
+
 #!/bin/bash
 python -c "import time; time.sleep(3)" # Wait for postgres to start up
 python manage.py migrate

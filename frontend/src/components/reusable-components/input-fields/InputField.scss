@@ -1,10 +1,10 @@
 .auth-inputfield {
     width: 80%;
     outline: none;
-    margin-bottom: 15px;
-    border-radius: 8px;
+    border-radius: var(--borderRadius);
     border: none;
     height: 35px;
     font-size: 1rem;
     padding-left: 10px;
+    box-shadow: 0 0 3px black;
 }
