@@ -23,7 +23,36 @@ class EmployeeDashboard extends React.Component {
                         </div>
                     </div>
                     <div className='employee-dashboard-content'>
-                        <h1>Hello, {user.first_name}</h1>
+                        <div className='dashboard-welcome-box'>
+                            <h1>Good day, {user.first_name}!</h1>
+                            <p>Here's what's been going on lately..</p>
+                        </div>
+                        <div className='dashboard-card-container'>
+                            <div className='dashboard-card'>
+                                <h3>Your latest activities</h3>
+                                <ul>
+                                    <li>upload document</li>
+                                    <li>edited user data</li>
+                                    <li>payslip download</li>
+                                </ul>
+                            </div>
+                            <div className='dashboard-card'>
+                                <h3>Latest company documents</h3>
+                                <ul>
+                                    <li>Spesenabrechnung_Neu.xls</li>
+                                    <li>Kinderzulagen.doc</li>
+                                    <li>Ferienantrag.xls</li>
+                                    <li>Selbsteinschätzung.doc</li>
+                                    <li>Selbsteinschätzung.doc</li>
+                                </ul>
+                            </div>
+                            <div className='dashboard-card'>
+                                <h3>Current payslip</h3>
+                                <ul>
+                                    <li>Lohnabrechnung_2020_01_25.pdf</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
