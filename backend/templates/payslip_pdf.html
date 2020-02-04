@@ -2,7 +2,7 @@
  <html>
     <head>
       <meta charset="utf-8">
-      <link href="../user/static/payslip_pdf.css" media="print" rel="stylesheet">
+      <link href="../user/static-files/payslip_pdf.css" media="print" rel="stylesheet">
       <title>Payslip</title>
       <meta name="description" content="Payslip demo sample">
         <meta name="Razzpay" content="Payslip">
@@ -20,12 +20,11 @@
         </address>
   
         <address id="to">
-          Chad Johnson
+          {{payslip.first_name}} {{payslip.last_name}}
             {{payslip.street}} - {{payslip.house_number}}
             {{payslip.postal_code}} -{{payslip.city}}
             {{payslip.email}}
-          Full Stück Developer
-
+            {{salary.position}}
         </address>
       </aside>
   
@@ -33,7 +32,7 @@
         <dt>Payslip number</dt>
         <dd>12345</dd>
         <dt>Date</dt>
-        <dd>January 30, 2020</dd>
+        <dd>{{record.date_paid}}</dd>
       </dl>
   
       <table>
@@ -46,27 +45,27 @@
         <tbody>
           <tr>
             <td>Monthly Salary</td>
-            <td>CHF3,420.00</td>
+            <td>{{salary.gross_month}}</td>
             <td></td>
-            <td>CHF3,420.00</td>
+            <td>{{salary.gross_month}}</td>
           </tr>
           <tr>
             <td style="text-indent: 40px">  AHV Deductions</td>
-            <td>-CHF45.50</td>
+            <td>-{{salary.ahv_amount}}</td>
             <td>5.25</td>
-            <td>CHF4,550.00</td>
+            <td>{{salary.ahv_amount}}</td>
           </tr>
           <tr>
             <td style="text-indent: 40px"> ALV Deductions</td>
-            <td>-CHF25.75</td>
+            <td>-{{salary.alv_amount}}</td>
             <td>1.1</td>
-            <td>CHF2,575.00</td>
+            <td>{{salary.alv_amount}}</td>
           </tr>
           <tr>
             <td style="text-indent: 40px"> Pension Fund</td>
-            <td>-CHF125.75</td>
+            <td>-{{salary.pension}}</td>
             <td>1</td>
-            <td>CHF2,575.00</td>
+            <td>{{salary.pension}}</td>
           </tr>
 
         </tbody>
@@ -80,9 +79,9 @@
         </thead>
         <tbody>
           <tr>
-            <td>January 30, 2020</td>
-            <td>132 456 789 012</td>
-            <td>CHF10,545.00</td>
+            <td>{{record.date_paid}}</td>
+            <td>{{payslip.iban}}</td>
+            <td>{{salary.net}}</td>
           </tr>
         </tbody>
       </table>

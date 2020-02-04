@@ -1,5 +1,4 @@
 import React from "react";
-import logo from '../../../../assets/logo_blue-white.png';
 import {Link} from "react-router-dom";
 import './CompanySidebar.scss';
 import '../../AppContainer.scss';
@@ -8,7 +7,10 @@ const CompanySidebar = () => {
     return (
         <div className="company-sidebar-container">
             <div className="company-logo">
-                <img src={logo} alt="logo"/>
+                {/* <img src={logo} alt="logo"/> */}
+                <div className='logo-circle'>
+                    <h1 className='company-logo-title'>R</h1>
+                </div>
             </div>
             <div className="company-sidebar-links">
                 <Link className="sidebar-link" to="/company/dashboard">Dashboard</Link>
@@ -18,7 +20,7 @@ const CompanySidebar = () => {
                 <Link className="sidebar-link" to="/company/documents">Documents</Link>
                 <Link className="sidebar-link" to="/company/reports">Reports</Link>
             </div>
-            <div className="sidebar-placeholder"></div>
+            {/* <div className="sidebar-placeholder"></div> */}
         </div>
     )
 }

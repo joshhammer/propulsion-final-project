@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'corsheaders',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
@@ -50,18 +51,23 @@ INSTALLED_APPS = [
     'emails',
     'employeeprofile',
     'salary',
+    'record',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'project.urls'
 
@@ -143,10 +149,14 @@ USE_TZ = True
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files/')
-STATIC_ROOT = '/static/'
+STATIC_ROOT = '/static-files/'
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static-files/'
 MEDIA_URL = '/media-files/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "user/static-files")
+]
 
 AUTH_USER_MODEL = 'user.User'
 

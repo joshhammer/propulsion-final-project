@@ -58,6 +58,13 @@ class User(AbstractUser):
         auto_now=True,
     )
 
+    bank_name = models.CharField(
+        verbose_name='bank name',
+        max_length=200,
+        null=True,
+        blank=True
+    )
+
     # Require AHV number
     ahv = models.CharField(
         verbose_name='AHV number',
@@ -112,7 +119,7 @@ class User(AbstractUser):
         verbose_name='Company',
         to=Company,
         on_delete=models.CASCADE,
-        related_name='user',
+        related_name='employees',
         null=True,
         blank=True,
     )
@@ -123,4 +130,4 @@ class User(AbstractUser):
     )
 
     def __str__(self):
-        return f'{self.email}  {self.first_name} {self.last_name} {self.date_created} {self.date_modified}'
+        return f'id: {self.id} {self.email}  {self.first_name} {self.last_name} {self.date_created} {self.date_modified}'

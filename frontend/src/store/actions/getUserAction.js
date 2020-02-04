@@ -1,9 +1,9 @@
 import { GET_SINGLE_USER } from '../actionTypes';
 
-export const getUserAction = (id) => async (dispatch, getState) => {
-    const url = `https://razzpay.propulsion-learn.ch/api/employee/${id}`
+export const getUserAction = (token) => async (dispatch, getState) => {
+    const url = `https://razzpay.propulsion-learn.ch/api/employee/`
     const headers = new Headers ({
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${token}`
     })
     const config = {
         method: 'GET',
@@ -17,3 +17,4 @@ export const getUserAction = (id) => async (dispatch, getState) => {
     }
     dispatch(action)
 }
+

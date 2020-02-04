@@ -1,4 +1,4 @@
-import { GET_SINGLE_USER } from '../actionTypes';
+import {CREATE_EMPLOYEE, GET_ALL_USERS, GET_SINGLE_USER} from '../actionTypes';
 
 const initialState = {
     user: {
@@ -16,9 +16,23 @@ const initialState = {
 
 export const userReducer = (state=initialState, action) => {
     if(action.type === GET_SINGLE_USER){
+        console.log('Hello from userReducer: ', action.payload)
         return {
             ...state,
             user: action.payload,
+        }
+    }
+    if (action.type === GET_ALL_USERS){
+        return {
+            ...state,
+            users: action.payload,
+        }
+    }
+
+    if (action.type === CREATE_EMPLOYEE){
+        return {
+            ...state,
+            newEmployee: action.payload,
         }
     }
     return state
