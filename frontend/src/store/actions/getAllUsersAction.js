@@ -17,7 +17,5 @@ export const getAllUsersAction = (id) => async (dispatch, getState) => {
         type: GET_ALL_USERS,
         payload: data
     }
-    console.log('in da user action: ', action)
-
     dispatch(action)
 }

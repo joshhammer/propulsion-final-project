@@ -21,11 +21,11 @@ const CompanyPeople = (props) => {
 
     return (
         <div className="company-people pages-container">
-            <div className={"company-people-modal-content"}>
-                {
-                    isOpen && <AddEmployee isOpen={toggleOpen}/>
-                }
-            </div>
+            {isOpen &&<div className={"company-people-modal-content"}>
+
+                     <AddEmployee isOpen={toggleOpen}/>
+
+            </div>}
             <div className="company-people-header">
                 <div className="company-people-allpeople">
                     <h2>All People</h2>

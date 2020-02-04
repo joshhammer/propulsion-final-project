@@ -1,11 +1,17 @@
-import React, {useState} from "react";
-import './CompanyReportTable.scss';
+import React, {useEffect, useState} from "react";
+import './CompanyTableRow.scss';
 import ReportButton from "../ReportButton/ReportButton";
 import CardContent from "../CardContent/CardContent";
+import {connect} from "react-redux";
+import {getSinglePayDateAction} from "../../../../../store/actions/getSinglePayDateAction";
 
 const CompanyTableRow = (props) => {
     const [hidden, setHidden] = useState(true);
     const toggleShow = () => setHidden(!hidden);
+
+    useEffect(() => {
+        props.dispatch(getSinglePayDateAction(props.payDate))
+    }, []);
 
     return (
         <div className="company-reportrow-container">
@@ -34,4 +40,11 @@ const CompanyTableRow = (props) => {
         </div>
     )
 };
-export default CompanyTableRow
+
+const mapStatetoProps = state => {
+    return {
+        payDate: state.dateReducer.payDate
+    }
+}
+
+export default connect(mapStatetoProps)(CompanyTableRow)
