@@ -4,11 +4,6 @@
     color: var(--mainWhite);
 }
 
-// .company-logo {
-//     height: 25%;
-//     display: flex;
-//     justify-content: center;
-// }
 
 .sidebar-link {
     display: flex;
@@ -43,7 +38,7 @@
 
 .company-logo {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
 .logo-circle {
