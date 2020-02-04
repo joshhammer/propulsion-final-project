@@ -58,6 +58,7 @@
     margin-top: 5%;
     margin-bottom: 2%;
     width: 100%;
+
     & h2 {
         color: var(--mainBlue);
         margin-left: 10%;
@@ -67,10 +68,8 @@
 }
 
 .company-people-table-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-evenly;
+    overflow: scroll;
+    height: 400px;
 
     & h3 {
         color: var(--mainWhite)
