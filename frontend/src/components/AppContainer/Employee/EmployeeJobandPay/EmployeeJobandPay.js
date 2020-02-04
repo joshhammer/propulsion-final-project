@@ -1,22 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getUserAction } from '../../../../store/actions/getUserAction'
-import { getCompanyAction } from '../../../../store/actions/getCompanyAction'
+import { getUserSalary } from '../../../../store/actions/getUserSalary'
 import './EmployeeJobAndPay.scss'
 
 class JobAndPay extends React.Component {
 
     componentDidMount() {
-        console.log('Token:', this.props.tokens.access)
         const token = this.props.tokens.access
         this.props.dispatch(getUserAction(token))
-        // this.props.dispatch(getCompanyAction())
+        this.props.dispatch(getUserSalary(token))
     }
 
     render() {
-        // const company = this.props.user.company
+        const salary = this.props.salary
         return(
-            <div className='pages-container job-page-wrapper'>
+            <>
+            {salary && <div className='pages-container job-page-wrapper'>
                 <div className='employee-job-content'>
                     <div className='employee-job-title-box'>
                         <div className='job-title-and-logo'>
@@ -31,15 +31,15 @@ class JobAndPay extends React.Component {
                         <div className='job-details-box'>
                             <div className='job-table-element'>
                                 <p>Job Title</p>
-                                <input name="" type="text" value='-'/>
+                                <input name="" type="text" value={salary.position}/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Pensum</p>
-                                <input name="" type="text" value='-'/>
+                                <input name="" type="text" value='100%'/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Salary</p>
-                                <input name="" type="text" value='-'/>
+                                <input name="" type="text" value={salary.gross_month}/>
                             </div>
                         </div>
 
@@ -81,7 +81,8 @@ class JobAndPay extends React.Component {
                 </div>
 
                 </div>
-            </div>
+            </div>}
+            </>
         )
     }
 }
@@ -90,7 +91,7 @@ const mapStateToProps = (state) => {
     console.log('State from JobandPay ', state)
     return {
         user: state.userReducer.user,
-        // company: state.companyReducer.company,
+        salary: state.salaryReducer.salary,
         tokens: state.loginReducer.tokens
     }
 }
