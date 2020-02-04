@@ -1,9 +1,18 @@
 import React from "react";
+import { connect } from 'react-redux'
+import { getUserAction } from '../../../../store/actions/getUserAction'
 import '../../AppContainer.scss';
 import './EmployeeDashboard.scss'
 
 class EmployeeDashboard extends React.Component {
+
+    componentDidMount() {
+        const token = this.props.tokens.access
+        this.props.dispatch(getUserAction(token))
+    }
+
     render() {
+        const user = this.props.user
         return (
             <div className="employee-dashboard-wrapper pages-container">
                 <div className='employee-dashboard-container'>
@@ -14,7 +23,7 @@ class EmployeeDashboard extends React.Component {
                         </div>
                     </div>
                     <div className='employee-dashboard-content'>
-                        Content
+                        <h1>Hello, {user.first_name}</h1>
                     </div>
                 </div>
             </div>
@@ -22,4 +31,11 @@ class EmployeeDashboard extends React.Component {
     }
 }
 
-export default EmployeeDashboard;
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+        tokens: state.loginReducer.tokens
+    }
+}
+
+export default connect(mapStateToProps)(EmployeeDashboard)
