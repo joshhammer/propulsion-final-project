@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import './EmployeeDetails.scss'
+import { getUserAction } from '../../../../store/actions/getUserAction'
 
 class ProfileData extends React.Component {
 
     componentDidMount(){
-        // const userId = this.props.match.params.id
-        // this.props.dispatch(getUserAction(userId))
+        console.log('Token:', this.props.tokens.access)
+        const token = this.props.tokens.access
+        this.props.dispatch(getUserAction(token))
     }
 
     render() {
@@ -104,6 +106,7 @@ const mapStateToProps = (state) => {
     console.log('State from EmployeeDetails ', state)
     return {
         user: state.userReducer.user,
+        tokens: state.loginReducer.tokens
     }
 }
 
