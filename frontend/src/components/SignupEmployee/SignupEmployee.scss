@@ -3,11 +3,10 @@
     height: 100%;
 }
 
-.signuppage-header {
-    height: 40%;
+.signup-header {
+    height: 35%;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
 
     & h1 {
@@ -20,40 +19,31 @@
     }
 }
 
-#razzpay-main-title {
-    color: var(--mainBlue);
-    font-size: 6rem;
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-    text-shadow: 0 0 5px var(--mainBlue);
-}
-
 #signup-subtitle {
     font-family: var(--secondaryFontFamily);
     font-weight: 300;
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     width: 60%;
     text-align: center;
     text-shadow: 0 0 5px var(--mainBlue);
 }
 
-.signupauthentication-container {
-    background-color: var(--mainBlue);
-    height: 80%;
+.signup-authentication-container {
+    height: 45%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    background-color: var(--mainBlue);
     box-shadow: 0px 0px 20px black;
 }
 
-.signupemployee {
+.signup-employee {
     display: flex;
-    height: 90%;
-    width: 35%;
+    width: 50%;
     justify-content: center;
-    border-right: 1px solid var(--mainWhite);
 
     & form {
         display: flex;
@@ -63,37 +53,14 @@
         width: 100%;
 
         .input-span {
-            height: 25px;
+            height: 35px;
         }
     }
 }
 
+.employee-submitBtn-box {
 
-.footer {
-    height: 20%;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 15px;
-
-    &-left {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &-spaceholder {
-        width: 30%;
-    }
-
-    &-right {
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-        & img {
-            width: 20px;
-            height: 20px;
-        }
-    }
 }
+
 
 
