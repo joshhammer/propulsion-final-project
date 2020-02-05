@@ -44,7 +44,7 @@ class ListRecordsByPaymentDate(ListAPIView):
 
 class ListRecordsByEmployee(ListAPIView):
     serializer_class = RecordSalaryEmployeeSerializer
-    permission_classes = [IsAdminList]
+    #permission_classes = [IsAdminList]
 
     def get_queryset(self):
         # If no search string passed in url returns all records of admin's company
