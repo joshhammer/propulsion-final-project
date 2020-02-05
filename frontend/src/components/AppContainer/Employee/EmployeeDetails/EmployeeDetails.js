@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import ProfileData from './ProfileData'
+import { updateEmployeeProfile } from '../../../../store/actions/updateEmployeeProfile'
 import './EmployeeDetails.scss';
 
 class EmployeeDetails extends React.Component {
@@ -34,7 +35,9 @@ class EmployeeDetails extends React.Component {
 
     saveAndUpdate = () => {
         this.toggleEdit()
-        console.log('DoSomethingElse')
+        console.log('SaveAndUpdate')
+        const token = this.props.tokens.access
+        this.props.dispatch(updateEmployeeProfile(this.state, token))
     }
 
     render() {
@@ -64,4 +67,11 @@ class EmployeeDetails extends React.Component {
     }
 }
 
-export default connect()(EmployeeDetails)
+const mapStateToProps = (state) => {
+    console.log('User: ', state.userReducer.user)
+    return {
+        tokens: state.loginReducer.tokens
+    }
+}
+
+export default connect(mapStateToProps)(EmployeeDetails)
