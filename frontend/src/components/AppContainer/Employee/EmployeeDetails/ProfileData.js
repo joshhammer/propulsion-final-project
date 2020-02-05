@@ -105,7 +105,6 @@ class ProfileData extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('User: ', state.userReducer.user)
     return {
         user: state.userReducer.user,
         company: state.companyReducer.company,
