@@ -15,6 +15,7 @@ export const submitNewEmployeeData = (employeeData) => async (dispatch, GetState
     console.log(response.status)
     const action = {
         type: SUBMIT_NEW_EMPLOYEE,
+        payload: body,
     }
     dispatch(action)
 }
