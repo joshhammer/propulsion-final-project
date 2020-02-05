@@ -1,4 +1,6 @@
+from django.db.models import Sum
 from rest_framework.generics import CreateAPIView, ListAPIView
+from rest_framework.views import APIView
 
 from record.models import Record
 from record.permissions import IsAdminList
@@ -39,6 +41,7 @@ class ListRecordsByPaymentDate(ListAPIView):
         # If string passed in url is <   search  >    : searches date_paid field using search parameter
         query_param = self.request.query_params['search']
         queryset = Record.objects.filter(date_paid=query_param, company_id=self.request.user.company_id)
+        #queryset = Record.objects.filter(date_paid=query_param, company_id=self.request.user.company_id)
         return queryset
 
 
@@ -65,6 +68,13 @@ class ListDatesPaid(ListAPIView):
 
     def get_queryset(self):
         return Record.objects.filter(company_id=self.request.user.company_id).order_by('date_paid').distinct('date_paid')
+
+
+class GetTotalDebitsPerPayPeriod(APIView):
+
+    def get(self):
+        return Record.objects.filter(company_id=self.request.user.company_id).values('date_paid').annotate(Sum('user__salary__gross_month'))
+
 
 
 

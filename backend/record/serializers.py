@@ -14,9 +14,18 @@ class RecordSerializer(serializers.ModelSerializer):
 
 
 class RecordDatesPaidSerializer(serializers.ModelSerializer):
+    total_salary_paid = serializers.SerializerMethodField()
+
     class Meta:
         model = Record
-        fields = ['date_paid']
+        fields = ['date_paid', 'payperiod_start', 'payperiod_end', 'total_salary_paid']
+
+    def get_total_salary_paid(self, obj):
+        record_list = Record.objects.filter(date_paid=obj.date_paid, company_id=obj.user.company_id)
+        sum = 0
+        for record in record_list:
+            sum += record.user.salary.gross_month
+        return sum
 
 
 class RecordSalaryEmployeeSerializer(serializers.ModelSerializer):
