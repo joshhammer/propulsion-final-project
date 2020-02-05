@@ -10,9 +10,6 @@ const CompanyReports = (props) => {
         props.dispatch(getPayDatesAction())
     }, []);
 
-    // What comes back from API is not correct
-
-    console.log('CompanyReports props: ', props)
     return (
         <div className="company-reports pages-container">
             <div className="company-reports-title">
@@ -31,6 +28,7 @@ const CompanyReports = (props) => {
                 <div className="company-reports-table-content">
 
                     {
+                        props.payDates &&
                         props.payDates.map((payDate, i) => {
                             return <CompanyTableRow payDate={payDate} key={i}/>
                         })
@@ -46,6 +44,6 @@ const mapStatetoProps = state => {
     return {
         payDates: state.dateReducer.payDates
     }
-}
+};
 
 export default connect(mapStatetoProps)(CompanyReports)

@@ -1,7 +1,7 @@
 import {GET_PAYDATES, GET_SINGLE_PAYDATE} from '../actionTypes';
 
 const initialState = {
-    payDates: {}
+    payDates: []
 };
 
 export const dateReducer = (state = initialState, action) => {
@@ -14,7 +14,7 @@ export const dateReducer = (state = initialState, action) => {
     if (action.type === GET_SINGLE_PAYDATE) {
         return {
             ...state,
-            payDate: action.payload,
+            payDateDetails: action.payload,
         }
     }
     return state

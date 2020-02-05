@@ -10,7 +10,7 @@ const CompanyTableRow = (props) => {
     const toggleShow = () => setHidden(!hidden);
 
     useEffect(() => {
-        props.dispatch(getSinglePayDateAction(props.payDate))
+        props.dispatch(getSinglePayDateAction(props.payDate.date_paid))
     }, []);
 
     return (
@@ -18,7 +18,7 @@ const CompanyTableRow = (props) => {
             <div className="company-reportrow">
                 <div className="company-reportrow-details">
                     <div className="company-reportrow-details-date">
-                        <p>25/11/2019</p>
+                        <p>{props.payDate.date_paid}</p>
                     </div>
                     <div className="company-reportrow-details-more">
                         <ReportButton content={"View Details"} toggle={toggleShow}/>
@@ -43,8 +43,8 @@ const CompanyTableRow = (props) => {
 
 const mapStatetoProps = state => {
     return {
-        payDate: state.dateReducer.payDate
+        payDateDetails: state.dateReducer.payDateDetails
     }
-}
+};
 
 export default connect(mapStatetoProps)(CompanyTableRow)
