@@ -25,7 +25,9 @@ class SignupEmployee extends React.Component {
         })
     }
 
-    submitData = () => {
+    submitData = (e) => {
+        e.preventDefault();
+        console.log('click Submit Data..')
         this.props.dispatch(submitNewEmployeeData(this.state))
     }
 

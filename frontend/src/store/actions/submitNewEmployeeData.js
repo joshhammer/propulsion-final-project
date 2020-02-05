@@ -5,12 +5,15 @@ export const submitNewEmployeeData = (employeeData) => async (dispatch, GetState
     const headers = new Headers({
         'Content-Type': 'application/json',
     })
-    const body = employeeData
-    const config = {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(body)
+    const body = {
+        ...employeeData
     }
+    const config = {
+        method: 'PATCH',
+        headers,
+        body
+    }
+    console.log('CONFIG: ', config)
     const response = await fetch(url, config)
     console.log(response.status)
     const action = {
