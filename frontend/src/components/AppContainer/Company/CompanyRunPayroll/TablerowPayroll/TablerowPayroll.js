@@ -3,13 +3,13 @@ import './TablerowPayroll.scss';
 
 const TableRowPayroll = (props) => {
 
-    const deductions = props.salary - props.net_salary;
-    const subtotal = props.salary + deductions;
+    let deductions = parseFloat(props.salary - props.net_salary).toFixed(2);
+    let subtotal = parseFloat(props.salary + deductions).toFixed(2);
 
     return (
         <div className="tablerowpayroll-container">
             <div>
-                <h3>{props.firstName} {props.lastName}</h3>
+                <h3>{props.lastName}, {props.firstName}</h3>
             </div>
             <div>
                 <h3>{props.role}</h3>

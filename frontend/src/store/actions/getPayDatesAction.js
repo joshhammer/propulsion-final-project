@@ -12,12 +12,10 @@ export const getPayDatesAction = () => async (dispatch, getState) => {
         headers,
     };
     const response = await fetch(url, config);
-    const data = await response;
+    const data = await response.json();
     const action = {
         type: GET_PAYDATES,
         payload: data
     };
-    console.log('getPayDatesAction: ', data)
-
     dispatch(action)
 };
