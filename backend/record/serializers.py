@@ -13,6 +13,12 @@ class RecordSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class RecordDatesPaidSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Record
+        fields = ['date_paid']
+
+
 class RecordSalaryEmployeeSerializer(serializers.ModelSerializer):
     user = UserLimitedSerializer()
 

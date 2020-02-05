@@ -1,5 +1,4 @@
 export const registrationAction = (email) => async (dispatch, getState) => {
-    console.log('in da action: ', email)
     const headers = new Headers({
         "content-type": "application/json",
     });
