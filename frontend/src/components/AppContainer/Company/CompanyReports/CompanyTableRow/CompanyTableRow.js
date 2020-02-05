@@ -28,14 +28,14 @@ const CompanyTableRow = (props) => {
                     <p>Regular</p>
                 </div>
                 <div className="company-reportrow-period">
-                    <p>1/11/2019-30/11/2019</p>
+                    <p>{props.payDate.payperiod_start}-{props.payDate.payperiod_end}</p>
                 </div>
                 <div className="company-reportrow-debit">
-                    <p>CHF 22,705.50</p>
+                    <p>{props.payDate.total_salary_paid}</p>
                 </div>
             </div>
             <div className="company-reportrow-toggle">
-                <CardContent isHidden={hidden}/>
+                <CardContent isHidden={hidden} payDate={props.payDate.date_paid}/>
             </div>
         </div>
     )
@@ -43,7 +43,7 @@ const CompanyTableRow = (props) => {
 
 const mapStatetoProps = state => {
     return {
-        payDateDetails: state.dateReducer.payDateDetails
+        payDateDetails: state.dateReducer.payDateDetails || []
     }
 };
 

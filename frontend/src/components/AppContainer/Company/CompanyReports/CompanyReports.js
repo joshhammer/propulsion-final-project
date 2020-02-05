@@ -26,14 +26,12 @@ const CompanyReports = (props) => {
                     <h3>Debit</h3>
                 </div>
                 <div className="company-reports-table-content">
-
                     {
-                        props.payDates &&
+                        props.payDates.length > 0 &&
                         props.payDates.map((payDate, i) => {
                             return <CompanyTableRow payDate={payDate} key={i}/>
                         })
                     }
-
                 </div>
             </div>
         </div>
