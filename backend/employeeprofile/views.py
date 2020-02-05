@@ -6,7 +6,7 @@ from record.models import Record
 from record.serializers import RecordSerializer
 from salary.permissions import IsAdmin
 from user.models import User
-from user.serializers import UserSerializer, UserLimitedSerializer
+from user.serializers import UserLimitedSerializer, UserProfileTypeSerializer
 
 
 # Old method returned employee profile as array rather than object
@@ -32,7 +32,8 @@ class GetMyEmployeeProfile(RetrieveUpdateDestroyAPIView):
     post:
     Logged in employee can update user profile
     """
-    serializer_class = UserSerializer
+    #serializer_class = UserSerializer
+    serializer_class = UserProfileTypeSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
 
