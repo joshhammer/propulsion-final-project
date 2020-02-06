@@ -1,12 +1,13 @@
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, GenericAPIView
 
 from record.serializers import RecordPayrollSerializer
 
 from rest_framework import status
 from rest_framework.response import Response
+from record.pdf import payslip_pdf
 
 
-class RecordRunpayroll(CreateAPIView):
+class RecordRunpayroll(GenericAPIView):
     """
         post:
         Create Create new Records for each User paid in payroll in the Admin's Company
@@ -20,5 +21,11 @@ class RecordRunpayroll(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(serializer.validated_data)
         return Response(status=status.HTTP_200_OK)
+
+   
+
+
+
+
 
 
