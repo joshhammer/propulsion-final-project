@@ -9,7 +9,8 @@ const CompanySidebar = (props) => {
 
     const handleClick = () => {
         localStorage.clear();
-        props.history.push('/')
+        props.history.push('/');
+        window.location.reload();
     };
 
     return (
