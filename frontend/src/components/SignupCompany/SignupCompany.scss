@@ -20,14 +20,14 @@
     }
 }
 
-#razzpay-main-title {
-    color: var(--mainBlue);
-    font-size: 6rem;
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-    text-shadow: 0 0 5px var(--mainBlue);
-}
+// #razzpay-main-title {
+//     color: var(--mainBlue);
+//     font-size: 6rem;
+//     font-family: 'Dancing Script', cursive;
+//     margin-bottom: 2rem;
+//     margin-top: 4rem;
+//     text-shadow: 0 0 5px var(--mainBlue);
+// }
 
 #signup-subtitle-subtitle {
     font-family: var(--secondaryFontFamily);
@@ -69,31 +69,31 @@
 }
 
 
-.footer {
-    height: 20%;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 15px;
+// .footer {
+//     height: 20%;
+//     display: flex;
+//     align-items: flex-end;
+//     padding-bottom: 15px;
 
-    &-left {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
-    }
+//     &-left {
+//         width: 50%;
+//         display: flex;
+//         justify-content: space-around;
+//     }
 
-    &-spaceholder {
-        width: 30%;
-    }
+//     &-spaceholder {
+//         width: 30%;
+//     }
 
-    &-right {
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-        & img {
-            width: 20px;
-            height: 20px;
-        }
-    }
-}
+//     &-right {
+//         display: flex;
+//         justify-content: space-around;
+//         width: 50%;
+//         & img {
+//             width: 20px;
+//             height: 20px;
+//         }
+//     }
+// }
 
 

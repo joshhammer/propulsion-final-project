@@ -6,7 +6,6 @@ import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
 
 const CompanyRunPayroll = (props) => {
-    console.log(props)
     useEffect(() => {
         props.dispatch(getAllUsersAction())
     }, []);
@@ -27,20 +26,22 @@ const CompanyRunPayroll = (props) => {
                 <h2>Subtotal</h2>
             </div>
             <div className="payroll-table">
-                {
-                    props.users &&
-                    props.users.map((user, i) => {
-                        total += user.salary.gross_month + (user.salary.gross_month - user.salary.net);
-                        return < TableRowPayroll
-                            key={i}
-                            firstName={user.first_name}
-                            lastName={user.last_name}
-                            role={user.salary.position}
-                            salary={user.salary.gross_month}
-                            net_salary={user.salary.net}
-                        />
-                    })
-                }
+                <div className="payroll-table-container">
+                    {
+                        props.users &&
+                        props.users.map((user, i) => {
+                            total += user.salary.gross_month + (user.salary.gross_month - user.salary.net);
+                            return < TableRowPayroll
+                                key={i}
+                                firstName={user.first_name}
+                                lastName={user.last_name}
+                                role={user.salary.position}
+                                salary={user.salary.gross_month}
+                                net_salary={user.salary.net}
+                            />
+                        })
+                    }
+                </div>
             </div>
             <div className="payroll-footer">
                 <div className="run-payroll">

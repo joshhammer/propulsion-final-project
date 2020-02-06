@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 from record.models import Record
 from record.pdf import payslip_pdf
+from user.serializers import UserLimitedSerializer, UserSerializer
 
 User = get_user_model()
 
@@ -11,6 +12,30 @@ class RecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = Record
         fields = '__all__'
+
+
+class RecordDatesPaidSerializer(serializers.ModelSerializer):
+    total_salary_paid = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Record
+        fields = ['date_paid', 'payperiod_start', 'payperiod_end', 'total_salary_paid']
+
+    def get_total_salary_paid(self, obj):
+        record_list = Record.objects.filter(date_paid=obj.date_paid, company_id=obj.user.company_id)
+        sum = 0
+        for record in record_list:
+            sum += record.user.salary.gross_month
+        return sum
+
+
+class RecordSalaryEmployeeSerializer(serializers.ModelSerializer):
+    user = UserLimitedSerializer()
+
+    class Meta:
+        model = Record
+        fields = ['user', 'id','date_paid', 'payperiod_start', 'payperiod_end', 'company']
+
 
 
 class RecordPayrollSerializer(serializers.Serializer):

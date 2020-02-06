@@ -22,6 +22,7 @@ from record.pdf import payslip_pdf
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
+    #path('api/docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])),
     path('api/registration/', include('registration.urls')),
     path('api/auth/', include('registration.urls')),
     path('api/adminprofile/', include('adminprofile.urls')),

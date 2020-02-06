@@ -58,21 +58,31 @@
     margin-top: 5%;
     margin-bottom: 2%;
     width: 100%;
+
     & h2 {
         color: var(--mainBlue);
         margin-left: 10%;
         width: 30%;
     }
-
 }
 
 .company-people-table-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-evenly;
+    overflow: scroll;
+    height: 80%;
 
     & h3 {
         color: var(--mainWhite)
     }
+}
+
+.company-people-modal-content {
+    width: 75%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    border-radius: 5px;
+    z-index: 5;
+    overflow: auto;
 }
