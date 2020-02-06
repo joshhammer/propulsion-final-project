@@ -17,7 +17,7 @@
     box-shadow: 0px 0px 20px black;
 }
 
-.employee-signup-title-box {
+.employee-signup-title-box, .employee-signup-success  {
         & h1 {
         margin-bottom: 1rem;
         font-family: 'Dancing Script', cursive;
@@ -34,6 +34,29 @@
         // margin-bottom: 3rem;
         font-size: 1rem;
         text-shadow: var(--boxShadow);
+    }
+
+    & a {
+        color: var(--mainGreen);
+        text-decoration: none;
+        transition: all .3s;
+        text-shadow: var(--boxShadow);
+        &:hover {
+            text-shadow: 0 0 5px var(--mainGreen);
+            color: var(--lightGreen);
+        }
+    }
+}
+
+.employee-signup-success {
+
+    & h1 {
+        font-size: 6rem;
+    }
+    & h3 {
+        font-size: 1.9rem;
+        font-style: normal;
+        font-family: 'Dancing Script', cursive;
     }
 }
 

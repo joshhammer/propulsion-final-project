@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
+// import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 // import InputField from "../reusable-components/input-fields/InputField";
 import { submitNewEmployeeData } from '../../store/actions/submitNewEmployeeData';
 // import instagram from '../../assets/svg/instagram.svg';
@@ -29,6 +29,7 @@ class SignupEmployee extends React.Component {
         e.preventDefault();
         console.log('click Submit Data..')
         this.props.dispatch(submitNewEmployeeData(this.state))
+        this.props.history.push('/signupsuccess')
     }
 
     render() {
