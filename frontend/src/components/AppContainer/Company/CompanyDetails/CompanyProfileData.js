@@ -11,9 +11,7 @@ class CompanyProfileData extends React.Component {
 
     render() {
         const {inputState, readonly, saveData} = this.props;
-        console.log('input state: ', inputState)
         const {name, house_number, street, city, country, postal_code, legal_number, poc_name, poc_email, bank_name, iban, bic} = inputState
-        console.log('xxx', this.props.company)
         const company = this.props.company;
         return (
             <div className='company-profile-data-container'>
