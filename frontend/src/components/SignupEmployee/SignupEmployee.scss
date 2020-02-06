@@ -10,7 +10,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding: 1rem;
     background-color: var(--mainBlue);
@@ -22,6 +22,7 @@
         margin-bottom: 1rem;
         font-family: 'Dancing Script', cursive;
         color: var(--mainWhite);
+        text-align: center;
         font-size: 3.5rem;
         text-shadow: var(--boxShadow);
     }
