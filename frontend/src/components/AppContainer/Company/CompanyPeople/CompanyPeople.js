@@ -54,12 +54,12 @@ const CompanyPeople = (props) => {
             </div>
         </div>
     )
-}
+};
 
 const mapStatetoProps = state => {
     return {
         users: state.userReducer.users
     }
-}
+};
 
 export default connect(mapStatetoProps)(CompanyPeople)
