@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
 import instagram from '../../assets/svg/instagram.svg';
@@ -29,9 +29,21 @@ const LandingPage = (props) => {
         if (state.email && state.password) {
             props.dispatch(loginAction(state.email, state.password))
         }
+        
     }
-
+    
     // check if provided email is an admin or employee and forward to the corresponding page
+    useEffect(() => {
+        if(props.tokens.user) {
+            if (props.tokens.user.username === 'admin'){
+                props.history.push('/company/dashboard')
+            }
+            else {
+                props.history.push('/employee/dashboard')
+            }
+        }
+    })
+
 
     return (
         <div className="landingpage-container">
@@ -82,7 +94,8 @@ const LandingPage = (props) => {
 const mapStatetoProps = (state) => {
     console.log('the login state: ', state)
     return {
-        tokens: state.tokens,
+        tokens: state.loginReducer.tokens,
+        user: state.userReducer.user,
     }
 }
 
