@@ -11,7 +11,7 @@ export const submitNewEmployeeData = (employeeData) => async (dispatch, GetState
     const config = {
         method: 'PATCH',
         headers,
-        body
+        body: JSON.stringify(body)
     }
     console.log('CONFIG: ', config)
     const response = await fetch(url, config)

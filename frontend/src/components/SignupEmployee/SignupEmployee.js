@@ -45,7 +45,7 @@ class SignupEmployee extends React.Component {
                         <form className="signup-employee-form">
                             {/* <input name={'ahv'} placeholder={"*AHV Number"} onChange={this.handleChange} required={true} /> */}
                             <input name={'first_name'} placeholder={"*Firstname"} onChange={this.handleChange} required={true} />
-                            <input name={'last'} placeholder={"*Lastname"} onChange={this.handleChange} required={true} />
+                            <input name={'last_name'} placeholder={"*Lastname"} onChange={this.handleChange} required={true} />
                             <input name={'email'} placeholder={"*Email"} onChange={this.handleChange} required={true} />
                             <input name={'username'} placeholder={"*Username"} onChange={this.handleChange} required={true} />
                             
@@ -55,22 +55,22 @@ class SignupEmployee extends React.Component {
                             
                             <input name={'city'} placeholder={"*City"} onChange={this.handleChange} required={true} />
                             
-                            <input name={'postal_code'} placeholder={"*Postal Code"} onChange={this.handleChange} required={true} /> */}
+                            <input name={'postal_code'} placeholder={"*Postal Code"} onChange={this.handleChange} required={true} />
 
-                            {/* <input name={'bank_name'} placeholder={"*Bank Name"} onChange={this.handleChange} required={true} />
+                            <input name={'bank_name'} placeholder={"*Bank Name"} onChange={this.handleChange} required={true} />
                             
                             <input name={'iban'} placeholder={"*IBAN"} onChange={this.handleChange} required={true} /> */}
                             
                             <input name={'code'} placeholder={"*Registration Code"} onChange={this.handleChange} required={true} />
 
-                            <input name={'password'} placeholder={"*Password"} onChange={this.handleChange} required={true} />
-                            <input name={'password_repeat'} placeholder={"*Repeat Password"} onChange={this.handleChange} required={true} />
+                            <input name={'password'} type='password' placeholder={"*Password"} onChange={this.handleChange} required={true} />
+                            <input name={'password_repeat'} type='password' placeholder={"*Repeat Password"} onChange={this.handleChange} required={true} />
                             
                         </form>
 
                     </div>
-                    
-                    <button className='employee-validate-submitBtn'>Submit</button>
+
+                    <button className='employee-validate-submitBtn' onClick={this.submitData}>Submit</button>
                 </div>
             </div>
         )
