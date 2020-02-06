@@ -3,8 +3,6 @@ from django.core.exceptions import ValidationError
 from rest_framework import serializers
 
 from adminprofile.models import AdminProfile
-from company.models import Company
-from company.serializers import CompanySerializer
 from emails.models import Email
 from employeeprofile.models import EmployeeProfile
 from registration.models import Registration, code_generator
@@ -46,6 +44,12 @@ def code_is_valid(code):
             raise ValidationError(message='This code has already been used!')
     except Registration.DoesNotExist:
         raise ValidationError(message='This code is not valid!')
+
+
+class RegistrationProfileTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registration
+        fields = ['profile_type']
 
 
 # This serializer is only for admin user!!!!!

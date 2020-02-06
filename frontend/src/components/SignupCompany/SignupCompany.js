@@ -6,6 +6,7 @@ import facebook from '../../assets/svg/facebook.svg';
 import twitter from '../../assets/svg/twitter.svg';
 import linkedin from '../../assets/svg/linkedin.svg';
 import './SignupCompany.scss';
+import '../LandingPage/LandingPage.scss';
 
 const SignupCompany = () => {
     return (
