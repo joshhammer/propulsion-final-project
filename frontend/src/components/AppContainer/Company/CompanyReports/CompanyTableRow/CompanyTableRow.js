@@ -21,7 +21,7 @@ const CompanyTableRow = (props) => {
                         <p>{props.payDate.date_paid}</p>
                     </div>
                     <div className="company-reportrow-details-more">
-                        <ReportButton content={"View Details"} toggle={toggleShow}/>
+                        <ReportButton content={hidden ? "View Details" : "Hide Details"} toggle={toggleShow}/>
                     </div>
                 </div>
                 <div className="company-reportrow-type">
@@ -31,7 +31,7 @@ const CompanyTableRow = (props) => {
                     <p>{props.payDate.payperiod_start}-{props.payDate.payperiod_end}</p>
                 </div>
                 <div className="company-reportrow-debit">
-                    <p>{props.payDate.total_salary_paid}</p>
+                    <p>CHF {props.payDate.total_salary_paid}</p>
                 </div>
             </div>
             <div className="company-reportrow-toggle">

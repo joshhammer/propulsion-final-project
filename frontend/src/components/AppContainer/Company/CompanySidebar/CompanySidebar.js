@@ -20,7 +20,6 @@ const CompanySidebar = () => {
                 <Link className="sidebar-link" to="/company/documents">Documents</Link>
                 <Link className="sidebar-link" to="/company/reports">Reports</Link>
             </div>
-            {/* <div className="sidebar-placeholder"></div> */}
         </div>
     )
 }

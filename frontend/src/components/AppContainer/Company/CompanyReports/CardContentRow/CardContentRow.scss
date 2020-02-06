@@ -9,11 +9,15 @@
     align-items: center;
     width: 100%;
 
-    //&:hover {
-    //    background-color: var(--mainGreen);
-    //}
+    &:hover {
+        background-color: var(--mainGreen);
+    }
 
-    & h3 {
+    & div {
+        width: 25%;
+    }
+
+    & h4 {
         color: var(--mainBlue);
 
         &:hover {

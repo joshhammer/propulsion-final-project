@@ -59,7 +59,7 @@ const AddEmployee = (props) => {
             <div className="modal-overlay"/>
         </>
     )
-}
+};
 
 
 export default connect()(AddEmployee)
