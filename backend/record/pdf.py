@@ -25,11 +25,7 @@ User = get_user_model()
 
 def payslip_pdf(paid_employee, record, host_url):
     salary = get_object_or_404(Salary, user=paid_employee)
-    # response = HttpResponse(content_type="application/pdf")
-    # response['Content-Disposition'] = "inline; filename={date}-{name}-payslip.pdf".format(
-    #     date=user.date_created.strftime('%Y-%m-%d'),
-    #     name=slugify(user.email),
-    # )
+
     html = render_to_string(
         template_name="payslip_pdf.html", 
         context={'payslip': paid_employee, 'salary': salary, 'record': record,

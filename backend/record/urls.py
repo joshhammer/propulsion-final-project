@@ -1,6 +1,6 @@
 from django.urls import path
 
-from record.views import RecordRunpayroll, ListRecordsByPaymentDate, ListRecordsByEmployee, ListDatesPaid
+from record.views import RecordRunpayroll, ListRecordsByPaymentDate, ListRecordsByEmployee, ListDatesPaid, GetSingleRecord
 
 urlpatterns = [
     path('runpayroll/', RecordRunpayroll.as_view(), name="record-run-payroll"),
@@ -14,4 +14,6 @@ urlpatterns = [
     path('employee/', ListRecordsByEmployee.as_view(), name="list-records-employee"),
 
     path('dates-paid/', ListDatesPaid.as_view(), name='list-dates-paid'),
+
+    path ('employee/<int:record_id>/', GetSingleRecord.as_view(), name='list-paid-pdf')
 ]
