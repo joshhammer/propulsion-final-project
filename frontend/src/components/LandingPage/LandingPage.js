@@ -18,7 +18,6 @@ const LandingPage = (props) => {
         password: "",
     });
     const handleChange = (e) => {
-        console.log(e.target.value)
         setState({...state, [e.target.name]: e.target.value});
     }
 
@@ -32,7 +31,8 @@ const LandingPage = (props) => {
             }
         }
         if (state.email && state.password) {
-            props.dispatch(loginAction(state.email, state.password))
+            await props.dispatch(loginAction(state.email, state.password))
+            
         }
         
     }
@@ -40,10 +40,16 @@ const LandingPage = (props) => {
     // check if provided email is an admin or employee and forward to the corresponding page
     useEffect(() => {
         if(props.tokens.access) {
+            console.log('ACCESS')
             const token = props.tokens.access
             props.dispatch(getUserAction(token))
         }
+    }, [props.tokens])
+
+    useEffect(() => {
+
         if(props.user.registration) {
+            console.log('REGISTRATION')
             if(props.user.registration.profile_type === 'AP') {
                 props.history.push('/company/dashboard')
             }
@@ -51,7 +57,7 @@ const LandingPage = (props) => {
                 props.history.push('/employee/dashboard')
             }
         }
-    }, [props.tokens])
+    }, [props.user])
 
 
     return (
@@ -77,7 +83,7 @@ const LandingPage = (props) => {
                         <InputField content={"Password"} type={"password"} name={"password"} value={state.password}
                                     onChange={handleChange}/>
                         <span className="input-span"></span>
-                        <AuthenticationButton content={"Login"} onSubmit={handleSubmit}/>
+                        <AuthenticationButton content={"Login"} />
                     </form>
                 </div>
             </div>
