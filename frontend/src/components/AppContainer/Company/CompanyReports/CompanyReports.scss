@@ -1,0 +1,40 @@
+.company-reports {
+
+    &-title {
+        height: 5%;
+        margin-top: 5%;
+        margin-left: 5%;
+
+    }
+
+    &-table-container {
+        margin-left: 10%;
+        margin-top: 5%;
+        margin-right: 10%;
+        border-radius: 8px;
+    }
+
+    &-table-title {
+        border-bottom: 1px solid var(--mainGreen);
+        margin-bottom: 3%;
+
+        & h2 {
+            padding-bottom: 2%;
+        }
+    }
+
+    &-table-header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &-table-container {
+
+    }
+
+    &-table-content {
+        overflow: scroll;
+        height: 500px;
+        margin-top: 3%;
+    }
+}

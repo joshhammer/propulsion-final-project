@@ -18,4 +18,6 @@ dependencies:
       - webpreview==1.6.0
       - django-extensions==2.2.5
       - django-fullurl==1.0
+      - weasyprint
+      - django-weasyprint
 

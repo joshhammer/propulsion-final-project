@@ -1,0 +1,19 @@
+.tablerowpayroll-container {
+    border-radius: 8px;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--mainWhite);
+
+    & div {
+        margin-left: 5%;
+        width: 20%;
+        & h3 {
+            color: var(--mainBlue);
+        }
+    }
+}
+

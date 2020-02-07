@@ -74,7 +74,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,10 +149,14 @@ USE_TZ = True
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files/')
-STATIC_ROOT = os.path.join(BASE_DIR, '/static-files/')
+STATIC_ROOT = '/static-files/'
 
 STATIC_URL = '/static-files/'
-MEDIA_URL = '/media-files/'
+MEDIA_URL = os.path.join(BASE_DIR, '/media-files/')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "user/static-files")
+]
 
 AUTH_USER_MODEL = 'user.User'
 
@@ -164,6 +168,7 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
 
 SITE_ID = 1
 
@@ -184,4 +189,5 @@ SIMPLE_JWT = {
 }
 
 #SESSION_COOKIE_SECURE = False
+
 

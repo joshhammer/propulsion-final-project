@@ -1,0 +1,95 @@
+
+ <html>
+    <head>
+      <meta charset="utf-8">
+      <link href="../user/static-files/payslip_pdf.css" media="print" rel="stylesheet">
+      <title>Payslip</title>
+      <meta name="description" content="Payslip demo sample">
+        <meta name="Razzpay" content="Payslip">
+    </head>
+  
+    <body>
+      <h1>Razz Payslip</h1>
+  
+      <aside>
+        <address id="from">
+          RazzPay [ a Propulsion Academy Project ]
+          Technopark
+          Zürich
+          Switzerland
+        </address>
+  
+        <address id="to">
+          {{payslip.first_name}} {{payslip.last_name}}
+            {{payslip.street}} - {{payslip.house_number}}
+            {{payslip.postal_code}} -{{payslip.city}}
+            {{payslip.email}}
+            {{salary.position}}
+        </address>
+      </aside>
+  
+      <dl id="informations">
+        <dt>Payslip number</dt>
+        <dd>12345</dd>
+        <dt>Date</dt>
+        <dd>{{record.date_paid}}</dd>
+      </dl>
+  
+      <table>
+        <thead>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>_%_</th>
+          <th>Subtotal</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monthly Salary</td>
+            <td>{{salary.gross_month}}</td>
+            <td></td>
+            <td>{{salary.gross_month}}</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 40px">  AHV Deductions</td>
+            <td>-{{salary.ahv_amount}}</td>
+            <td>5.25</td>
+            <td>{{salary.ahv_amount}}</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 40px"> ALV Deductions</td>
+            <td>-{{salary.alv_amount}}</td>
+            <td>1.1</td>
+            <td>{{salary.alv_amount}}</td>
+          </tr>
+          <tr>
+            <td style="text-indent: 40px"> Pension Fund</td>
+            <td>-{{salary.pension}}</td>
+            <td>1</td>
+            <td>{{salary.pension}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+  
+      <table id="total">
+        <thead>
+          <th>Paid by</th>
+          <th>Account number</th>
+          <th>Net Paid</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{record.date_paid}}</td>
+            <td>{{payslip.iban}}</td>
+            <td>{{salary.net}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+  </html>
+
+
+ 
+ 
+ 
+ 
