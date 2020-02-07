@@ -8,6 +8,7 @@ export const submitNewEmployeeData = (employeeData) => async (dispatch, GetState
     const body = {
         ...employeeData
     }
+    console.log(body)
     const config = {
         method: 'PATCH',
         headers,
