@@ -1,4 +1,5 @@
 from django.urls import path
+from rest_framework.documentation import include_docs_urls
 
 from record.views import RecordRunpayroll, ListRecordsByPaymentDate, ListRecordsByEmployee, ListDatesPaid, GetSingleRecord, ListAllUserRecords
 
@@ -17,5 +18,7 @@ urlpatterns = [
 
     path ('employee/<int:record_id>/', GetSingleRecord.as_view(), name='list-paid-pdf'),
 
-    path('all/', ListAllUserRecords.as_view(), name='list-all-user-records')
+    path('all/', ListAllUserRecords.as_view(), name='list-all-user-records'),
+
+   # path('docs/', include_docs_urls(title='RazzPay Docs', public=False))
 ]
