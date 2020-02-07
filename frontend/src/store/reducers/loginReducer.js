@@ -13,12 +13,12 @@ const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 tokens: action.payload
-            }
+            };
 
         default:
             return state;
     }
-}
+};
 
 export default loginReducer;
 

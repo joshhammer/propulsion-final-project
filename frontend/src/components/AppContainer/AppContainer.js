@@ -15,8 +15,7 @@ class AppContainer extends React.Component {
     render() {
         return (
             <>
-            {/* <Employee /> */}
-                {   
+                {
                     this.props.user.registration && this.props.user.registration.profile_type === 'AP' && <Company />
                 }
 
