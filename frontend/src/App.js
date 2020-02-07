@@ -17,7 +17,7 @@ const App = () => {
                     <Route exact={true} path="/" component={LandingPage}/>
                     <Route path="/company" component={AppContainer}/>
                     <Route path="/employee" component={AppContainer}/>
-                    <Route path="/signup" component={SignupCompany}/>
+                    <Route path="/signupcompany" component={SignupCompany}/>
                     <Route exact path="/signupemployee" component={SignupEmployee}/>
                     <Route exact={true} path="/signupsuccess" component={SignupSuccess} />
 
