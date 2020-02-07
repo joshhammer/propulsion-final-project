@@ -1,17 +1,16 @@
 .company-dashboard {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
 }
 
 .company-dashboard-content {
-    border: 1px solid red;
     width: 70%;
 }
 
 .company-dashboard-user {
-    border: 1px solid red;
-    margin-top: 20%;
+    border-bottom: 2px solid var(--mainWhite);
+    margin-top: 15%;
+    padding-bottom: 3%;
 
     & h1 {
         font-family: var(--mainFontFamily);
@@ -22,23 +21,40 @@
 .company-dashboard-bottom {
     display: flex;
     justify-content: space-evenly;
-    height: 100%;
-    margin-top: 10%;
+    height: 65%;
+    margin-top: 7%;
 
     & h2 {
         color: var(--mainWhite);
+        margin-bottom: 5%;
+        margin-top: 3%;
     }
 
     &-left {
-        border: 1px solid red;
+        border: 1px solid var(--mainWhite);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         width: 45%;
-        height: 40%;
+        height: 50%;
+
+        & li {
+            margin: 10%;
+        }
     }
 
     &-right {
-        border: 1px solid red;
+        border: 1px solid var(--mainWhite);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         width: 45%;
-        height: 40%;
+        height: 50%;
 
+        & li {
+            margin: 10%;
+        }
     }
 }

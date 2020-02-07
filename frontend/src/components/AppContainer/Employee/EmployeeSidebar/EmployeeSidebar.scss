@@ -7,35 +7,41 @@
     background-color: var(--mainGreen);
 }
 
-// .company-logo {
-//     height: 25%;
-//     display: flex;
-//     justify-content: center;
-// }
-
 .employee-sidebar-link-container {
     display: flex;
     height: 60%;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 15%;
 }
 
-// .sidebar-link {
-//     text-decoration: none;
+// .company-logo {
+//     display: flex;
+//     align-items: center;
+// }
+
+// .logo-circle {
 //     display: flex;
 //     justify-content: center;
-//     width: 50%;
-//     color: var(--mainBlue);
-//     border: 2px solid var(--mainBlue);
-//     border-radius: 8px;
-//     padding: 5px;
+//     align-items: center;
+//     width: 150px;
+//     height: 150px;
+//     margin-top: 15%;
+//     background: var(--mainBlue);
+//     border-radius: 50%;
+//     box-shadow: 0 0 5px black;
+//     transition: all .5s ease-in-out;
 //     &:hover {
-//         background-color: var(--mainBlue);
-//         color: var(--mainWhite);
+//         transform: rotate(360deg);
+//         box-shadow: 0 0 15px black;
 //     }
 // }
 
-// .sidebar-placeholder {
-//     height: 15%;
+// .company-logo-title {
+//     color: var(--mainWhite);
+//     font-family: 'Dancing Script', cursive;
+//     font-weight: 700;
+//     font-size: 5rem;
 // }
+

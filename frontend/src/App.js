@@ -5,6 +5,9 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import LandingPage from './components/LandingPage/LandingPage';
 import {store} from "./store";
 import AppContainer from "./components/AppContainer/AppContainer";
+import SignupCompany from "./components/SignupCompany/SignupCompany";
+import SignupEmployee from "./components/SignupEmployee/SignupEmployee"
+import SignupSuccess from './components/SignupEmployee/SignupSuccess';
 
 const App = () => {
     return (
@@ -14,6 +17,9 @@ const App = () => {
                     <Route exact={true} path="/" component={LandingPage}/>
                     <Route path="/company" component={AppContainer}/>
                     <Route path="/employee" component={AppContainer}/>
+                    <Route path="/signupcompany" component={SignupCompany}/>
+                    <Route exact path="/signupemployee" component={SignupEmployee}/>
+                    <Route exact={true} path="/signupsuccess" component={SignupSuccess} />
 
                 </Switch>
             </BrowserRouter>

@@ -4,27 +4,63 @@
     color: var(--mainWhite);
 }
 
-.company-logo {
-    height: 25%;
-    display: flex;
-    justify-content: center;
-}
 
 .sidebar-link {
-    text-decoration: none;
     display: flex;
     justify-content: center;
-    width: 50%;
+    align-items: center;
+    width: 60%;
+    height: 45px;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgb(51, 51, 51);
     color: var(--mainBlue);
-    border: 2px solid var(--mainBlue);
+    border: 1px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
+    transition: all 0.3s;
     &:hover {
         background-color: var(--mainBlue);
         color: var(--mainWhite);
     }
 }
 
-.sidebar-placeholder {
-    height: 15%;
+#active-sidebar-link {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
+}
+
+// .sidebar-placeholder {
+//     height: 15%;
+// }
+
+.company-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin-top: 15%;
+    background: var(--mainBlue);
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+    transition: all .5s ease-in-out;
+    &:hover {
+        transform: rotate(360deg);
+        box-shadow: 0 0 15px black;
+    }
+}
+
+.company-logo-title {
+    color: var(--mainWhite);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 5rem;
 }

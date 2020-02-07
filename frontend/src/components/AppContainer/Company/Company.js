@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
 import CompanySidebar from "./CompanySidebar/CompanySidebar";
 import CompanyDashboard from "./CompanyDashboard/CompanyDashboard";
 import './Company.scss';

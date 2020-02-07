@@ -1,12 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './CompanyRunPayroll.scss';
 import TableRowPayroll from "./TablerowPayroll/TablerowPayroll";
-import TableRow from "../../../reusable-components/TableRow/Tablerow";
 import AuthenticationButton from "../../../reusable-components/buttons/AuthenticationButton";
+import {connect} from "react-redux";
+import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
+import PayRollConfirm from "./PayRollConfirm/PayRollConfirm";
+import {postPayrollAction} from "../../../../store/actions/postPayroll";
 
-const CompanyRunPayroll = () => {
+const CompanyRunPayroll = (props) => {
+    useEffect(() => {
+        props.dispatch(getAllUsersAction())
+    }, []);
+
+    const [isOpen, setisOpen] = useState(false);
+
+    const toggleOpen = () => {
+        setisOpen(isOpen => !isOpen)
+    };
+
+    const handleSubmit = async () => {
+        const response = await props.dispatch(postPayrollAction(props.users));
+        if (response.status === 200) {
+            props.history.push('payroll/success');
+        }
+    };
+
+    let total = 0;
+
     return (
         <div className="payroll-container pages-container">
+            {isOpen &&
+            <div className={"company-payroll-modal-content"}>
+                <PayRollConfirm isOpen={toggleOpen} amount={total} onClick={handleSubmit}/>
+            </div>}
             <div className="payroll-header">
                 <h1>Payroll period February-March 2020</h1>
                 <h3>due on 25 March 2020</h3>
@@ -15,28 +41,41 @@ const CompanyRunPayroll = () => {
                 <h2>Name</h2>
                 <h2 id="table-role">Role</h2>
                 <h2>Salary</h2>
-                <h2>Pension</h2>
+                <h2>Deductions</h2>
                 <h2>Subtotal</h2>
             </div>
             <div className="payroll-table">
-                <TableRowPayroll name={"Matt Damon"} role={"Actor"} salary={6000} pension={400} subtotal={6400}/>
-                <TableRowPayroll name={"RazzPay"} role={"Full-Stuck"} salary={3000} pension={200} subtotal={3200}/>
-                <TableRowPayroll name={"Alfred Meier"} role={"Scientist"} salary={5000} pension={350} subtotal={5350}/>
-                <TableRowPayroll name={"Piotr Schawinski"} role={"House Keeping"} salary={7000} pension={450}
-                                 subtotal={7450}/>
-                <TableRowPayroll name={"Matt Damon"} role={"Actor"} salary={6000} pension={400} subtotal={6400}/>
-                <TableRowPayroll name={"David"} role={"Pupil"} salary={6000} pension={400} subtotal={6400}/>
-                <TableRowPayroll name={"Peter Meier"} role={"Assistant to Assistant"} salary={4000} pension={250}
-                                 subtotal={4250}/>
+                <div className="payroll-table-container">
+                    {
+                        props.users &&
+                        props.users.map((user, i) => {
+                            total += user.salary.gross_month + (user.salary.gross_month - user.salary.net);
+                            return < TableRowPayroll
+                                key={i}
+                                firstName={user.first_name}
+                                lastName={user.last_name}
+                                role={user.salary.position}
+                                salary={user.salary.gross_month}
+                                net_salary={user.salary.net}
+                            />
+                        })
+                    }
+                </div>
             </div>
             <div className="payroll-footer">
                 <div className="run-payroll">
-                    <AuthenticationButton content={"Run Payroll"}/>
+                    <AuthenticationButton content={"Run Payroll"} onClick={toggleOpen}/>
                 </div>
-                <h2>Total: CHF 32'000</h2>
+                <h2>Total: CHF {total}</h2>
             </div>
         </div>
     )
 };
 
-export default CompanyRunPayroll
+const mapStatetoProps = state => {
+    return {
+        users: state.userReducer.users
+    }
+}
+
+export default connect(mapStatetoProps)(CompanyRunPayroll)
