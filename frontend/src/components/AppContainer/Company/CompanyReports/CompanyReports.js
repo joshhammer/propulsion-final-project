@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import './CompanyReports.scss';
 import CompanyTableRow from "./CompanyTableRow/CompanyTableRow";
 import {getPayDatesAction} from "../../../../store/actions/getPayDatesAction";
+import ReactLoading from 'react-loading';
 import {connect} from "react-redux";
 
 const CompanyReports = (props) => {
@@ -27,10 +28,13 @@ const CompanyReports = (props) => {
                 </div>
                 <div className="company-reports-table-content">
                     {
-                        props.payDates.length > 0 &&
-                        props.payDates.map((payDate, i) => {
-                            return <CompanyTableRow payDate={payDate} key={i}/>
-                        })
+                        !props.payDates.length > 0 ? (
+                            <ReactLoading type={"spin"}/>
+                        ) : (<div className="company-reports-table-content-2">
+                            {props.payDates.map((payDate, i) => {
+                                return <CompanyTableRow payDate={payDate} key={i}/>
+                            })}</div>
+                        )
                     }
                 </div>
             </div>
