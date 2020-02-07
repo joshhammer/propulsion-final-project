@@ -11,6 +11,6 @@ export const registrationAction = (email) => async (dispatch, getState) => {
         body: JSON.stringify(body)
     };
     const response = await fetch('https://razzpay.propulsion-learn.ch/api/registration/', config);
-    const data = await response.json();
+    const data = await response;
     return data;
 }
