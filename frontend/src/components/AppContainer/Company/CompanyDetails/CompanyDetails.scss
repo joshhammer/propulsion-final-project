@@ -1,46 +1,66 @@
-.company-profile-data-container {
-    height: 500px;
-    width: 500px;
-    overflow: scroll;
-    box-shadow: 0px 20px 20px black;
-}
-
 .company-details-wrapper {
     display: flex;
     justify-content: center;
 }
 
 .company-details-content {
+    height: 100%;
     width: 80%;
-    padding-top: 4rem;
-    margin-left: 20%;
+    padding-top: 2rem;
+    padding: 0 1rem;
+}
+
+.company-profile-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 20%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .company-profile-title-box {
     display: flex;
-    align-items: center;
-    margin-bottom: 4rem;
-    // margin: 2rem 0 0 1rem;
-    & img {
-        border-radius: 50%;
-        background: var(--mainWhite);
-        box-shadow: 0 0 10px black;
+    width: 70%;
+
+    & svg {
+        width: 50px;
+        height: 50px;
+        color: var(--mainGreen);
     }
+
     & h1 {
         margin-left: 1rem;
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        border-bottom: 1px solid var(--mainWhite);
+        border-bottom: 1px solid var(--mainGreen);
         letter-spacing: 1px;
     }
 }
+
+.company-profile-data-container {
+    padding: 1rem 1rem 5rem 1rem;
+    height: 80%;
+    width: 80%;
+    overflow: scroll;
+}
+
+.profile-data-section-title {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px black;
+    color: var(--mainWhite);
+    letter-spacing: 1px;;
+}
+
 
 .profile-table-element {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
     & p {
-        width: 200px;
+        width: 30%;
         height: 35px;
         margin-right: 1rem;
         background: var(--mainGreen);
@@ -58,13 +78,14 @@
         outline: none;
         border: none;
         border-radius: 5px;
+        margin-left: 4rem;
         padding-left: .5rem;
         height: 35px;
-        width: 300px;
+        width: 70%;
         font-size: 1rem;
         letter-spacing: 1px;
         box-shadow: 0 0 10px black;
-        background: rgb(200, 200, 200);
+        background: var(--mainWhite);
     }
 }
 
@@ -75,11 +96,11 @@
     border-radius: 5px;
     padding-left: .5rem;
     height: 35px;
-    width: 300px;
+    width: 70%;
     font-size: 1rem;
     letter-spacing: 1px;
     box-shadow: 0 0 10px black;
-    background: var(--mainWhite);
+    background: rgb(255, 96, 234);
 }
 
 
@@ -90,16 +111,19 @@
     height: 35px;
     width: 50px;
     border-radius: 25px;
-    margin-left: 10rem;
+    // margin-left: 10rem;
     transition: all .3s;
+
     &:hover {
         background: var(--mainGreen);
         color: var(--mainBlue);
     }
+
     &:focus {
         outline: none;
     }
 }
+
 .profile-save-btn {
     border: none;
     background: var(--mainGreen);
@@ -109,14 +133,17 @@
     border-radius: 25px;
     margin-left: 6rem;
     transition: all .3s;
+
     &:hover {
         background: var(--mainGreen);
         color: var(--mainBlue);
     }
+
     &:focus {
         outline: none;
     }
 }
+
 .profile-cancel-btn {
     border: none;
     background: var(--mainGreen);
@@ -126,10 +153,12 @@
     border-radius: 25px;
     margin-left: 1rem;
     transition: all .3s;
+
     &:hover {
         background: var(--mainGreen);
         color: var(--mainBlue);
     }
+
     &:focus {
         outline: none;
     }

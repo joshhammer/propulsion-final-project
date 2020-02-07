@@ -11,6 +11,6 @@ const ReportButton = (props) => {
             </button>
         </div>
     )
-}
+};
 
 export default ReportButton
