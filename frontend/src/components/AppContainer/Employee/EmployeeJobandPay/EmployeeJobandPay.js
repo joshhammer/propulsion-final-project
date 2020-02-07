@@ -13,10 +13,10 @@ class JobAndPay extends React.Component {
     }
 
     render() {
-        const salary = this.props.salary
+        const user = this.props.user
         return(
             <>
-            {salary && <div className='pages-container job-page-wrapper'>
+            {user && <div className='pages-container job-page-wrapper'>
                 <div className='employee-job-content'>
                     <div className='employee-job-title-box'>
                         <div className='job-title-and-logo'>
@@ -31,7 +31,7 @@ class JobAndPay extends React.Component {
                         <div className='job-details-box'>
                             <div className='job-table-element'>
                                 <p>Job Title</p>
-                                <input name="" type="text" value={salary.position}/>
+                                <input name="" type="text" value={user.salary.position}/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Pensum</p>
@@ -39,7 +39,7 @@ class JobAndPay extends React.Component {
                             </div>
                             <div className='job-table-element'>
                                 <p>Salary</p>
-                                <input name="" type="text" value={salary.gross_month}/>
+                                <input name="" type="text" value={user.salary.gross_month}/>
                             </div>
                         </div>
 
@@ -64,19 +64,19 @@ class JobAndPay extends React.Component {
 
                         <div className='job-table-element'>
                             <p>Street</p>
-                            <input name="" type="text" value='-' />
+                            <input name="" type="text" value={user.company.street} />
                         </div>
                         <div className='job-table-element'>
                             <p>House Number</p>
-                            <input name="" type="text" value='-' />
+                            <input name="" type="text" value={user.company.house_number} />
                         </div>
                         <div className='job-table-element'>
                             <p>Postal Code</p>
-                            <input name="" type="text" value='-' />
+                            <input name="" type="text" value={user.company.postal_code} />
                         </div>
                         <div className='job-table-element'>
                             <p>City</p>
-                            <input name="" type="text" value='-' />
+                            <input name="" type="text" value={user.company.city} />
                         </div>
                 </div>
 
