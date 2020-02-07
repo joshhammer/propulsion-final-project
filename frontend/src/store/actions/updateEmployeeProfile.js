@@ -16,9 +16,10 @@ export const updateEmployeeProfile = (updatedData, token) => async (dispatch, ge
         body: JSON.stringify(body)
     }
     const response = await fetch(url, config)
+    const data = await response.json()
     const action = {
         type: UPDATE_EMPLOYEE_PROFILE,
-        payload: body
+        payload: data
     }
     dispatch(action)
 }
