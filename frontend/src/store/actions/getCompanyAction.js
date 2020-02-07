@@ -4,7 +4,7 @@ export const getCompanyAction = () => async (dispatch, getState) => {
     const token = localStorage.getItem("access");
     const url = 'https://razzpay.propulsion-learn.ch/api/company/';
     const headers = new Headers ({
-        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/json',
         "Authorization": "Bearer " + token,
     })
     const config = {

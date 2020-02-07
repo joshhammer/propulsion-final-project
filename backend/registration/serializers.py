@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from rest_framework import serializers
 
 from adminprofile.models import AdminProfile
+from company.models import Company
 from emails.models import Email
 from employeeprofile.models import EmployeeProfile
 from registration.models import Registration, code_generator
@@ -70,6 +71,24 @@ class RegistrationSerializer(serializers.Serializer):
             user=new_user
         )
         new_adminprofile.save()
+
+
+        # Create new company instance and assign admin_profile to new admin_profile, other fields have placeholder values
+        new_company = Company(
+            adminprofile = new_adminprofile,
+            name="Please enter your company's name",
+            house_number="Please enter your company's house number",
+            street="Please enter your company's street",
+            city="Please enter your company's city",
+            postal_code="Please enter your company's postal code",
+            country="Please enter your company's country",
+            poc_name="Please enter your contact person's name",
+            poc_phone="Please enter your contact person's phone number",
+            poc_email="Please enter your contact person's email",
+            bank_name="Please enter the name of your company's bank",
+            iban="Please enter your company's bank account IBAN",
+        )
+        new_company.save()
 
         registration = Registration(
             user=new_user,

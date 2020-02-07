@@ -24,8 +24,11 @@ const LandingPage = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (state.registrationEmail) {
-            await props.dispatch(registrationAction(state.registrationEmail))
-            
+            const response = await props.dispatch(registrationAction(state.registrationEmail))
+            console.log(response)
+            if(response.status === 200) {
+                props.history.push('/signupcompany')
+            }
         }
         if (state.email && state.password) {
             await props.dispatch(loginAction(state.email, state.password))
