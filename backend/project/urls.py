@@ -33,6 +33,7 @@ urlpatterns = [
     path('api/salary/', include('salary.urls')),
     path('api/employees/', include('user.urls')),
 
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

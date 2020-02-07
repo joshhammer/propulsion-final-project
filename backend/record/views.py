@@ -79,6 +79,8 @@ class ListDatesPaid(ListAPIView):
         return Record.objects.filter(company_id=self.request.user.company_id).order_by('date_paid').distinct('date_paid')
 
 
+
+
 class GetTotalDebitsPerPayPeriod(APIView):
 
     def get(self):
@@ -96,6 +98,24 @@ class ListAllUserRecords(ListAPIView):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class GetSingleRecord(APIView):
+    def get(self, request, *args, **kwargs):
+        record_id = self.kwargs.get('record_id')
+        return Response(RecordSerializer(Record.objects.get(id=record_id)).data)
 
 
 
