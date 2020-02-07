@@ -9,7 +9,7 @@ from record.serializers import RecordPayrollSerializer, RecordSalaryEmployeeSeri
 from rest_framework import status
 from rest_framework.response import Response
 
-from salary.permissions import IsAdmin
+# Testing Git
 
 
 class RecordRunpayroll(CreateAPIView):
@@ -50,7 +50,7 @@ class ListRecordsByEmployee(ListAPIView):
     #permission_classes = [IsAdminList]
 
     def get_queryset(self):
-        # If no search string passed in url returns all records of admin's company
+        # If no user_id passed in url returns all records of admin's company
         if not self.request.query_params.get('user_id', None):
             return Record.objects.filter(company_id=self.request.user.company_id).order_by('date_paid')
 
