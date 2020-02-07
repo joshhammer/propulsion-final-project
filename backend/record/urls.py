@@ -15,7 +15,7 @@ urlpatterns = [
 
     path('dates-paid/', ListDatesPaid.as_view(), name='list-dates-paid'),
 
-    path ('employee/<int:record_id>/', GetSingleRecord.as_view(), name='list-paid-pdf')
+    path ('employee/<int:record_id>/', GetSingleRecord.as_view(), name='list-paid-pdf'),
 
     path('all/', ListAllUserRecords.as_view(), name='list-all-user-records')
 ]
