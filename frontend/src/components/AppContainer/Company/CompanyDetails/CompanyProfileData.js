@@ -11,12 +11,11 @@ class CompanyProfileData extends React.Component {
 
     render() {
         const {inputState, readonly, saveData} = this.props;
-        console.log('input state: ', inputState)
         const {name, house_number, street, city, country, postal_code, legal_number, poc_name, poc_email, bank_name, iban, bic} = inputState
-        console.log('xxx', this.props.company)
         const company = this.props.company;
         return (
             <div className='company-profile-data-container'>
+                <h3 className='profile-data-section-title'>Address Information</h3>
                 <div className='profile-table-element'>
                     <p>Name</p>
                     <input name="name" type="text" value={readonly ? company.name : name} readOnly={readonly}
@@ -56,12 +55,13 @@ class CompanyProfileData extends React.Component {
                            id={readonly ? '' : 'editable-input'}/>
                 </div>
                 <div className='profile-table-element'>
-                    <p>Legal Number</p>
+                    <p>Company UID</p>
                     <input name='legal_number' type="text" value={readonly ? company.legal_number : legal_number}
                            readOnly={readonly}
                            onChange={saveData}
                            id={readonly ? '' : 'editable-input'}/>
                 </div>
+                <h3 className='profile-data-section-title'>Contact Person</h3>
                 <div className='profile-table-element'>
                     <p>Contact Person</p>
                     <input name='poc_name' type="text" value={readonly ? company.poc_name : poc_name}
@@ -76,6 +76,7 @@ class CompanyProfileData extends React.Component {
                            onChange={saveData}
                            id={readonly ? '' : 'editable-input'}/>
                 </div>
+                <h3 className='profile-data-section-title'>Banking Details</h3>
                 <div className='profile-table-element'>
                     <p>Bank Name</p>
                     <input name='bank_name' type="text" value={readonly ? company.bank_name : bank_name}

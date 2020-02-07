@@ -1,4 +1,4 @@
-import {CREATE_EMPLOYEE, GET_ALL_USERS, GET_SINGLE_USER, UPDATE_EMPLOYEE_PROFILE} from '../actionTypes';
+import {CREATE_EMPLOYEE, GET_ALL_USERS, GET_SINGLE_USER, UPDATE_EMPLOYEE_PROFILE, SUBMIT_NEW_EMPLOYEE} from '../actionTypes';
 
 const initialState = {
     user: {
@@ -35,6 +35,12 @@ export const userReducer = (state=initialState, action) => {
         }
     }
     if (action.type === UPDATE_EMPLOYEE_PROFILE) {
+        return {
+            ...state,
+            user: action.payload
+        }
+    }
+    if (action.type === SUBMIT_NEW_EMPLOYEE) {
         return {
             ...state,
             user: action.payload

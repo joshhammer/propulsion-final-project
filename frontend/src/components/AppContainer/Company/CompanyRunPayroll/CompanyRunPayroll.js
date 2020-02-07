@@ -1,19 +1,38 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './CompanyRunPayroll.scss';
 import TableRowPayroll from "./TablerowPayroll/TablerowPayroll";
 import AuthenticationButton from "../../../reusable-components/buttons/AuthenticationButton";
 import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
+import PayRollConfirm from "./PayRollConfirm/PayRollConfirm";
+import {postPayrollAction} from "../../../../store/actions/postPayroll";
 
 const CompanyRunPayroll = (props) => {
     useEffect(() => {
         props.dispatch(getAllUsersAction())
     }, []);
 
+    const [isOpen, setisOpen] = useState(false);
+
+    const toggleOpen = () => {
+        setisOpen(isOpen => !isOpen)
+    };
+
+    const handleSubmit = async () => {
+        const response = await props.dispatch(postPayrollAction(props.users));
+        if (response.status === 200) {
+            props.history.push('payroll/success');
+        }
+    };
+
     let total = 0;
 
     return (
         <div className="payroll-container pages-container">
+            {isOpen &&
+            <div className={"company-payroll-modal-content"}>
+                <PayRollConfirm isOpen={toggleOpen} amount={total} onClick={handleSubmit}/>
+            </div>}
             <div className="payroll-header">
                 <h1>Payroll period February-March 2020</h1>
                 <h3>due on 25 March 2020</h3>
@@ -45,7 +64,7 @@ const CompanyRunPayroll = (props) => {
             </div>
             <div className="payroll-footer">
                 <div className="run-payroll">
-                    <AuthenticationButton content={"Run Payroll"}/>
+                    <AuthenticationButton content={"Run Payroll"} onClick={toggleOpen}/>
                 </div>
                 <h2>Total: CHF {total}</h2>
             </div>

@@ -1,9 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import './CompanySidebar.scss';
 import '../../AppContainer.scss';
+import LogoutButton from "../../../reusable-components/buttons/LogoutButton";
+import {connect} from "react-redux";
 
-const CompanySidebar = () => {
+const CompanySidebar = (props) => {
+
+    const handleClick = () => {
+        localStorage.clear();
+        props.history.push('/');
+        window.location.reload();
+    };
+
     return (
         <div className="company-sidebar-container">
             <div className="company-logo">
@@ -19,10 +28,10 @@ const CompanySidebar = () => {
                 <Link className="sidebar-link" to="/company/details">Company Info</Link>
                 <Link className="sidebar-link" to="/company/documents">Documents</Link>
                 <Link className="sidebar-link" to="/company/reports">Reports</Link>
+                <LogoutButton onClick={handleClick}/>
             </div>
-            {/* <div className="sidebar-placeholder"></div> */}
         </div>
     )
 }
 
-export default CompanySidebar;
+export default withRouter(connect()(CompanySidebar));
