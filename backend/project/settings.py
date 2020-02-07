@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    # TODO make sure all apps are registered
     'fullurl',
     'user',
     'registration',
