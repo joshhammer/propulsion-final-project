@@ -38,7 +38,7 @@ componentDidMount() {
                         {
                             records && records.map((payslip, index)=>{
                                 return <Payslip key={ index } paid={payslip.date_paid} payperiod_start={payslip.payperiod_start}
-                                    payperiod_end={payslip.payperiod_end}/>
+                                    payperiod_end={payslip.payperiod_end} pdfstorage={payslip.pdfstorage}/>
                             })
                         }
                     </div>
