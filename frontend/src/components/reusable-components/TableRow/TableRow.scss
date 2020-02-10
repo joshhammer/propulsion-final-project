@@ -2,18 +2,24 @@
     border: solid 1px var(--mainWhite);
     background-color: var(--mainWhite);
     border-radius: 8px;
-    height: 40px;
+    height: 7%;
     margin-bottom: 1%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
+
+    &-element {
+        width: 30%;
+        display: flex;
+        justify-content: space-evenly;
+    }
 
     &:hover {
         background-color: var(--mainGreen);
     }
 
-    & h3 {
+    & p {
         color: var(--mainBlue);
 
         &:hover {
@@ -21,14 +27,4 @@
 
         }
     }
-}
-
-.tablerow-name {
-    margin-left: 10%;
-    width: 30%;
-}
-
-.tablerow-role {
-    margin-left: 10%;
-    width: 30%;
 }

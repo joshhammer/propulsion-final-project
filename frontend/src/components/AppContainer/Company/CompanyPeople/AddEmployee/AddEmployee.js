@@ -36,7 +36,7 @@ const AddEmployee = (props) => {
             <Zoom duration={300}>
                 <div className="dialog-container">
                         <div className="dialog-container-actions">
-                            <h2>Invite an employee:</h2>
+                            <h2>Invite an employee</h2>
                             <form onSubmit={handleSubmit}>
                                 <InputField content={"Firstname"} name={"first_name"} onChange={handleChange}
                                             value={newEmployee.first_name}/>
@@ -54,7 +54,6 @@ const AddEmployee = (props) => {
                                             value={newEmployee.position}/>
                                 <div className={"dialog-buttons"}>
                                     <AuthenticationButton content={"Save"} type={'submit'}/>
-                                    <span className="span-dialog"/>
                                     <AuthenticationButton content={"Cancel"} onClick={props.isOpen}/>
                                 </div>
                             </form>
