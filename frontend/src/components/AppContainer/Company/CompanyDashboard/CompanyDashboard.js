@@ -2,8 +2,15 @@ import React from "react";
 import {connect} from "react-redux";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
+import { getCompanyAction } from '../../../../store/actions/getCompanyAction'
+import { getUserAction } from '../../../../store/actions/getUserAction'
 
 class CompanyDashboard extends React.Component {
+
+    componentDidMount() {
+        const token = this.props.tokens.access
+        this.props.dispatch(getUserAction(token))
+    }
 
     render() {
         return (
@@ -17,7 +24,7 @@ class CompanyDashboard extends React.Component {
                     </div>
                     <div className='company-dashboard-content'>
                         <div className='company-dashboard-welcome-box'>
-                            <h1>Good day, ...!</h1>
+                            <h1>Good day, {this.props.user.first_name}!</h1>
                             <p>Here's what's been going on lately..</p>
                         </div>
                         <div className='company-dashboard-card-container'>
@@ -50,4 +57,11 @@ class CompanyDashboard extends React.Component {
     }
 }
 
-export default connect()(CompanyDashboard)
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+        tokens: state.loginReducer.tokens
+    }
+}
+
+export default connect(mapStateToProps)(CompanyDashboard)
