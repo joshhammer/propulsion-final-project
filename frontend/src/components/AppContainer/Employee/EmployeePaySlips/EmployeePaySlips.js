@@ -1,9 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Payslip from './Payslip'
+import { getRecordsAction } from '../../../../store/actions/getRecordsAction'
 import './EmployeePaySlips.scss'
 
 class EmployeePaySlips extends React.Component {
+
+componentDidMount() {
+    const token = this.props.tokens.access
+    this.props.dispatch(getRecordsAction(token))
+}
+
     render() {
+        const records = this.props.records
         return(
             <div className='employee-payslips-wrapper pages-container'>
                 <div className='employee-payslips-container'>
@@ -25,15 +34,13 @@ class EmployeePaySlips extends React.Component {
                                 <h3>Download</h3>
                             </div>
                         </div>
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
-                        <Payslip />
+                        {/* <Payslip /> */}
+                        {
+                            records && records.map((payslip, index)=>{
+                                return <Payslip key={ index } paid={payslip.date_paid} payperiod_start={payslip.payperiod_start}
+                                    payperiod_end={payslip.payperiod_end} pdfstorage={payslip.pdfstorage}/>
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -41,4 +48,12 @@ class EmployeePaySlips extends React.Component {
     }
 }
 
-export default EmployeePaySlips
+const mapStateToProps = (state) => {
+    console.log('State from Payslips', state)
+    return {
+        records: state.recordsReducer.records,
+        tokens: state.loginReducer.tokens
+    }
+}
+
+export default connect(mapStateToProps)(EmployeePaySlips)

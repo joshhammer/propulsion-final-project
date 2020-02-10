@@ -1,59 +1,59 @@
 .signuppage-container {
     background-color: var(--mainGreen);
     height: 100%;
-}
-
-.signuppage-header {
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-
-    & h1 {
-        font-family: var(--mainFontFamily);
-    }
-
-    & h3 {
-        font-family: var(--secondaryFontFamily);
-        color: var(--mainBlue);
-    }
-}
-
-#razzpay-main-title {
-    color: var(--mainBlue);
-    font-size: 6rem;
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
-    text-shadow: 0 0 5px var(--mainBlue);
-}
-
-#signup-subtitle-subtitle {
-    font-family: var(--secondaryFontFamily);
-    font-weight: 300;
-    font-style: italic;
-    font-size: 1.5rem;
-    width: 60%;
-    text-align: center;
-    text-shadow: 0 0 5px var(--mainBlue);
-}
-
-.signupauthentication-container {
-    background-color: var(--mainBlue);
-    height: 80%;
     display: flex;
     justify-content: center;
+}
+
+.signup-authentication-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    padding: 1rem;
+    background-color: var(--mainBlue);
     box-shadow: 0px 0px 20px black;
 }
 
-.signupadmin {
+.company-signup-title-box {
+        & h1 {
+        margin-bottom: 1rem;
+        font-family: 'Dancing Script', cursive;
+        color: var(--mainWhite);
+        text-align: center;
+        font-size: 3.5rem;
+        text-shadow: var(--boxShadow);
+    }
+
+    & h3 {
+        color: var(--mainWhite);
+        font-style: italic;
+        text-align: center;
+        // margin-bottom: 3rem;
+        font-size: 1rem;
+        text-shadow: var(--boxShadow);
+    }
+
+    & a {
+        color: var(--mainGreen);
+        text-decoration: none;
+        transition: all .3s;
+        text-shadow: var(--boxShadow);
+        &:hover {
+            text-shadow: 0 0 5px var(--mainGreen);
+            color: var(--lightGreen);
+        }
+    }
+}
+
+.signup-company {
     display: flex;
-    height: 90%;
-    width: 35%;
+    flex-direction: column;
+    width: 100%;
     justify-content: center;
-    border-right: 1px solid var(--mainWhite);
+    align-items: center;
 
     & form {
         display: flex;
@@ -61,39 +61,41 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+    }
 
-        .input-span {
-            height: 25px;
-        }
+    & input {
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        height: 30px;
+        width: 50%;
+        padding-left: .5rem;
+        margin-bottom: 1rem;
+        font-size: .9rem;
+        letter-spacing: 1px;
+        box-shadow: var(--boxShadow);
+        background: var(--mainWhite);
+    }
+}
+
+.employee-validate-submitBtn {
+    height: 30px;
+    width: 125px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background-color: var(--mainGreen);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px black;
+    transition: all .2s;
+    &:hover {
+        background: var(--lightGreen); 
+    }
+    &:active {
+        box-shadow: 0 0 0 black;
     }
 }
 
 
-.footer {
-    height: 20%;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 15px;
-
-    &-left {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    &-spaceholder {
-        width: 30%;
-    }
-
-    &-right {
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
-        & img {
-            width: 20px;
-            height: 20px;
-        }
-    }
-}
 
 

@@ -15,30 +15,27 @@ from project import settings
 from salary.models import Salary
 from record.models import Record
 from user.models import User
+from django.core.files.uploadedfile import SimpleUploadedFile
+
 
 User = get_user_model()
 
+# paid_employee = (User, Record):
 
-def payslip_pdf(request):
-    payslip = get_object_or_404(User, pk=3)
-    salary = get_object_or_404(Salary, user=payslip)
-    record = get_object_or_404(Record, user=payslip)
-    response = HttpResponse(content_type="application/pdf")
-    response['Content-Disposition'] = "inline; filename={date}-{name}-payslip.pdf".format(
-        date=payslip.date_created.strftime('%Y-%m-%d'),
-        name=slugify(payslip.email),
-    )
+
+def payslip_pdf(paid_employee, record, host_url):
+    salary = get_object_or_404(Salary, user=paid_employee)
+
     html = render_to_string(
         template_name="payslip_pdf.html", 
-        context={'payslip': payslip, 'salary': salary, 'record': record,
+        context={'payslip': paid_employee, 'salary': salary, 'record': record,
                     })
 
-    host_url = request.META.get('wsgi.url_scheme') + '://' + request.META['HTTP_HOST']
     css = CSS(host_url + settings.STATIC_ROOT + 'payslip_pdf.css')
 
     # print(request.META.get('wsgi.url_scheme') + '://' + request.META['HTTP_HOST'], settings.STATIC_ROOT)
 
     font_config = FontConfiguration()
-    HTML(string=html).write_pdf(response, stylesheets=[css], font_config=font_config)
-    return response
-
+    pdf_file = HTML(string=html).write_pdf(stylesheets=[css], font_config=font_config)
+    record.pdfstorage = SimpleUploadedFile(f'Report-{record.date_paid.strftime("%d-%m-%Y")}.pdf', pdf_file, content_type='application/pdf')
+    record.save()
