@@ -43,13 +43,12 @@ class EmployeeDashboard extends React.Component {
                                     <li>Kinderzulagen.doc</li>
                                     <li>Ferienantrag.xls</li>
                                     <li>Selbsteinschätzung.doc</li>
-                                    <li>Selbsteinschätzung.doc</li>
                                 </ul>
                             </div>
                             <div className='dashboard-card'>
                                 <h3>Current payslip</h3>
                                 <ul>
-                                    <li>Lohnabrechnung_2020_01_25.pdf</li>
+                                    <li>Lohnabrechnung_2020_01.pdf</li>
                                 </ul>
                             </div>
                         </div>

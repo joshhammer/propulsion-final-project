@@ -35,6 +35,7 @@
         padding-bottom: .75rem;
         border-bottom: 1px solid var(--mainGreen);
         letter-spacing: 1px;
+        font-weight: 300;
     }
 }
 
@@ -45,12 +46,17 @@
     overflow: scroll;
 }
 
+.employee-profile-data-container::-webkit-scrollbar {
+    display: none;
+}
+
 .profile-data-section-title {
     padding-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-shadow: 0 0 10px black;
     color: var(--mainWhite);
-    letter-spacing: 1px;;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 .profile-table-element {
@@ -98,7 +104,7 @@
     font-size: 1rem;
     letter-spacing: 1px;
     box-shadow: 0 0 10px black;
-    background: rgb(255, 96, 234);
+    background: var(--mainWhite);
 }
 
 
@@ -107,7 +113,7 @@
     background: var(--mainBlue);
     color: var(--mainWhite);
     height: 35px;
-    width: 50px;
+    // width: 50px;
     border-radius: 25px;
     // margin-left: 10rem;
     transition: all .3s;
@@ -124,13 +130,14 @@
     background: var(--mainGreen);
     color: var(--mainBlue);
     height: 35px;
-    width: 50px;
+    // width: 50px;
     border-radius: 25px;
     margin-left: 6rem;
     transition: all .3s;
     &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
+        border: 1px solid var(--mainGreen);
+        background: var(--mainBlue);
+        color: var(--mainWhite);
     }
     &:focus {
         outline: none;
@@ -141,18 +148,22 @@
     background: var(--mainGreen);
     color: var(--mainBlue);
     height: 35px;
-    width: 50px;
+    // width: 50px;
     border-radius: 25px;
     margin-left: 1rem;
     transition: all .3s;
     &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
+        border: 1px solid var(--mainGreen);
+        background: var(--mainBlue);
+        color: var(--mainWhite);
     }
     &:focus {
         outline: none;
     }
 }
 
-
+.profile-edit-btn, .profile-save-btn, .profile-cancel-btn {
+    font-size: .9rem;
+    width: 60px;
+}
 
