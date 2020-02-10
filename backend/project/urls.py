@@ -33,8 +33,7 @@ urlpatterns = [
     path('api/record/', include('record.urls')),
     path('api/salary/', include('salary.urls')),
     path('api/employees/', include('user.urls')),
-
-
+    path('api/documents/', include('document.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
