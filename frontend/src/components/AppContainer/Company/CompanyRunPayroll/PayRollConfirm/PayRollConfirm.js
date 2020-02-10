@@ -8,13 +8,13 @@ const PayRollConfirm = (props) => {
     console.log(props.amount)
     return (
         <>
-            <div className="dialog-container">
-                <div className="dialog-container-actions">
+            <div className="confirm-dialog-container">
+                <div className="confirm-dialog-container-actions">
                     <h2>Confirm your payment of: CHF {props.amount}</h2>
                     <InputField type={"password"} content={"Password"} name={"password"}/>
-                    <div className={"dialog-buttons"}>
+                    <div className={"confirm-dialog-buttons"}>
                         <AuthenticationButton content={"Pay"} type={'submit'} onClick={props.onClick}/>
-                        <span className="span-dialog"/>
+                        <span className="confirm-span-dialog"/>
                         <AuthenticationButton content={"Cancel"} onClick={props.isOpen}/>
                     </div>
                 </div>
