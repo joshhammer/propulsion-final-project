@@ -16,23 +16,24 @@ const CompanyTableRow = (props) => {
     return (
         <div className="company-reportrow-container">
             <div className="company-reportrow">
+                <div className="company-reportrow-details-more">
+                    <ReportButton content={hidden ? "more.." : "less.."} toggle={toggleShow}/>
+                </div>
                 <div className="company-reportrow-details">
-                    <div className="company-reportrow-details-date">
+                    <div className="company-reportrow-details-field">
                         <p>{props.payDate.date_paid}</p>
                     </div>
-                    <div className="company-reportrow-details-more">
-                        <ReportButton content={hidden ? "View Details" : "Hide Details"} toggle={toggleShow}/>
+                    <div className="company-reportrow-details-field">
+                        <p>Regular</p>
+                    </div>
+                    <div className="company-reportrow-details-field">
+                        <p>{props.payDate.payperiod_start}</p>
+                    </div>
+                    <div className="company-reportrow-details-field">
+                        <p>CHF {props.payDate.total_salary_paid}</p>
                     </div>
                 </div>
-                <div className="company-reportrow-type">
-                    <p>Regular</p>
-                </div>
-                <div className="company-reportrow-period">
-                    <p>{props.payDate.payperiod_start}-{props.payDate.payperiod_end}</p>
-                </div>
-                <div className="company-reportrow-debit">
-                    <p>CHF {props.payDate.total_salary_paid}</p>
-                </div>
+
             </div>
             <div className="company-reportrow-toggle">
                 <CardContent isHidden={hidden} payDate={props.payDate.date_paid}/>
@@ -48,3 +49,4 @@ const mapStatetoProps = state => {
 };
 
 export default connect(mapStatetoProps)(CompanyTableRow)
+

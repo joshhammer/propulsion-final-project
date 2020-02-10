@@ -13,33 +13,37 @@
     &.hidden {
         max-height: 0;
     }
-}
 
-.card-content-row {
-    width: 100%;
-    overflow: scroll;
-}
+    &-row {
+        width: 100%;
+        overflow: scroll;
+    }
 
-.card-content-header {
-    border: solid 1px var(--mainGreen);
-    background-color: var(--mainGreen);
-    border-radius: 8px;
-    height: 30px;
-    margin-bottom: 1%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+    &-header {
+        border: solid 1px var(--mainGreen);
+        background-color: var(--mainGreen);
+        border-radius: 8px;
+        height: 30px;
+        margin-bottom: 1%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
 
 
-    & h3 {
-        color: var(--mainBlue);
-        margin-left: 5%;
-        width: 25%;
+        &-element {
+            width: 25%;
+            display: flex;
+            justify-content: space-evenly;
 
-        &:hover {
-            color: var(--mainBlue);
-
+            & h3 {
+                color: var(--mainBlue);
+            }
         }
     }
 }
+
+.card-content::-webkit-scrollbar {
+    display: none;
+}
+

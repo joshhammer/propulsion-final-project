@@ -46,6 +46,10 @@
     overflow: scroll;
 }
 
+.company-profile-data-container::-webkit-scrollbar {
+    display: none;
+}
+
 .profile-data-section-title {
     padding-top: 1rem;
     margin-bottom: 1rem;
