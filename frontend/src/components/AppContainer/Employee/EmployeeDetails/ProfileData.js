@@ -93,12 +93,12 @@ class ProfileData extends React.Component {
                         onChange={saveData}
                         id={readonly ? '' : 'editable-input'} />
                 </div>
-                <div className='profile-table-element'>
+                {/* <div className='profile-table-element'>
                     <p>BIC</p>
                     <input name='bic' type="text" value={readonly ? user.bic : bic} readOnly={readonly}
                         onChange={saveData}
                         id={readonly ? '' : 'editable-input'} />
-                </div>
+                </div> */}
             </div>
         )
     }
