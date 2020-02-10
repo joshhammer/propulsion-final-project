@@ -26,6 +26,7 @@
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
+        font-weight: 300;
     }
 }
 
@@ -41,6 +42,10 @@
     padding: 1rem 1rem 5rem 1rem;
     height: 80%;
     overflow: scroll;
+    & h3 {
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
 }
 
 .employee-job-details-container::-webkit-scrollbar {
