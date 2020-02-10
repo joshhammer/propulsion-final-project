@@ -4,18 +4,23 @@ import CompanyDropzone from "../../../reusable-components/CompanyDropzone/Compan
 
 const CompanyDocuments = () => {
     return (
-        <div className="company-documents-container pages-container">
-            <div className="company-documents-manager">
-                <h1>DocZone</h1>
-                <h2>Manage & share documents with employees.</h2>
-            </div>
-            <div className="company-documents-share">
-                <h3>Drop & share with employees.</h3>
-                <CompanyDropzone/>
-            </div>
-            <div className="company-documents-share">
-                <h3>Drop & keep private to yourself.</h3>
-                <CompanyDropzone/>
+        <div className="company-documents-wrapper pages-container">
+            <div className='company-documents-content'>
+                <div className='company-documents-title-box'>
+                    <div className='company-documents-title-and-logo'>
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-alt" class="svg-inline--fa fa-file-alt fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"></path></svg>
+                        <h1>Documents</h1>
+                        <CompanyDropzone />
+                    </div>
+                </div>
+                {/* <div className="company-documents-share">
+                    <CompanyDropzone/>
+                </div> */}
+                {/* <div className="company-documents-share">
+                    <h3>Drop & keep private to yourself.</h3>
+                    <CompanyDropzone/>
+                </div> */}
+
             </div>
         </div>
     )

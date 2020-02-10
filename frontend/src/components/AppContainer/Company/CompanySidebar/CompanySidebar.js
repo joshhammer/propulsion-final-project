@@ -13,6 +13,7 @@ const CompanySidebar = (props) => {
         window.location.reload();
     };
 
+    const path = props.history.location.pathname
     return (
         <div className="company-sidebar-container">
             <div className="company-logo">
@@ -22,12 +23,18 @@ const CompanySidebar = (props) => {
                 </div>
             </div>
             <div className="company-sidebar-links">
-                <Link className="sidebar-link" to="/company/dashboard">Dashboard</Link>
-                <Link className="sidebar-link" to="/company/people">People</Link>
-                <Link className="sidebar-link" to="/company/payroll">Run Payroll</Link>
-                <Link className="sidebar-link" to="/company/details">Company Info</Link>
-                <Link className="sidebar-link" to="/company/documents">Documents</Link>
-                <Link className="sidebar-link" to="/company/reports">Reports</Link>
+                <Link className="sidebar-link" to="/company/dashboard"
+                    id={path === '/company/dashboard' ? 'active-sidebar-link' : ''}>Dashboard</Link>
+                <Link className="sidebar-link" to="/company/people"
+                    id={path === '/company/people' ? 'active-sidebar-link' : ''}>People</Link>
+                <Link className="sidebar-link" to="/company/payroll"
+                    id={path === '/company/payroll' ? 'active-sidebar-link' : ''}>Run Payroll</Link>
+                <Link className="sidebar-link" to="/company/details"
+                    id={path === '/company/details' ? 'active-sidebar-link' : ''}>Company Info</Link>
+                <Link className="sidebar-link" to="/company/documents"
+                    id={path === '/company/documents' ? 'active-sidebar-link' : ''}>Documents</Link>
+                <Link className="sidebar-link" to="/company/reports"
+                    id={path === '/company/reports' ? 'active-sidebar-link' : ''}>Reports</Link>
                 <LogoutButton onClick={handleClick}/>
             </div>
         </div>
