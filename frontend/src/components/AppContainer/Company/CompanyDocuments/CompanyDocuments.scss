@@ -13,6 +13,7 @@
 .company-documents-title-box {
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 2rem;
     height: 20%;
     display: flex;
     align-items: center;
@@ -35,6 +36,22 @@
 .company-documents-title-and-logo {
     display: flex;
     border-bottom: 1px solid var(--mainGreen);
+}
+
+.company-document-upload {
+    display: flex;
+    align-items: center;
+    & svg {
+        color: var(--mainWhite);
+    }
+    & h3 {
+        margin-right: 1rem;
+        text-shadow: 0 0 10px black;
+        font-weight: 400;
+    }
+    & svg:hover {
+        color: var(--mainGreen)
+    }
 }
 
 #document-table-head {
@@ -75,4 +92,11 @@
     width: 30%;
     display: flex;
     justify-content: center;
+    &-left {
+        justify-content: flex-start;
+    }
+    &-right {
+        justify-content: flex-end;
+        padding-right: 2rem;
+    }
 }
