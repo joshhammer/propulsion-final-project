@@ -17,7 +17,7 @@ class CompanyProfileData extends React.Component {
             <div className='company-profile-data-container'>
                 <h3 className='profile-data-section-title'>Address Information</h3>
                 <div className='profile-table-element'>
-                    <p>Name</p>
+                    <p>Company</p>
                     <input name="name" type="text" value={readonly ? company.name : name} readOnly={readonly}
                            onChange={saveData}
                            id={readonly ? '' : 'editable-input'}/>
@@ -70,7 +70,7 @@ class CompanyProfileData extends React.Component {
                            id={readonly ? '' : 'editable-input'}/>
                 </div>
                 <div className='profile-table-element'>
-                    <p>Contact Person Email</p>
+                    <p>Email</p>
                     <input name='poc_email' type="text" value={readonly ? company.poc_email : poc_email}
                            readOnly={readonly}
                            onChange={saveData}

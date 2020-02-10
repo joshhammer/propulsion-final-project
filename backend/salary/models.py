@@ -5,28 +5,40 @@ from django.db import models
 class Salary(models.Model):
 
     gross_month = models.FloatField(
-        verbose_name='gross month'
+        verbose_name='gross month',
+        blank=True,
+        null=True,
     )
 
     ahv_amount = models.FloatField(
-        verbose_name='AHV amount'
+        verbose_name='AHV amount',
+        blank=True,
+        null=True
     )
 
     alv_amount = models.FloatField(
-        verbose_name='ALV amount'
+        verbose_name='ALV amount',
+        blank=True,
+        null=True,
     )
 
     pension = models.FloatField(
-        verbose_name='pension'
+        verbose_name='pension',
+        blank=True,
+        null=True,
     )
 
     net = models.FloatField(
-        verbose_name='net'
+        verbose_name='net',
+        blank=True,
+        null=True,
     )
 
     position = models.CharField(
         verbose_name='position',
-        max_length=200
+        max_length=200,
+        blank=True,
+        null=True,
     )
 
     user = models.OneToOneField(
