@@ -17,10 +17,7 @@ class CreateDocument(CreateAPIView):
 
     def perform_create(self, serializer):
         myuser = User.objects.get(id=self.request.user.id)
-        #doc = Document.objects.create(user=self.request.user, **serializer.validated_data)
         doc = Document.objects.create(user_id=myuser.id, **serializer.validated_data)
-        #doc = Document.objects.create(user=self.request.user, **serializer.validated_data)
-
         return doc
 
 
