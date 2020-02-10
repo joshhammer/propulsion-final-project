@@ -5,7 +5,7 @@ class SingleDocument extends React.Component {
         return(
             <div className='employee-document-element'>
                 <div className='documents-helper-div'>
-                    <p>Document Name</p>
+                    <p>{this.props.name}</p>
                 </div>
                 <div className='documents-helper-div'>
                     <a href="#">

@@ -21,26 +21,19 @@ class EmployeeDocuments extends React.Component {
                     <div className='employee-documents-divider'>
                         <div className='employee-documents-left-section'>
                             <h3>Company Documents</h3>
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
+                            <SingleDocument name='Spesenformular.xls'/>
+                            <SingleDocument name='Kinderzulagen.doc'/>
+                            <SingleDocument name='Sicherheitsbestimmungen.doc'/>
+                            <SingleDocument name='Verhaltensregeln.doc'/>
                         </div>
                         <div className='employee-documents-right-section'>
                             <h3>Your Documents</h3>
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
-                            <SingleDocument />
+                            <SingleDocument name='Spesenabrechnung_mai.xls'/>
+                            <SingleDocument name='Arztzeugnis.doc'/>
+                            <SingleDocument name='Anmeldung_Sommerfest.doc'/>
+                            <SingleDocument name='Spesenabrechnung_märz.xls'/>
+                            <SingleDocument name='Quittungen.pdf'/>
+
                         </div>
                     </div>
                 </div>
