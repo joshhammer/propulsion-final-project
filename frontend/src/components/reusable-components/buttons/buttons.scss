@@ -6,7 +6,7 @@
     background-color: var(--mainGreen);
     font-size: 1rem;
     outline: none;
-    box-shadow: 0 0 10px black;
+    box-shadow: var(--boxShadow);
     transition: all .2s;
     &:hover {
         background: var(--lightGreen); 
