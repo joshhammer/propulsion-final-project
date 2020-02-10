@@ -21,19 +21,24 @@ const CompanyReports = (props) => {
                     <h2>Summaries</h2>
                 </div>
                 <div className="company-reports-table-header">
-                    <h3>Pay Date</h3>
-                    <h3>Type</h3>
-                    <h3>Description</h3>
-                    <h3>Debit</h3>
+                    <div className="company-reports-table-header-property-placeholder">
+                        <div/>
+                    </div>
+                    <div className={"company-reports-table-header-property-container"}>
+                        <div className="company-reports-table-header-property-container-element"><h3>Pay Date</h3></div>
+                        <div className="company-reports-table-header-property-container-element"><h3>Type</h3></div>
+                        <div className="company-reports-table-header-property-container-element"><h3>Description</h3></div>
+                        <div className="company-reports-table-header-property-container-element"><h3>Debit</h3></div>
+                    </div>
                 </div>
                 <div className="company-reports-table-content">
                     {
                         !props.payDates.length > 0 ? (
                             <ReactLoading type={"spin"}/>
                         ) : (<div className="company-reports-table-content-2">
-                            {props.payDates.map((payDate, i) => {
-                                return <CompanyTableRow payDate={payDate} key={i}/>
-                            })}</div>
+                                {props.payDates.map((payDate, i) => {
+                                    return <CompanyTableRow payDate={payDate} key={i}/>
+                                })}</div>
                         )
                     }
                 </div>

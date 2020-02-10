@@ -24,11 +24,35 @@
 
     &-table-header {
         display: flex;
-        justify-content: space-around;
-    }
+        justify-content: center;
+        align-items: center;
+        padding: 1%;
+        border-radius: 8px;
+        border-bottom: 1px solid var(--mainBlue);
+        background-color: var(--mainGreen);
+        color: var(--mainBlue);
 
-    &-table-container {
+        &-property-placeholder {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 35px;
+            width: 110px;
+            font-size: 1rem;
+            outline: none;
+        }
 
+        &-property-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            &-element {
+                width: 25%;
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
 
     &-table-content {
