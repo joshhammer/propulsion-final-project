@@ -34,28 +34,5 @@
 
 .company-documents-title-and-logo {
     display: flex;
-    align-items: center;
     border-bottom: 1px solid var(--mainGreen);
 }
-
-.company-documents-manager {
-    border-bottom: 3px solid var(--mainWhite);
-    padding-bottom: 2%;
-    margin-top: 5%;
-    margin-bottom: 2%;
-
-}
-
-.company-documents-share {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-}
-
-//.company-documents-private {
-//    border: 1px solid red;
-//    height: 30%;
-//    width: 100%;
-//}
