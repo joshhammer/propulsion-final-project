@@ -66,6 +66,12 @@ class RegistrationSerializer(serializers.Serializer):
         )
         new_user.save()
 
+        # Create new salary instance
+        new_salary = Salary(
+            user=new_user
+        )
+        new_salary.save()
+
         # Create new adminprofile instance
         new_adminprofile = AdminProfile(
             user=new_user

@@ -39,15 +39,17 @@ const CompanyPeople = (props) => {
             </div>
             <div className="company-people-table-container">
                 <div className="company-people-table-header">
-                    <h2>Name</h2>
-                    <h2 id="table-role">Role</h2>
+                    <div><h2>Name</h2></div>
+                    <div><h2 id="table-role">Role</h2></div>
+                    <div><h2>Email</h2></div>
                 </div>
                 <div className="company-people-table-content">
                     {
                         props.users &&
                         props.users.map((user, i) => {
+                            console.log('user: ', user)
                             return <TableRow key={i} firstName={user.first_name} lastName={user.last_name}
-                                             salary={user.salary.position}/>
+                                             position={user.salary.position} email={user.email}/>
                         })
                     }
                 </div>

@@ -1,4 +1,4 @@
-.dialog-container {
+.confirm-dialog-container {
     height: 40%;
     width: 40%;
     position: fixed;
@@ -11,36 +11,36 @@
     align-items: center;
     flex-direction: column;
     background-color: var(--mainWhite);
-}
 
-.dialog-container-actions {
-    display: flex;
-    width: 70%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & h2 {
-        height: 10%;
-        color: var(--mainBlue);
-    }
-
-    & form {
-        height: 80%;
-        width: 90%;
+    &-actions {
         display: flex;
+        width: 70%;
+        height: 100%;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+
+        & h2 {
+            height: 10%;
+            color: var(--mainBlue);
+        }
+
+        & form {
+            height: 80%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
     }
 }
 
-.span-dialog {
+.confirm-span-dialog {
     margin: 1%;
 }
 
-.dialog-buttons {
+.confirm-dialog-buttons {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -48,7 +48,7 @@
 
 }
 
-.span-buttons-dialog {
+.confirm-span-buttons-dialog {
     margin: 2%;
 }
 

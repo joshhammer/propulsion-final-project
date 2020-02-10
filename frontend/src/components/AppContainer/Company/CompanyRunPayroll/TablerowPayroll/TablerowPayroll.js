@@ -11,19 +11,19 @@ const TableRowPayroll = (props) => {
     return (
         <div className="tablerowpayroll-container">
             <div>
-                <h3>{props.lastName}, {props.firstName}</h3>
+                <p>{props.lastName}, {props.firstName}</p>
             </div>
             <div>
-                <h3>{props.role}</h3>
+                <p>{props.role}</p>
             </div>
             <div>
-                <h3>CHF {salary}</h3>
+                <p>CHF {salary}</p>
             </div>
             <div>
-                <h3>CHF {deductions}</h3>
+                <p>CHF {deductions}</p>
             </div>
             <div>
-                <h3>CHF {subtotal}</h3>
+                <p>CHF {subtotal}</p>
             </div>
         </div>
     )
