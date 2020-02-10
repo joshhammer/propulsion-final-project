@@ -10,7 +10,8 @@ const EmployeeSidebar = (props) => {
 
     const handleClick = () => {
         localStorage.clear();
-        props.history.push('/')
+        props.history.push('/');
+        window.location.reload();
     };
 
     const path = props.history.location.pathname

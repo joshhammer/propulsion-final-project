@@ -8,6 +8,11 @@
     border-bottom: 1px solid var(--mainBlue);
     background-color: var(--mainWhite);
 
+    &-container {
+        width: 100%;
+
+    }
+
     &-details {
         display: flex;
         flex-direction: column;
