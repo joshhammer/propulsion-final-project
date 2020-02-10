@@ -13,41 +13,37 @@
     &.hidden {
         max-height: 0;
     }
+
+    &-row {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    &-header {
+        border: solid 1px var(--mainGreen);
+        background-color: var(--mainGreen);
+        border-radius: 8px;
+        height: 30px;
+        margin-bottom: 1%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+
+        &-element {
+            width: 25%;
+            display: flex;
+            justify-content: space-evenly;
+
+            & h3 {
+                color: var(--mainBlue);
+            }
+        }
+    }
 }
 
 .card-content::-webkit-scrollbar {
     display: none;
 }
 
-.card-content-row {
-    width: 100%;
-    overflow: scroll;
-}
-
-.card-content-row::-webkit-scrollbar {
-    display: none;
-}
-
-.card-content-header {
-    border: solid 1px var(--mainGreen);
-    background-color: var(--mainGreen);
-    border-radius: 8px;
-    height: 30px;
-    margin-bottom: 1%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-
-
-    & h3 {
-        color: var(--mainBlue);
-        margin-left: 5%;
-        width: 25%;
-
-        &:hover {
-            color: var(--mainBlue);
-
-        }
-    }
-}
