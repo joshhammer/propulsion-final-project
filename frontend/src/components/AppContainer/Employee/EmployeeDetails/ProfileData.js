@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { getUserAction } from '../../../../store/actions/getUserAction'
+// import { getCompanyAction } from '../../../../store/actions/getCompanyAction'
+
 import './EmployeeDetails.scss'
 
 class ProfileData extends React.Component {
 
     componentDidMount(){
-        // const userId = this.props.match.params.id
-        // this.props.dispatch(getUserAction(userId))
+        const token = this.props.tokens.access
+        this.props.dispatch(getUserAction(token))
+        // this.props.dispatch(getCompanyAction())
     }
 
     render() {
@@ -101,9 +105,10 @@ class ProfileData extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('State from EmployeeDetails ', state)
     return {
         user: state.userReducer.user,
+        // company: state.companyReducer.company,
+        tokens: state.loginReducer.tokens
     }
 }
 

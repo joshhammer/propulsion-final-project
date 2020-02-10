@@ -1,82 +1,82 @@
 import React from 'react';
-import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
-import InputField from "../reusable-components/input-fields/InputField";
-import instagram from '../../assets/svg/instagram.svg';
-import facebook from '../../assets/svg/facebook.svg';
-import twitter from '../../assets/svg/twitter.svg';
-import linkedin from '../../assets/svg/linkedin.svg';
+import { connect } from 'react-redux';
+// import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
+// import InputField from "../reusable-components/input-fields/InputField";
+import { submitNewEmployeeData } from '../../store/actions/submitNewEmployeeData';
+// import instagram from '../../assets/svg/instagram.svg';
+// import facebook from '../../assets/svg/facebook.svg';
+// import twitter from '../../assets/svg/twitter.svg';
+// import linkedin from '../../assets/svg/linkedin.svg';
 import './SignupEmployee.scss';
+import '../LandingPage/LandingPage.scss'
 
-const SignupEmployee = () => {
-    return (
-        <div className="signuppage-container">
-            <div className="signuppage-header">
-                {/* <img src={logo} alt="logo"/> */}
+class SignupEmployee extends React.Component {
 
-                    <h1 id='razzpay-main-title'>Razzpay</h1>
+    constructor(props) {
+        super(props)
 
-                <h3 id='signup-subtitle'>Fill in the SignUp form to complete the registration <br/>*All fields are mandatory</h3>
-            </div>
-            <div className="signupauthentication-container">
-                <div className="signupemployee">
-                <form className="signupemployee-form">
-                        <InputField content={"*Name"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*Last Name"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*Street Address"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*House Number"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*City"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*Postal Code"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*Country"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*AHV Number"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*IBAN Number"} required={true}/>
-                        <span className="input-span"></span>
-                        
-                        <InputField content={"*Position"} required={true}/>
-                        <span className="input-span"></span>
-                       
-                        {/* <AuthenticationButton content={"Sign Up"}/> */}
-                       
-                    </form>
-                </div>
-                <div className="signupemployeeuser">
-                    <form>
-                        <AuthenticationButton content={"Sign Up"}/>
-                    </form>
-                </div>
-            </div>
-            <div className="footer">
-                <div className="footer-left">
-                    <p>About</p>
-                    <p>Services</p>
-                    <p>Pricing</p>
-                    <p>Jobs</p>
-                </div>
-                <div className="footer-spaceholder"></div>
-                <div className="footer-right">
-                    <img src={instagram} alt="instagram"/>
-                    <img src={facebook} alt="facebook"/>
-                    <img src={twitter} alt="twitter"/>
-                    <img src={linkedin} alt="linkedin"/>
+        this.state = {}
+    }
+    
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    submitData = (e) => {
+        e.preventDefault();
+        console.log('click Submit Data..')
+        this.props.dispatch(submitNewEmployeeData(this.state))
+        this.props.history.push('/signupsuccess')
+    }
+
+    render() {
+        return (
+            <div className="signuppage-container">
+                <div className="signup-authentication-container">
+                        <div className='employee-signup-title-box'>
+                            <h1>Welcome to Razzpay</h1>
+                            <h3>please fill in the form to complete the registration <br />all *fields are mandatory</h3>
+
+                        </div>
+                    <div className="signup-employee">
+
+                        <form className="signup-employee-form">
+                            {/* <input name={'ahv'} placeholder={"*AHV Number"} onChange={this.handleChange} required={true} /> */}
+                            <input name={'first_name'} placeholder={"*Firstname"} onChange={this.handleChange} required={true} />
+                            <input name={'last_name'} placeholder={"*Lastname"} onChange={this.handleChange} required={true} />
+                            <input name={'email'} placeholder={"*Email"} onChange={this.handleChange} required={true} />
+                            <input name={'username'} placeholder={"*Username"} onChange={this.handleChange} required={true} />
+                            
+                            {/* <input name={'street'} placeholder={"*Street"} onChange={this.handleChange} required={true} />
+                            
+                            <input name={'house_number'} placeholder={"*House Number"} onChange={this.handleChange} required={true} />
+                            
+                            <input name={'city'} placeholder={"*City"} onChange={this.handleChange} required={true} />
+                            
+                            <input name={'postal_code'} placeholder={"*Postal Code"} onChange={this.handleChange} required={true} />
+
+                            <input name={'bank_name'} placeholder={"*Bank Name"} onChange={this.handleChange} required={true} />
+                            
+                            <input name={'iban'} placeholder={"*IBAN"} onChange={this.handleChange} required={true} /> */}
+                            
+                            <input name={'code'} placeholder={"*Registration Code"} onChange={this.handleChange} required={true} />
+
+                            <input name={'password'} type='password' placeholder={"*Password"} onChange={this.handleChange} required={true} />
+                            <input name={'password_repeat'} type='password' placeholder={"*Repeat Password"} onChange={this.handleChange} required={true} />
+                            
+                        </form>
+
+                    </div>
+
+                    <button className='employee-validate-submitBtn' onClick={this.submitData}>Submit</button>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default SignupEmployee
+
+export default connect()(SignupEmployee)

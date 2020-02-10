@@ -5,8 +5,8 @@
     justify-content: flex-end;
     align-items: center;
     margin: 1% auto;
-    max-height: 150px;
-    overflow: hidden;
+    max-height: 300px;
+    overflow: scroll;
     width: 95%;
     transition: max-height 0.5s ease-in-out;
 
@@ -17,4 +17,29 @@
 
 .card-content-row {
     width: 100%;
+    overflow: scroll;
+}
+
+.card-content-header {
+    border: solid 1px var(--mainGreen);
+    background-color: var(--mainGreen);
+    border-radius: 8px;
+    height: 30px;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+
+    & h3 {
+        color: var(--mainBlue);
+        margin-left: 5%;
+        width: 25%;
+
+        &:hover {
+            color: var(--mainBlue);
+
+        }
+    }
 }
