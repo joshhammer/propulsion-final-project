@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.payroll-container::-webkit-scrollbar {
+    display: none;
+}
+
 .payroll-header {
     height: 20%;
     width: 100%;
@@ -48,6 +52,10 @@
     align-items: center;
     width: 90%;
     height: 50%;
+}
+
+.payroll-table::-webkit-scrollbar {
+    display: none;
 }
 
 .payroll-table-container {
