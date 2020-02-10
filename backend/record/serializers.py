@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
+from company.serializers import CompanySerializer
 from record.models import Record
 from record.pdf import payslip_pdf
 from user.serializers import UserLimitedSerializer, UserSerializer
@@ -31,6 +32,7 @@ class RecordDatesPaidSerializer(serializers.ModelSerializer):
 
 class RecordSalaryEmployeeSerializer(serializers.ModelSerializer):
     user = UserLimitedSerializer()
+    company= CompanySerializer()
 
     class Meta:
         model = Record
