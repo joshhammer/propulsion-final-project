@@ -42,6 +42,10 @@
     position: relative;
 }
 
+.employee-dashboard-content::-webkit-scrollbar {
+    display: none;
+}
+
 .dashboard-welcome-box {
     text-shadow: 0 0 10px black;
     & h1 {
@@ -87,4 +91,8 @@
             color: var(--mainBlue);
         }
     }
+}
+
+.dashboard-card::-webkit-scrollbar {
+    display: none;
 }

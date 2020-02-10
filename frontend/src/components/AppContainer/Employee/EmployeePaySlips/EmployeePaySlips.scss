@@ -42,6 +42,10 @@
     position: relative;
 }
 
+.employee-payslips-content::-webkit-scrollbar {
+    display: none;
+}
+
 
 .single-payslip-element {
     display: flex;
