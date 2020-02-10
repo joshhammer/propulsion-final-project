@@ -39,19 +39,18 @@
 .payroll-footer {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 
 .payroll-table {
-    margin-bottom: 2%;
     display: flex;
     overflow: scroll;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 50%;
+    height: 45%;
 }
 
 .payroll-table::-webkit-scrollbar {
@@ -61,4 +60,8 @@
 .payroll-table-container {
     width: 100%;
     height: 100%;
+}
+
+.payroll-confirm {
+    height: 10%;
 }

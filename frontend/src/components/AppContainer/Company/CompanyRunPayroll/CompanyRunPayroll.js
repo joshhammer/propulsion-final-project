@@ -62,11 +62,12 @@ const CompanyRunPayroll = (props) => {
                     }
                 </div>
             </div>
+            <div className="payroll-confirm"><h3>Please review the payments above & confirm.</h3></div>
             <div className="payroll-footer">
                 <div className="run-payroll">
                     <AuthenticationButton content={"Run Payroll"} onClick={toggleOpen}/>
                 </div>
-                <h2>Total: CHF {total}</h2>
+                <h2>Total: CHF {total.toFixed(2)}</h2>
             </div>
         </div>
     )
