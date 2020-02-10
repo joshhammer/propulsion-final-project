@@ -62,15 +62,14 @@ function CompanyDropzone(props) {
         <div className="dropzone-container">
             <div className="dropzone-field" {...getRootProps({style})}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p>Drag & drop files here, or click to select files</p>
             </div>
             <div className="dropzone-files-button">
                 <aside className="dropzone-files">
-                    <h4>Files</h4>
                     <ul>{files}</ul>
                 </aside>
                 <div>
-                    <AuthenticationButton content={"Submit your files!"} onClick={'submitted'}/>
+                    <AuthenticationButton content={"Submit"} onClick={'submitted'}/>
                 </div>
             </div>
         </div>
