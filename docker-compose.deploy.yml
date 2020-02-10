@@ -10,8 +10,8 @@ services:
     #command: "tail -f /dev/null"
     volumes:
       - ./backend:/backend
-      - ./media-files:/media-files
-      - ./static-files:/static-files
+      - media-files:/media-files
+      - static-files:/static-files
     depends_on:
       - postgres
       - backend

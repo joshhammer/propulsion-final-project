@@ -5,7 +5,7 @@ import {patchCompanyAction} from "../../../../store/actions/patchCompanyAction";
 
 class CompanyDetails extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             readonly: true,
@@ -16,24 +16,24 @@ class CompanyDetails extends React.Component {
         this.setState({
             [event.target.name]: event.target.value,
         })
-    }
+    };
 
     toggleEdit = (event) => {
         this.setState({
             readonly: !this.state.readonly,
         })
-    }
+    };
 
     cancelEdit = () => {
         this.setState({
             readonly: !this.state.readonly,
         })
-    }
+    };
 
     saveAndUpdate = () => {
-        this.toggleEdit()
+        this.toggleEdit();
         this.props.dispatch(patchCompanyAction(this.state))
-    }
+    };
 
     render() {
         return (

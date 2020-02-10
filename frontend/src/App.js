@@ -20,7 +20,6 @@ const App = () => {
                     <Route path="/signupcompany" component={SignupCompany}/>
                     <Route exact path="/signupemployee" component={SignupEmployee}/>
                     <Route exact={true} path="/signupsuccess" component={SignupSuccess} />
-
                 </Switch>
             </BrowserRouter>
         </Provider>
