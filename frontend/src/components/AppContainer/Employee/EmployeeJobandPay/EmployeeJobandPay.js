@@ -13,11 +13,10 @@ class JobAndPay extends React.Component {
     }
 
     render() {
-        // const salary = this.props.salary
         const user = this.props.user
         return(
             <>
-            {user.company && <div className='pages-container job-page-wrapper'>
+            {user && <div className='pages-container job-page-wrapper'>
                 <div className='employee-job-content'>
                     <div className='employee-job-title-box'>
                         <div className='job-title-and-logo'>
@@ -69,15 +68,15 @@ class JobAndPay extends React.Component {
                         </div>
                         <div className='job-table-element'>
                             <p>House Number</p>
-                                <input name="" type="text" value={user.company.house_number} />
+                            <input name="" type="text" value={user.company.house_number} />
                         </div>
                         <div className='job-table-element'>
                             <p>Postal Code</p>
-                                <input name="" type="text" value={user.company.postal_code} />
+                            <input name="" type="text" value={user.company.postal_code} />
                         </div>
                         <div className='job-table-element'>
                             <p>City</p>
-                                <input name="" type="text" value={user.company.city} />
+                            <input name="" type="text" value={user.company.city} />
                         </div>
                 </div>
 

@@ -4,7 +4,6 @@ from rest_framework import serializers
 
 from adminprofile.models import AdminProfile
 from company.models import Company
-from company.serializers import CompanySerializer
 from emails.models import Email
 from employeeprofile.models import EmployeeProfile
 from registration.models import Registration, code_generator
@@ -48,6 +47,12 @@ def code_is_valid(code):
         raise ValidationError(message='This code is not valid!')
 
 
+class RegistrationProfileTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registration
+        fields = ['profile_type']
+
+
 # This serializer is only for admin user!!!!!
 class RegistrationSerializer(serializers.Serializer):
     email = serializers.EmailField(label='Registration E-Mail Address', validators=[email_does_not_exist])
@@ -66,6 +71,13 @@ class RegistrationSerializer(serializers.Serializer):
             user=new_user
         )
         new_adminprofile.save()
+
+
+        # Create new company instance and assign admin_profile to new admin_profile, other fields have placeholder values
+        new_company = Company(
+            adminprofile = new_adminprofile
+        )
+        new_company.save()
 
         registration = Registration(
             user=new_user,

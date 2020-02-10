@@ -13,14 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.documentation import include_docs_urls
 
-from PDF.pdf import payslip_pdf
+from record.pdf import payslip_pdf
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
-    #path('api/docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])),
+    #path('api/docs/', include_docs_urls(title='Razzpay', public=False)),
     path('api/registration/', include('registration.urls')),
     path('api/auth/', include('registration.urls')),
     path('api/adminprofile/', include('adminprofile.urls')),
@@ -30,4 +33,8 @@ urlpatterns = [
     path('api/record/', include('record.urls')),
     path('api/salary/', include('salary.urls')),
     path('api/employees/', include('user.urls')),
+
+
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -43,6 +43,10 @@
     overflow: scroll;
 }
 
+.employee-job-details-container::-webkit-scrollbar {
+    display: none;
+}
+
 .job-details-box {
     margin-bottom: 2rem;
 }

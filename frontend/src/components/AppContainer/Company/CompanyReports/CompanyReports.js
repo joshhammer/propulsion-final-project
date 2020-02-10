@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import './CompanyReports.scss';
 import CompanyTableRow from "./CompanyTableRow/CompanyTableRow";
 import {getPayDatesAction} from "../../../../store/actions/getPayDatesAction";
+import ReactLoading from 'react-loading';
 import {connect} from "react-redux";
 
 const CompanyReports = (props) => {
@@ -10,9 +11,6 @@ const CompanyReports = (props) => {
         props.dispatch(getPayDatesAction())
     }, []);
 
-    // What comes back from API is not correct
-
-    console.log('CompanyReports props: ', props)
     return (
         <div className="company-reports pages-container">
             <div className="company-reports-title">
@@ -29,13 +27,15 @@ const CompanyReports = (props) => {
                     <h3>Debit</h3>
                 </div>
                 <div className="company-reports-table-content">
-
                     {
-                        props.payDates.map((payDate, i) => {
-                            return <CompanyTableRow payDate={payDate} key={i}/>
-                        })
+                        !props.payDates.length > 0 ? (
+                            <ReactLoading type={"spin"}/>
+                        ) : (<div className="company-reports-table-content-2">
+                            {props.payDates.map((payDate, i) => {
+                                return <CompanyTableRow payDate={payDate} key={i}/>
+                            })}</div>
+                        )
                     }
-
                 </div>
             </div>
         </div>
@@ -46,6 +46,6 @@ const mapStatetoProps = state => {
     return {
         payDates: state.dateReducer.payDates
     }
-}
+};
 
 export default connect(mapStatetoProps)(CompanyReports)

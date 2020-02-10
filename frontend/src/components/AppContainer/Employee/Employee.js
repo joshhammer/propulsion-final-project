@@ -6,6 +6,7 @@ import EmployeeDetails from './EmployeeDetails/EmployeeDetails';
 import EmployeePaySlips from "./EmployeePaySlips/EmployeePaySlips";
 import JobAndPay from "./EmployeeJobandPay/EmployeeJobandPay";
 import EmployeeDocuments from "./EmployeeDocuments/EmployeeDocuments";
+import SignupSuccess from '../../SignupEmployee/SignupSuccess';
 import './Employee.scss';
 
 const Employee = (props) => {

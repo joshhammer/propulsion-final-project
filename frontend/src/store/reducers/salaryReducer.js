@@ -5,7 +5,6 @@ const initialState = {
 }
 
 export const salaryReducer = (state = initialState, action) => {
-    console.log('from da salaryReducer', action)
     if (action.type === GET_USER_SALARY) {
         return {
             ...state,

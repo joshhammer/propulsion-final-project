@@ -27,7 +27,7 @@
     & svg {
         width: 50px;
         height: 50px;
-        color: var(--mainWhite);
+        color: var(--mainGreen);
     }
     & h1 {
         margin-left: 1rem;
@@ -43,6 +43,10 @@
     height: 80%;
     width: 80%;
     overflow: scroll;
+}
+
+.employee-profile-data-container::-webkit-scrollbar {
+    display: none;
 }
 
 .profile-data-section-title {

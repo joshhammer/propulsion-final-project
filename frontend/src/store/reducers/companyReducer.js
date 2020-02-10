@@ -1,7 +1,20 @@
 import {GET_SINGLE_COMPANY, PATCH_COMPANY} from '../actionTypes';
 
 const initialState = {
-    company: {}
+    company: {
+        name: '',
+        house_number: '',
+        street: '',
+        city: '',
+        country: '',
+        postal_code: '',
+        legal_number: '',
+        poc_name: '',
+        poc_email: '',
+        bank_name: '',
+        iban: '',
+        bic: '',
+    }
 };
 
 export const companyReducer = (state = initialState, action) => {
