@@ -72,9 +72,17 @@
     padding-right: 2rem;
 }
 
+.employee-documents-left-section::-webkit-scrollbar {
+    display: none;
+}
+
 .employee-documents-right-section {
     border-left: 1px solid var(--mainWhite);
     padding-left: 2rem;
+}
+
+.employee-documents-right-section::-webkit-scrollbar {
+  display: none;
 }
 
 .employee-document-element {
