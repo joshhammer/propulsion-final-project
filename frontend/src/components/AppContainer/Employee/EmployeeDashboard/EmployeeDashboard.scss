@@ -67,12 +67,12 @@
 .dashboard-card {
     background: var(--mainWhite);
     width: 45%;
-    // height: 300px;
     margin-right: 5%;
     margin-bottom: 5%;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px black;
+    // box-shadow: var(--boxShadow);
     color: var(--mainBlue);
     overflow: scroll;
     & h3 {
@@ -87,7 +87,7 @@
             padding: 10px;
             margin-bottom: .5rem;
             border-radius: 5px;
-            box-shadow: 0 0 10px black;
+            box-shadow: var(--boxShadow);
         }
         & li:nth-child(2n) {
             background: var(--mainGreen);

@@ -57,11 +57,15 @@
     border-radius: 5px;
     margin-bottom: 1.25rem;
     padding: 0 2rem;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 8px black;
+    // box-shadow: var(--boxShadow);
     & svg {
     color: var(--mainBlue);
     width: 25px;
     height: 25px;
+    }
+    & p {
+        font-size: 1.2rem;
     }
 }
 
@@ -71,6 +75,7 @@
     background: var(--mainGreen);
     margin-bottom: 2.5rem;
     & h3 {
+        font-size: 1.3rem;
         font-weight: 400;
     }
 }
