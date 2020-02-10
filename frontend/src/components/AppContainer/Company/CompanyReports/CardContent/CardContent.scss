@@ -15,9 +15,17 @@
     }
 }
 
+.card-content::-webkit-scrollbar {
+    display: none;
+}
+
 .card-content-row {
     width: 100%;
     overflow: scroll;
+}
+
+.card-content-row::-webkit-scrollbar {
+    display: none;
 }
 
 .card-content-header {
