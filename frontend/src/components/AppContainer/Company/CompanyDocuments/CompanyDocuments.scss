@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.company-documents-content {
+.company-documents-container {
     height: 100%;
     width: 80%;
     padding-top: 2rem;
@@ -35,4 +35,44 @@
 .company-documents-title-and-logo {
     display: flex;
     border-bottom: 1px solid var(--mainGreen);
+}
+
+#document-table-head {
+    background: var(--mainGreen);
+    margin-bottom: 2.5rem;
+    & h3 {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+}
+
+.single-document-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--mainWhite);
+    color: var(--mainBlue);
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
+    padding: 0 2rem;
+    box-shadow: 0 0 8px black;
+    // box-shadow: var(--boxShadow);
+    & svg {
+    color: var(--mainBlue);
+    width: 25px;
+    height: 25px;
+    }
+    & p {
+        font-size: 1.1rem;
+    }
+    & svg:hover {
+        color: red;
+    }
+}
+
+.document-helper-div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
 }
