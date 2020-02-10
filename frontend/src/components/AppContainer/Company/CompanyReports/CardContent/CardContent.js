@@ -8,10 +8,10 @@ const CardContent = (props) => {
         <div className={`card-content ${props.isHidden ? ' hidden' : ''}`}>
             <div className="card-content-row">
                 <div className="card-content-header">
-                    <h3>Name</h3>
-                    <h3>Type</h3>
-                    <h3>Description</h3>
-                    <h3>Debit</h3>
+                    <div className="card-content-header-element"><h3>Name</h3></div>
+                    <div className="card-content-header-element"><h3>Type</h3></div>
+                    <div className="card-content-header-element"><h3>Description</h3></div>
+                    <div className="card-content-header-element"><h3>Debit</h3></div>
                 </div>
 
                 {

@@ -6,7 +6,7 @@ export const patchCompanyAction = (new_state) => async (dispatch, getState) => {
     const headers = new Headers({
         'Content-Type': 'application/json',
         "Authorization": "Bearer " + token,
-    })
+    });
     const body = {
         ...new_state
     };
@@ -14,14 +14,13 @@ export const patchCompanyAction = (new_state) => async (dispatch, getState) => {
         method: 'PATCH',
         headers,
         body: JSON.stringify(body),
-    }
-    console.log('CONFIG', config)
-    const response = await fetch(url, config)
-    const data = await response.json()
+    };
+    console.log('CONFIG', config);
+    const response = await fetch(url, config);
+    const data = await response.json();
     const action = {
         type: PATCH_COMPANY,
         payload: data
-    }
-    dispatch(action)
-    console.log('data: ', data)
-}
+    };
+    dispatch(action);
+};

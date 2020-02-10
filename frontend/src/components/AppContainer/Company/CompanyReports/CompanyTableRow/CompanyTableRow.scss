@@ -1,17 +1,27 @@
 .company-reportrow {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    margin: 1% 0;
     padding: 1%;
     border-radius: 8px;
     border-bottom: 1px solid var(--mainBlue);
     background-color: var(--mainWhite);
 
+    &-container {
+        width: 100%;
+    }
+
     &-details {
+        //margin-left: 4%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-around;
+
+        &-field {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+        }
     }
 
     & p {

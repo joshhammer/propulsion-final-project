@@ -28,6 +28,7 @@
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
+        font-weight: 300;
     }
 }
 
@@ -40,13 +41,16 @@
     & h3 {
         margin-right: 1rem;
         text-shadow: 0 0 10px black;
+        font-weight: 400;
+    }
+    & svg:hover {
+        color: var(--mainGreen)
     }
 }
 
 .employee-documents-title-and-logo {
     display: flex;
     border-bottom: 1px solid var(--mainGreen);
-    padding-top: 1rem;
 }
 
 .employee-documents-divider {
@@ -62,6 +66,8 @@
     & h3 {
         text-shadow: 0 0 10px black;
         margin-bottom: 2rem;
+        font-weight: 400;
+        font-size: 1.3rem;
     }
     & .employee-document-element:nth-child(2n+1) {
         background: var(--mainGreen);
@@ -72,9 +78,17 @@
     padding-right: 2rem;
 }
 
+.employee-documents-left-section::-webkit-scrollbar {
+    display: none;
+}
+
 .employee-documents-right-section {
     border-left: 1px solid var(--mainWhite);
     padding-left: 2rem;
+}
+
+.employee-documents-right-section::-webkit-scrollbar {
+  display: none;
 }
 
 .employee-document-element {
@@ -96,5 +110,9 @@
     width: 20px;
     height: 20px;
     }
+}
+
+.documents-helper-div {
+    overflow: hidden;
 }
 
