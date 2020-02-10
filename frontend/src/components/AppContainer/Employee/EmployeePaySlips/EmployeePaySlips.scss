@@ -18,8 +18,8 @@
     & h1 {
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        // border-bottom: 1px solid var(--mainWhite);
         letter-spacing: 1px;
+        font-weight: 300;
         margin-left: 1rem;
     }
     & svg {
@@ -66,6 +66,9 @@
 #payslip-table-head {
     background: var(--mainGreen);
     margin-bottom: 2.5rem;
+    & h3 {
+        font-weight: 400;
+    }
 }
 
 .payslip-helper-div {

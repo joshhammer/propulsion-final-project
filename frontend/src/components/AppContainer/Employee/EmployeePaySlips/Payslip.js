@@ -6,8 +6,7 @@ class Payslip extends React.Component {
         return(
             <div className='single-payslip-element'>
                 <div className='payslip-helper-div'>
-                    <p>{this.props.payperiod_start}</p>
-                    {/* <p>{this.props.payperiod_end}</p> */}
+                    <p>{this.props.payperiod_start.slice(0,7)}</p>
                 </div>
                 <div className='payslip-helper-div'>
                     <p>{this.props.paid}</p>
