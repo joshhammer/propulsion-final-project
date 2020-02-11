@@ -16,10 +16,12 @@ const CompanyReports = (props) => {
         <div className="company-reports pages-container">
             <div className="company-reports-title">
                 <div className="company-reports-title-box">
-                    <FolderOpen width="50px" height="50px"/>
-                    <h1>Reports</h1>
+                    <div className="company-reports-title-box-content">
+                        <FolderOpen width="50px" height="50px"/>
+                        <h1>Reports</h1>
+                    </div>
+                    <div className="company-reports-title-placeholder"></div>
                 </div>
-                <div classname="company-reports-title-placeholder"></div>
             </div>
             <div className="company-reports-table-container">
                 <div className="company-reports-table-title">
