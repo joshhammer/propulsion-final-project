@@ -59,6 +59,18 @@
     }
 }
 
+.company-documents-content {
+    // height: 80%;
+    // overflow: scroll;
+    // position: relative;
+    & .single-document-element:nth-child(2n+1) {
+        background: var(--mainGreen);
+        & .svg-arrow-down:hover {
+        color: var(--mainWhite);
+    }
+    }
+}
+
 #document-table-head {
     background: var(--mainGreen);
     margin-bottom: 2.5rem;
@@ -86,6 +98,10 @@
         color: var(--mainBlue);
         width: 25px;
         height: 25px;
+    color: var(--mainBlue);
+    width: 25px;
+    height: 25px;
+    margin-left: 2rem;
     }
 
     & p {
@@ -94,6 +110,9 @@
 
     & svg:hover {
         color: red;
+    }
+    & .svg-arrow-down:hover {
+        color: var(--mainGreen);
     }
 }
 
@@ -104,6 +123,7 @@
 
     &-left {
         justify-content: flex-start;
+        margin-right: 5rem;
     }
 
     &-right {
