@@ -29,6 +29,14 @@ const CompanyRunPayroll = (props) => {
 
     return (
         <div className="payroll-container pages-container">
+
+            {
+                props.users &&
+                props.users.map((user, i) => {
+                    total += user.salary.gross_month + user.salary.gross_month - user.salary.net;
+                })
+            }
+
             {isOpen &&
             <div className={"company-payroll-modal-content"}>
                 <PayRollConfirm isOpen={toggleOpen} amount={total} onClick={handleSubmit}/>
@@ -49,7 +57,6 @@ const CompanyRunPayroll = (props) => {
                     {
                         props.users &&
                         props.users.map((user, i) => {
-                            total += user.salary.gross_month + (user.salary.gross_month - user.salary.net);
                             return < TableRowPayroll
                                 key={i}
                                 firstName={user.first_name}
@@ -77,6 +84,6 @@ const mapStatetoProps = state => {
     return {
         users: state.userReducer.users
     }
-}
+};
 
 export default connect(mapStatetoProps)(CompanyRunPayroll)
