@@ -40,8 +40,11 @@
     width: 60%;
     display: flex;
     justify-content: space-evenly;
-}
 
+    & h2 {
+        border-bottom: 1px solid var(--mainWhite);
+    }
+}
 
 .payroll-table {
     display: flex;
