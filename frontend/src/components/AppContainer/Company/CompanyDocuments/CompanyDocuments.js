@@ -35,6 +35,8 @@ const CompanyDocuments = () => {
                     <SingleDocument name='Verhalten_am_Arbeitsplatz.doc' upload_date='2019-07-05'/>
                     <SingleDocument name='Sicherheitsregeln.doc' upload_date='2019-06-14'/>
                     <SingleDocument name='Ferienantrag.xls' upload_date='2019-03-18'/>
+                    <SingleDocument name='Selbsteinschätzung.xls' upload_date='2019-03-18'/>
+
                 </div>
             </div>
         </div>
