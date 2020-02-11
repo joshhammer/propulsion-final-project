@@ -21,7 +21,7 @@ const CompanyDocuments = () => {
                 <div className='company-documents-content'>
                     <div className='single-document-element' id='document-table-head'>
                         <div className='document-helper-div document-helper-div-left'>
-                            <h3>Document Name</h3>
+                            <h3>Document Title</h3>
                         </div>
                         <div className='document-helper-div'>
                             <h3>Date Uploaded</h3>
@@ -32,7 +32,9 @@ const CompanyDocuments = () => {
                         
                     </div>
                     <SingleDocument name='Spesenformular.xls' upload_date='2020-01-20'/>
-                    <SingleDocument name='Sicherheitsregeln.doc' upload_date='2020-01-20'/>
+                    <SingleDocument name='Verhalten_am_Arbeitsplatz.doc' upload_date='2019-07-05'/>
+                    <SingleDocument name='Sicherheitsregeln.doc' upload_date='2019-06-14'/>
+                    <SingleDocument name='Ferienantrag.xls' upload_date='2019-03-18'/>
                 </div>
             </div>
         </div>
