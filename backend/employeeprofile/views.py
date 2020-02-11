@@ -63,7 +63,7 @@ class GetMyEmployeeProfile(RetrieveUpdateDestroyAPIView):
 class ListEmployees(ListAPIView):
     """
     get:
-    List all employees of admin
+    List all employees of admin and their salary
     """
     serializer_class = UserLimitedSerializer
     permission_classes = [IsAdmin]

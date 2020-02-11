@@ -31,7 +31,9 @@ class SignupEmployee extends React.Component {
                 <div className="signup-authentication-container">
                     <div className='company-signup-title-box'>
                         <h1>Welcome to Razzpay</h1>
-                        <h3>please fill in the form to complete the registration <br />all *fields are mandatory</h3>
+                        <h3>Thank you for registering!</h3>
+                        <h3>Please check your inbox and enter the registration code <br />and your personal details below</h3>
+                        <h3>*all fields are mandatory</h3>
 
                     </div>
                     <div className="signup-company">

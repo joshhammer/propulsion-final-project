@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getUserAction } from '../../../../store/actions/getUserAction'
-import { getUserSalary } from '../../../../store/actions/getUserSalary'
 import './EmployeeJobAndPay.scss'
 
 class JobAndPay extends React.Component {
@@ -9,7 +8,10 @@ class JobAndPay extends React.Component {
     componentDidMount() {
         const token = this.props.tokens.access
         this.props.dispatch(getUserAction(token))
-        // this.props.dispatch(getUserSalary(token))
+    }
+
+    componentDidUpdate() {
+        console.log(this.props)
     }
 
     render() {
@@ -48,15 +50,15 @@ class JobAndPay extends React.Component {
                         <div className='job-details-box'>
                             <div className='job-table-element'>
                                 <p>Full Name</p>
-                                <input name="" type="text" value='-'/>
+                                <input name="" type="text" value={user.company.poc_name}/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Email</p>
-                                <input name="" type="text" value='-'/>
+                                    <input name="" type="text" value={user.company.poc_email}/>
                             </div>
                             <div className='job-table-element'>
                                 <p>Phone</p>
-                                <input name="" type="text" value='-'/>
+                                    <input name="" type="text" value={user.company.poc_phone}/>
                             </div>
                         </div>
 
@@ -91,8 +93,7 @@ const mapStateToProps = (state) => {
     console.log('State from JobandPay ', state)
     return {
         user: state.userReducer.user,
-        // salary: state.salaryReducer.salary,
-        tokens: state.loginReducer.tokens
+        tokens: state.loginReducer.tokens,
     }
 }
 

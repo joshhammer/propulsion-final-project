@@ -22,9 +22,9 @@ class EmployeeDocuments extends React.Component {
                         <div className='employee-documents-left-section'>
                             <h3>Company Documents</h3>
                             <SingleDocument name='Spesenformular.xls'/>
-                            <SingleDocument name='Kinderzulagen.doc'/>
-                            <SingleDocument name='Sicherheitsbestimmungen.doc'/>
-                            <SingleDocument name='Verhaltensregeln.doc'/>
+                            <SingleDocument name='Verhalten_am_Arbeitsplatz.doc'/>
+                            <SingleDocument name='Sicherheitsregeln.doc'/>
+                            <SingleDocument name='Ferienantrag.xls'/>
                         </div>
                         <div className='employee-documents-right-section'>
                             <h3>Your Documents</h3>
