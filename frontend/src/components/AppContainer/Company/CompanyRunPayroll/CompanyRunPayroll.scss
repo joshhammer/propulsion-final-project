@@ -3,6 +3,10 @@
     overflow: scroll;
     flex-direction: column;
     align-items: center;
+
+    &-calc {
+        color: var(--mainBlue);
+    }
 }
 
 .payroll-container::-webkit-scrollbar {
