@@ -10,16 +10,25 @@
     padding: 0 1rem;
 }
 
-.employee-job-title-box {
+.job-pay-header {
     padding-left: 1rem;
+    padding-right: 1rem;
     height: 20%;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.employee-job-title-box {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 20%;
     & svg {
         width: 40px;
         height: 40px;
         color: var(--mainGreen);
-        text-shadow: 0 0 10px black;
     }
     & h1 {
         margin-left: 1rem;
@@ -37,33 +46,25 @@
 }
 
 .employee-job-details-container {
-    display: flex;
-    flex-direction: column;
     padding: 1rem 1rem 5rem 1rem;
     height: 80%;
+    width: 100%;
     overflow: scroll;
-    & h3 {
-        font-weight: 400;
-        font-size: 1.3rem;
-    }
 }
 
 .employee-job-details-container::-webkit-scrollbar {
     display: none;
 }
 
-.job-details-box {
-    margin-bottom: 2rem;
-}
 
 .job-table-element {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
     & p {
-        width: 250px;
+        width: 30%;
         height: 35px;
-        margin-right: 1rem;
+        // margin-right: 1rem;
         background: var(--mainGreen);
         color: var(--mainBlue);
         border-radius: 5px;
@@ -79,9 +80,10 @@
         outline: none;
         border: none;
         border-radius: 5px;
+        margin-left: 4rem;
         padding-left: 1rem;
         height: 35px;
-        width: 400px;
+        width: 60%;
         font-size: 1rem;
         letter-spacing: 1px;
         box-shadow: 0 0 10px black;
