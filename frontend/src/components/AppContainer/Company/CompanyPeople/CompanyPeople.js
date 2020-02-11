@@ -6,7 +6,6 @@ import TableRow from "../../../reusable-components/TableRow/Tablerow";
 import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
 import AddEmployee from "./AddEmployee/AddEmployee";
-import AuthenticationButton from "../../../reusable-components/buttons/AuthenticationButton";
 import AddButton from "./AddButton";
 
 const CompanyPeople = (props) => {
