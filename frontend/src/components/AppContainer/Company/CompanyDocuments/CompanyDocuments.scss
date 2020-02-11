@@ -8,6 +8,7 @@
     width: 80%;
     padding-top: 2rem;
     padding: 0 1rem;
+    
 }
 
 .company-documents-title-box {
@@ -54,6 +55,18 @@
     }
 }
 
+.company-documents-content {
+    // height: 80%;
+    // overflow: scroll;
+    // position: relative;
+    & .single-document-element:nth-child(2n+1) {
+        background: var(--mainGreen);
+        & .svg-arrow-down:hover {
+        color: var(--mainWhite);
+    }
+    }
+}
+
 #document-table-head {
     background: var(--mainGreen);
     margin-bottom: 2.5rem;
@@ -79,12 +92,16 @@
     color: var(--mainBlue);
     width: 25px;
     height: 25px;
+    margin-left: 2rem;
     }
     & p {
         font-size: 1.1rem;
     }
     & svg:hover {
         color: red;
+    }
+    & .svg-arrow-down:hover {
+        color: var(--mainGreen);
     }
 }
 
@@ -94,6 +111,7 @@
     justify-content: center;
     &-left {
         justify-content: flex-start;
+        margin-right: 5rem;
     }
     &-right {
         justify-content: flex-end;
