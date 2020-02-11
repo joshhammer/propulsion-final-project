@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
-import instagram from '../../assets/svg/instagram.svg';
-import facebook from '../../assets/svg/facebook.svg';
-import twitter from '../../assets/svg/twitter.svg';
-import linkedin from '../../assets/svg/linkedin.svg';
+import { ReactComponent as Instagram } from '../../assets/svg/instagram-square-brands.svg';
+import { ReactComponent as Facebook } from '../../assets/svg/facebook.svg';
+import { ReactComponent as Twitter } from '../../assets/svg/twitter.svg';
+import { ReactComponent as LinkedIn } from '../../assets/svg/linkedin.svg';
 import './LandingPage.scss';
 import {connect} from "react-redux";
 import {loginAction} from "../../store/actions/loginAction";
@@ -25,7 +25,6 @@ const LandingPage = (props) => {
         e.preventDefault();
         if (state.registrationEmail) {
             const response = await props.dispatch(registrationAction(state.registrationEmail))
-            console.log(response)
             if(response.status === 200) {
                 props.history.push('/signupcompany')
             }
@@ -40,7 +39,6 @@ const LandingPage = (props) => {
     // check if provided email is an admin or employee and forward to the corresponding page
     useEffect(() => {
         if(props.tokens.access) {
-            console.log('ACCESS')
             const token = props.tokens.access
             props.dispatch(getUserAction(token))
         }
@@ -49,7 +47,6 @@ const LandingPage = (props) => {
     useEffect(() => {
 
         if(props.user.registration) {
-            console.log('REGISTRATION')
             if(props.user.registration.profile_type === 'AP') {
                 props.history.push('/company/dashboard')
             }
@@ -89,17 +86,21 @@ const LandingPage = (props) => {
             </div>
             <div className="footer">
                 <div className="footer-left">
-                    <p>About</p>
-                    <p>Services</p>
-                    <p>Pricing</p>
-                    <p>Jobs</p>
+                    <a href='#'>About</a>
+                    <a href='#'>Services</a>
+                    <a href='#'>Pricing</a>
+                    <a href='#'>Jobs</a>
                 </div>
                 <div className="footer-spaceholder"></div>
                 <div className="footer-right">
-                    <img src={instagram} alt="instagram"/>
-                    <img src={facebook} alt="facebook"/>
-                    <img src={twitter} alt="twitter"/>
-                    <img src={linkedin} alt="linkedin"/>
+                    {/* <img src={instagram} alt="instagram"/> */}
+                    <a className='footer-icon' href='#'><Instagram width='25px' height='25px'/></a>
+                    {/* <img src={facebook} alt="facebook"/> */}
+                    <a className='footer-icon' href='#'><Facebook width='25px' height='25px'/></a>
+                    {/* <img src={twitter} alt="twitter"/> */}
+                    <a className='footer-icon' href='#'><Twitter width='25px' height='25px'/></a>
+                    {/* <img src={linkedin} alt="linkedin"/> */}
+                    <a className='footer-icon' href='#'><LinkedIn width='25px' height='25px'/></a>
                 </div>
             </div>
         </div>
@@ -107,7 +108,6 @@ const LandingPage = (props) => {
 }
 
 const mapStatetoProps = (state) => {
-    console.log('the login state: ', state)
     return {
         tokens: state.loginReducer.tokens,
         user: state.userReducer.user,
