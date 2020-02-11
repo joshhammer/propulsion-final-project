@@ -34,7 +34,7 @@ class ListAllUserDocuments(ListAPIView):
 class ListCreateUserDocuments(ListCreateAPIView):
     """
     get:
-    Get the documents of an employee by providing the id of the employee (admin only)
+    Get the documents of an employee by providing the id of the employee
     post:
     Admin can add document to employee's account
     """

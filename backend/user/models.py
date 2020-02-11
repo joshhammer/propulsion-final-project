@@ -129,5 +129,12 @@ class User(AbstractUser):
         blank=True,
     )
 
+    phone = models.CharField(
+        verbose_name='phone',
+        max_length=200,
+        blank=True,
+        null=True,
+    )
+
     def __str__(self):
         return f'id: {self.id} {self.email}  {self.first_name} {self.last_name} {self.date_created} {self.date_modified}'
