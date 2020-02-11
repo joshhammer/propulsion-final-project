@@ -25,7 +25,6 @@ const LandingPage = (props) => {
         e.preventDefault();
         if (state.registrationEmail) {
             const response = await props.dispatch(registrationAction(state.registrationEmail))
-            console.log(response)
             if(response.status === 200) {
                 props.history.push('/signupcompany')
             }
@@ -40,7 +39,6 @@ const LandingPage = (props) => {
     // check if provided email is an admin or employee and forward to the corresponding page
     useEffect(() => {
         if(props.tokens.access) {
-            console.log('ACCESS')
             const token = props.tokens.access
             props.dispatch(getUserAction(token))
         }
@@ -49,7 +47,6 @@ const LandingPage = (props) => {
     useEffect(() => {
 
         if(props.user.registration) {
-            console.log('REGISTRATION')
             if(props.user.registration.profile_type === 'AP') {
                 props.history.push('/company/dashboard')
             }
@@ -111,7 +108,6 @@ const LandingPage = (props) => {
 }
 
 const mapStatetoProps = (state) => {
-    console.log('the login state: ', state)
     return {
         tokens: state.loginReducer.tokens,
         user: state.userReducer.user,

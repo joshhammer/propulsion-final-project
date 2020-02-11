@@ -19,19 +19,21 @@
 
 .company-signup-title-box {
         & h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         font-family: 'Dancing Script', cursive;
         color: var(--mainWhite);
         text-align: center;
-        font-size: 3.5rem;
+        font-size: 3rem;
         text-shadow: var(--boxShadow);
     }
 
     & h3 {
         color: var(--mainWhite);
+        font-family: var(--secondaryFontFamily);
         font-style: italic;
+        font-weight: 400;
         text-align: center;
-        // margin-bottom: 3rem;
+        margin-bottom: .5rem;
         font-size: 1rem;
         text-shadow: var(--boxShadow);
     }
@@ -67,7 +69,7 @@
         outline: none;
         border: none;
         border-radius: 5px;
-        height: 30px;
+        height: 35px;
         width: 50%;
         padding-left: .5rem;
         margin-bottom: 1rem;
