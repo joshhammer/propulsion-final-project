@@ -21,7 +21,7 @@ class UserProfileTypeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['salary', 'company', 'registration', 'id', 'email', 'first_name', 'last_name', 'bank_name', 'ahv', 'iban', 'house_number', 'street', 'city', 'postal_code', 'country']
+        fields = ['salary', 'company', 'registration', 'id', 'email', 'first_name', 'last_name', 'bank_name', 'ahv', 'iban', 'house_number', 'street', 'city', 'postal_code', 'country', 'phone']
 
 
 class UserLimitedSerializer(serializers.ModelSerializer):
@@ -30,7 +30,7 @@ class UserLimitedSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['salary', 'id', 'email', 'first_name', 'last_name', 'bank_name', 'ahv', 'iban', 'house_number', 'street',
-                  'city', 'postal_code', 'country', 'company']
+                  'city', 'postal_code', 'country', 'company', 'phone']
 
 
 class UserTestSerializer(serializers.ModelSerializer):
