@@ -5,7 +5,6 @@ import AuthenticationButton from "../../../../reusable-components/buttons/Authen
 import './PayRollConfirm.scss';
 
 const PayRollConfirm = (props) => {
-    console.log(props.amount)
     return (
         <>
             <div className="confirm-dialog-container">

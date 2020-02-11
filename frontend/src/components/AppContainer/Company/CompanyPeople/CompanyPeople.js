@@ -11,13 +11,13 @@ import AddButton from "./AddButton";
 const CompanyPeople = (props) => {
     useEffect(() => {
         props.dispatch(getAllUsersAction())
-    }, [])
+    }, []);
 
     const [isOpen, setisOpen] = useState(false);
 
     const toggleOpen = () => {
         setisOpen(isOpen => !isOpen)
-    }
+    };
 
     return (
         <div className="company-people pages-container">
@@ -47,7 +47,6 @@ const CompanyPeople = (props) => {
                     {
                         props.users &&
                         props.users.map((user, i) => {
-                            console.log('user: ', user)
                             return <TableRow key={i} firstName={user.first_name} lastName={user.last_name}
                                              position={user.salary.position} email={user.email}/>
                         })
