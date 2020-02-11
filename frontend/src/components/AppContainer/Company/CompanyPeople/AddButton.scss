@@ -1,0 +1,21 @@
+.add-button {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--mainBlue);
+    height: 35px;
+    width: 150px;
+    border: none;
+    border-radius: var(--borderRadius);
+    background-color: var(--mainGreen);
+    font-size: 1rem;
+    outline: none;
+    box-shadow: var(--boxShadow);
+    transition: all .2s;
+    &:hover {
+        background: var(--lightGreen);
+    }
+    &:active {
+        box-shadow: 0 0 0 black;
+    }
+}
