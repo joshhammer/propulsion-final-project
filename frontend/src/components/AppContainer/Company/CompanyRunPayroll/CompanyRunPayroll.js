@@ -32,10 +32,10 @@ const CompanyRunPayroll = (props) => {
 
             {
                 props.users &&
-                <div className="payroll-container-calc">
-                    props.users.map((user, i) => total += user.salary.gross_month + user.salary.gross_month -
-                    user.salary.net)
-                </div>}
+                props.users.map((user, i) => {
+                    total += user.salary.gross_month + user.salary.gross_month - user.salary.net;
+                })
+            }
 
             {isOpen &&
             <div className={"company-payroll-modal-content"}>
