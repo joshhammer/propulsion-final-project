@@ -34,15 +34,15 @@ const CompanyRunPayroll = (props) => {
                 <PayRollConfirm isOpen={toggleOpen} amount={total} onClick={handleSubmit}/>
             </div>}
             <div className="payroll-header">
-                <h1>Payroll period February-March 2020</h1>
-                <h3>due on 25 March 2020</h3>
+                <h1>Payroll period February 2020</h1>
+                <h3>due on 25 February 2020</h3>
             </div>
             <div className="payroll-table-header">
-                <h2>Name</h2>
-                <h2 id="table-role">Role</h2>
-                <h2>Salary</h2>
-                <h2>Deductions</h2>
-                <h2>Subtotal</h2>
+                <div className="payroll-table-header-element-small"><h2>Name</h2></div>
+                <div className="payroll-table-header-element-small"><h2 id="table-role">Role</h2></div>
+                <div className="payroll-table-header-element-small"><h2>Salary</h2></div>
+                <div className="payroll-table-header-element-wide"><h2>Deductions</h2></div>
+                <div className="payroll-table-header-element-wide"><h2>Subtotal</h2></div>
             </div>
             <div className="payroll-table">
                 <div className="payroll-table-container">

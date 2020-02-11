@@ -2,7 +2,6 @@ import React from "react";
 import {connect} from "react-redux";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
-import { getCompanyAction } from '../../../../store/actions/getCompanyAction'
 import { getUserAction } from '../../../../store/actions/getUserAction'
 
 class CompanyDashboard extends React.Component {
