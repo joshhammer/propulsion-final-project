@@ -35,7 +35,7 @@ const CompanyReports = (props) => {
                     {
                         !props.payDates.length > 0 ? (
                             <ReactLoading type={"spin"}/>
-                        ) : (<div className="company-reports-table-content-2">
+                        ) : (<div className="company-reports-table-content-add">
                                 {props.payDates.map((payDate, i) => {
                                     return <CompanyTableRow payDate={payDate} key={i}/>
                                 })}</div>

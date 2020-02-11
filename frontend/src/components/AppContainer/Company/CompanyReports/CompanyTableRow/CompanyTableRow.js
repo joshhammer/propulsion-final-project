@@ -17,7 +17,7 @@ const CompanyTableRow = (props) => {
         <div className="company-reportrow-container">
             <div className="company-reportrow">
                 <div className="company-reportrow-details-more">
-                    <ReportButton content={hidden ? "more.." : "less.."} toggle={toggleShow}/>
+                    <ReportButton content={hidden ? "more.." : "less.."} hidden={hidden} toggle={toggleShow}/>
                 </div>
                 <div className="company-reportrow-details">
                     <div className="company-reportrow-details-field">

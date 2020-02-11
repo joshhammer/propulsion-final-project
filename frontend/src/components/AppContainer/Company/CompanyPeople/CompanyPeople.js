@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
 import AddEmployee from "./AddEmployee/AddEmployee";
 import AuthenticationButton from "../../../reusable-components/buttons/AuthenticationButton";
+import AddButton from "./AddButton";
 
 const CompanyPeople = (props) => {
     useEffect(() => {
@@ -34,7 +35,7 @@ const CompanyPeople = (props) => {
                     <InputField id="search-input" content={"Search..."}/>
                 </div>
                 <div className="company-people-modal">
-                    <AuthenticationButton content={"Add Employee +"} onClick={toggleOpen}/>
+                    <AddButton content={"Add Employee"} onClick={toggleOpen}/>
                 </div>
             </div>
             <div className="company-people-table-container">
