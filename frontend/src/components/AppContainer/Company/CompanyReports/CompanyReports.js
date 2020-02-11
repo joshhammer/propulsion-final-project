@@ -4,6 +4,7 @@ import CompanyTableRow from "./CompanyTableRow/CompanyTableRow";
 import {getPayDatesAction} from "../../../../store/actions/getPayDatesAction";
 import ReactLoading from 'react-loading';
 import {connect} from "react-redux";
+import {ReactComponent as FolderOpen} from './../../../../assets/svg/folder-open.svg';
 
 const CompanyReports = (props) => {
 
@@ -14,7 +15,13 @@ const CompanyReports = (props) => {
     return (
         <div className="company-reports pages-container">
             <div className="company-reports-title">
-                <h1>Reports</h1>
+                <div className="company-reports-title-box">
+                    <div className="company-reports-title-box-content">
+                        <FolderOpen width="50px" height="50px"/>
+                        <h1>Reports</h1>
+                    </div>
+                    <div className="company-reports-title-placeholder"></div>
+                </div>
             </div>
             <div className="company-reports-table-container">
                 <div className="company-reports-table-title">
@@ -27,7 +34,8 @@ const CompanyReports = (props) => {
                     <div className={"company-reports-table-header-property-container"}>
                         <div className="company-reports-table-header-property-container-element"><h3>Pay Date</h3></div>
                         <div className="company-reports-table-header-property-container-element"><h3>Type</h3></div>
-                        <div className="company-reports-table-header-property-container-element"><h3>Description</h3></div>
+                        <div className="company-reports-table-header-property-container-element"><h3>Description</h3>
+                        </div>
                         <div className="company-reports-table-header-property-container-element"><h3>Debit</h3></div>
                     </div>
                 </div>

@@ -29,7 +29,7 @@ const CompanyPeople = (props) => {
             </div>}
             <div className="company-people-header">
                 <div className="company-people-allpeople">
-                    <h2>All People</h2>
+                    <h1>Your team.</h1>
                 </div>
                 <div className="company-people-search">
                     <InputField id="search-input" content={"Search..."}/>
