@@ -2,17 +2,24 @@ import React from "react";
 import {connect} from "react-redux";
 import '../../AppContainer.scss';
 import './CompanyDashboard.scss';
-import { getCompanyAction } from '../../../../store/actions/getCompanyAction'
 import { getUserAction } from '../../../../store/actions/getUserAction'
+import { getPayDatesAction } from '../../../../store/actions/getPayDatesAction'
 
 class CompanyDashboard extends React.Component {
 
     componentDidMount() {
         const token = this.props.tokens.access
         this.props.dispatch(getUserAction(token))
+        this.props.dispatch(getPayDatesAction())
+    }
+    
+    componentDidUpdate() {
+        
+        console.log(this.props)
     }
 
     render() {
+        const paydates = this.props.paydates
         return (
             <div className="company-dashboard-wrapper pages-container">
                 <div className='company-dashboard-container'>
@@ -32,7 +39,7 @@ class CompanyDashboard extends React.Component {
                                 <h3>Your latest activities</h3>
                                 <ul>
                                     <li>You uploaded Spesenformular.xls</li>
-                                    <li>XY joined your company</li>
+                                    <li>Sara Ober joined your company</li>
                                     <li>You edited your bank account</li>
                                 </ul>
                             </div>
@@ -40,13 +47,13 @@ class CompanyDashboard extends React.Component {
                                 <h3>Reminders</h3>
                                 <ul>
                                     <li>Run Payroll Feb 2020</li>
-                                    <li>Jeb's Birthday on March 23rd</li>
+                                    <li>Jorge's Birthday on March 23</li>
                                 </ul>
                             </div>
                             <div className='dashboard-card'>
-                                <h3>Last Payroll</h3>
+                                <h3>Last Payroll Run</h3>
                                 <ul>
-                                    <li>Payroll Jan 2020</li>
+                                    {paydates.length > 0 && <li>Payroll - {paydates[paydates.length - 1].date_paid.slice(0, 7)}</li>}
                                 </ul>
                             </div>
                         </div>
@@ -58,9 +65,11 @@ class CompanyDashboard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('hello from dashboardState: ', state)
     return {
         user: state.userReducer.user,
-        tokens: state.loginReducer.tokens
+        tokens: state.loginReducer.tokens,
+        paydates: state.dateReducer.payDates
     }
 }
 
