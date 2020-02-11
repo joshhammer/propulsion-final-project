@@ -10,19 +10,19 @@ const TableRowPayroll = (props) => {
 
     return (
         <div className="tablerowpayroll-container">
-            <div>
+            <div className="tablerowpayroll-element-small">
                 <p>{props.lastName}, {props.firstName}</p>
             </div>
-            <div>
+            <div className="tablerowpayroll-element-small">
                 <p>{props.role}</p>
             </div>
-            <div>
+            <div className="tablerowpayroll-element-small">
                 <p>CHF {salary}</p>
             </div>
-            <div>
+            <div className="tablerowpayroll-element-wide">
                 <p>CHF {deductions}</p>
             </div>
-            <div>
+            <div className="tablerowpayroll-element-wide">
                 <p>CHF {subtotal}</p>
             </div>
         </div>

@@ -1,5 +1,5 @@
 .tablerowpayroll-container {
-    border-radius: 8px;
+    border-radius: 4px;
     margin-bottom: 1%;
     width: 100%;
     height: 10%;
@@ -7,13 +7,30 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--mainWhite);
+}
 
-    & div {
-        margin-left: 5%;
-        width: 20%;
-        & p {
-            color: var(--mainBlue);
-        }
+.tablerowpayroll-element-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 100%;
+
+    & p {
+        color: var(--mainBlue);
     }
 }
+
+.tablerowpayroll-element-wide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+
+    & p {
+        color: var(--mainBlue);
+    }
+}
+
 
