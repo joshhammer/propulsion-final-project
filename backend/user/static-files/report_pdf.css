@@ -1,16 +1,16 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:400,700");
-@page {
-  margin: 3cm;
-  @bottom-left {
-    color: #1ee494;
-    font-family: Pacifico;
-    content: '♥ Thank you!'; }
-  @bottom-right {
-    color: #a9a;
-    content: 'hello@razzpay.ch | +41 1 12 34 56 78 | razzpay.propulsion-learn.ch/';
-    font-family: Pacifico;
-    font-size: 9pt; } }
+/*@page {*/
+/*  margin: 3cm;*/
+/*  @bottom-left {*/
+/*    color: #1ee494;*/
+/*    font-family: Pacifico;*/
+/*    content: '♥ Thank you!'; }*/
+/*  @bottom-right {*/
+/*    color: #a9a;*/
+/*    content: 'hello@razzpay.ch | +41 1 12 34 56 78 | razzpay.propulsion-learn.ch/';*/
+/*    font-family: Pacifico;*/
+/*    font-size: 9pt; } }*/
 
 html {
   color: #14213d;
