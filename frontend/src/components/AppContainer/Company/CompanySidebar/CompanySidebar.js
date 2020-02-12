@@ -26,7 +26,7 @@ const CompanySidebar = (props) => {
                 <Link className="sidebar-link" to="/company/dashboard"
                     id={path === '/company/dashboard' ? 'active-sidebar-link' : ''}>Dashboard</Link>
                 <Link className="sidebar-link" to="/company/people"
-                    id={path === '/company/people' ? 'active-sidebar-link' : ''}>People</Link>
+                    id={path === '/company/people' ? 'active-sidebar-link' : ''}>Employees</Link>
                 <Link className="sidebar-link" to="/company/payroll"
                     id={path === '/company/payroll' ? 'active-sidebar-link' : ''}>Run Payroll</Link>
                 <Link className="sidebar-link" to="/company/details"
