@@ -10,7 +10,7 @@ const PayRollConfirm = (props) => {
             <div className="confirm-dialog-container">
                 <div className="confirm-dialog-container-actions">
                     <div className="confirm-dialog-container-actions-header">
-                        <h2>Confirm your payment of: CHF {props.amount}</h2>
+                        <h2>Confirm your payment of: <br />CHF {props.amount}</h2>
                     </div>
                     <div className="confirm-dialog-container-actions-password">
                         <InputField type={"password"} content={"Password"} name={"password"}/>
