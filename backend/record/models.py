@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 
 from company.models import Company
+from report.models import Report
 
 
 class Record(models.Model):
@@ -47,6 +48,23 @@ class Record(models.Model):
         upload_to='pdfreports/',
         blank=True,
         null=True
+    )
+
+    # No longer used, just used in testing and development
+    reportstorage = models.FileField(
+        verbose_name='reportstorage',
+        upload_to='reports/',
+        blank=True,
+        null=True
+    )
+
+    report = models.ForeignKey(
+        verbose_name='report',
+        to=Report,
+        on_delete=models.CASCADE,
+        related_name='record',
+        blank=True,
+        null=True,
     )
 
     def __str__(self):
