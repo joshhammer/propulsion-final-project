@@ -46,8 +46,8 @@ class CompanyDashboard extends React.Component {
                             <div className='dashboard-card'>
                                 <h3>Reminders</h3>
                                 <ul>
-                                    <li>Run Payroll Feb 2020</li>
-                                    <li>Jorge's Birthday on March 23</li>
+                                    <li>Run Payroll 2020-02</li>
+                                    <li>Jorge's Birthday on March 23rd</li>
                                 </ul>
                             </div>
                             <div className='dashboard-card'>
