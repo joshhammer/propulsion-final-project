@@ -1,6 +1,6 @@
 .dialog-container {
-    height: 70%;
-    width: 50%;
+    // height: 70%;
+    width: 450px;
     display: flex;
     z-index: 1010;
     border-radius: 5px;
@@ -12,16 +12,19 @@
 
 .dialog-container-actions {
     display: flex;
-    width: 70%;
+    width: 80%;
     height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem 0;
 
     & h2 {
         height: 9%;
         color: var(--mainBlue);
         border-bottom: 1px solid var(--mainBlue);
+        margin-bottom: 2rem;
+        font-weight: 400;
     }
 
     & form {
@@ -40,9 +43,9 @@
 
 .dialog-buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 2rem;
 }
 
 .modal-overlay {

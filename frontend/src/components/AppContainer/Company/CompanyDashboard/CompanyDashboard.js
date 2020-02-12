@@ -32,7 +32,7 @@ class CompanyDashboard extends React.Component {
                     <div className='company-dashboard-content'>
                         <div className='company-dashboard-welcome-box'>
                             <h1>Good day, {this.props.user.first_name}!</h1>
-                            <p>Here's what's been going on lately..</p>
+                            <p>Here's what's been going on lately...</p>
                         </div>
                         <div className='company-dashboard-card-container'>
                             <div className='company-dashboard-card'>
