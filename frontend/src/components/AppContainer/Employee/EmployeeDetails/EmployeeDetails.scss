@@ -14,35 +14,41 @@
     padding-left: 1rem;
     padding-right: 1rem;
     height: 20%;
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .employee-profile-title-box {
     display: flex;
+    align-items: center;
     width: 70%;
+    height: 20%;
     & svg {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         color: var(--mainGreen);
     }
     & h1 {
         margin-left: 1rem;
         text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        border-bottom: 1px solid var(--mainGreen);
         letter-spacing: 1px;
         font-weight: 300;
     }
 }
 
+.profile-title-and-logo {
+    display: flex;
+    border-bottom: 1px solid var(--mainGreen);
+    padding-top: 1rem;
+}
+
 .employee-profile-data-container {
     padding: 1rem 1rem 5rem 1rem;
     height: 80%;
-    width: 80%;
+    width: 100%;
     overflow: scroll;
 }
 
@@ -67,7 +73,7 @@
     & p {
         width: 30%;
         height: 35px;
-        margin-right: 1rem;
+        // margin-right: 1rem;
         background: var(--mainGreen);
         color: var(--mainBlue);
         border-radius: 5px;
@@ -86,7 +92,7 @@
         margin-left: 4rem;
         padding-left: 1rem;
         height: 35px;
-        width: 70%;
+        width: 60%;
         font-size: 1rem;
         letter-spacing: 1px;
         box-shadow: 0 0 8px black;
@@ -102,7 +108,7 @@
     border-radius: 5px;
     padding-left: 1rem;
     height: 35px;
-    width: 70%;
+    width: 60%;
     font-size: 1rem;
     letter-spacing: 1px;
     box-shadow: 0 0 10px black;
