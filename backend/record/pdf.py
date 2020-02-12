@@ -39,3 +39,26 @@ def payslip_pdf(paid_employee, record, host_url):
     pdf_file = HTML(string=html).write_pdf(stylesheets=[css], font_config=font_config)
     record.pdfstorage = SimpleUploadedFile(f'Report-{record.date_paid.strftime("%d-%m-%Y")}.pdf', pdf_file, content_type='application/pdf')
     record.save()
+
+
+def report_pdf(company, record_list, total__paid, new_report, paid_employee, record, host_url):
+    salary = get_object_or_404(Salary, user=paid_employee)
+
+    employee = []
+    employee.append(record_list[0].id)
+
+    html = render_to_string(
+        template_name="report_pdf.html",
+        context={'company': company, 'record_list':record_list, 'total_paid':total__paid, 'new_report':new_report,
+                 'payslip': paid_employee, 'salary': salary, 'record': record, 'employee':employee,
+                    })
+
+    css = CSS(host_url + settings.STATIC_ROOT + 'report_pdf.css')
+    font_config = FontConfiguration()
+    pdf_file = HTML(string=html).write_pdf(stylesheets=[css], font_config=font_config)
+    new_report.reportfiles = SimpleUploadedFile(f'Payperiod Report-{record.date_paid.strftime("%d-%m-%Y")}.pdf', pdf_file,
+                                              content_type='application/pdf')
+    new_report.save()
+
+
+
