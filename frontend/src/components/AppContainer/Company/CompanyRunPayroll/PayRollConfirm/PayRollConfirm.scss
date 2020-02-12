@@ -1,8 +1,9 @@
 .confirm-dialog-container {
-    height: 40%;
-    width: 40%;
+    // height: 40%;
+    width: 35%;
+    width: 450px;
     position: fixed;
-    top: 15%;
+    top: 20%;
     left: 40%;
     display: flex;
     z-index: 1010;
@@ -10,6 +11,7 @@
     justify-content: center;
     align-items: flex-start;
     background-color: var(--mainWhite);
+    padding-bottom: 2rem;
 
     &-actions {
         display: flex;
@@ -18,14 +20,14 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        padding-top: 2rem;
 
         &-header {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 15%;
             width: 100%;
-            margin-top: 15%;
+            margin-bottom: 3rem;
         }
 
         &-password {
@@ -34,12 +36,14 @@
             align-items: center;
             height: 15%;
             width: 100%;
-            margin-top: 5%;
+            margin-bottom: 3rem;
         }
 
         & h2 {
-            height: 10%;
             color: var(--mainBlue);
+            text-align: center;
+            font-weight: 400;
+            text-shadow: 2px 2px 5px gray;
         }
 
         & form {
@@ -61,7 +65,6 @@
     display: flex;
     justify-content: space-evenly;
     width: 80%;
-    margin-top: 15%;
 
 }
 

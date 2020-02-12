@@ -10,8 +10,8 @@ const TableRowPayroll = (props) => {
 
     return (
         <div className="tablerowpayroll-container">
-            <div className="tablerowpayroll-element-small">
-                <p>{props.lastName}, {props.firstName}</p>
+            <div className="tablerowpayroll-element-small payroll-name-field">
+                <p>{props.lastName}, {props.firstName.slice(0,1)}.</p>
             </div>
             <div className="tablerowpayroll-element-small">
                 <p>{props.role}</p>
