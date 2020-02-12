@@ -23,13 +23,13 @@ class ProfileData extends React.Component {
                 <h3 className='profile-data-section-title'>Personal Information</h3>
                 <div className='profile-table-element'>
                     <p>Firstname</p>
-                    <input name="firstname" type="text" value={readonly ? user.first_name : firstname} readOnly={readonly} 
+                    <input name="first_name" type="text" value={readonly ? user.first_name : firstname} readOnly={readonly} 
                         onChange={saveData}
                         id={readonly ? '' : 'editable-input'}/>
                 </div>
                 <div className='profile-table-element'>
                     <p>Lastname</p>
-                    <input name="lastname" type="text" value={readonly ? user.last_name : lastname} readOnly={readonly}
+                    <input name="last_name" type="text" value={readonly ? user.last_name : lastname} readOnly={readonly}
                         onChange={saveData}
                         id={readonly ? '' : 'editable-input'} />
                 </div>
