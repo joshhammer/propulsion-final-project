@@ -13,17 +13,16 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     text-decoration: none;
-    letter-spacing: 1px;
     box-shadow: var(--boxShadow);
     color: var(--mainWhite);
-    background-color: var(--mainBurgund);
+    //background-color: var(--mainBurgund);
     border: 1px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
     transition: all 0.25s;
 
     &:hover {
-        background-color: (--mainBurgund);
+        background-color: var(--mainBurgund);
         color: var(--mainWhite);
     }
 
@@ -34,7 +33,7 @@
 }
 
 #active-sidebar-link {
-    background-color: (--mainBurgund);
+    background-color: var(--mainBurgund);
     color: var(--mainWhite);
 }
 
