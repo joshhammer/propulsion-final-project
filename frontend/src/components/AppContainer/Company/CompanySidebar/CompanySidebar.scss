@@ -15,7 +15,8 @@
     justify-content: space-evenly;
 
     & button {
-        //background-color: #CB2D6F;
+        background-color: var(--mainGreen);
+        color: black;
 
         &:hover {
             background-color: #CB2D6F;

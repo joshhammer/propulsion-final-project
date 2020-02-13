@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import InputField from "../../../../reusable-components/input-fields/InputField";
 import AuthenticationButton from "../../../../reusable-components/buttons/AuthenticationButton";
 import './PayRollConfirm.scss';
+import PopupButtonConfirm from "../../CompanyPeople/AddEmployee/Buttons/PopupButtonConfirm";
+import PopupButtonCancel from "../../CompanyPeople/AddEmployee/Buttons/PopupButtonCancel";
 
 const PayRollConfirm = (props) => {
     return (
@@ -16,9 +18,9 @@ const PayRollConfirm = (props) => {
                         <InputField type={"password"} content={"Password"} name={"password"}/>
                     </div>
                     <div className={"confirm-dialog-buttons"}>
-                        <AuthenticationButton content={"Pay"} type={'submit'} onClick={props.onClick}/>
+                        <PopupButtonConfirm content={"Pay"} type={'submit'} onClick={props.onClick}/>
                         <span className="confirm-span-dialog"/>
-                        <AuthenticationButton content={"Cancel"} onClick={props.isOpen}/>
+                        <PopupButtonCancel content={"Cancel"} onClick={props.isOpen}/>
                     </div>
                 </div>
             </div>

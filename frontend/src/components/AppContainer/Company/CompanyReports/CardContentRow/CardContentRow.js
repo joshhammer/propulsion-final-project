@@ -5,16 +5,16 @@ const CardContentRow = (props) => {
     return (
         <div className="cardcontentrow-container">
             <div className="cardcontentrow-element">
-                <h4>{props.payment.user.first_name}, {props.payment.user.last_name}</h4>
+                <p>{props.payment.user.first_name}, {props.payment.user.last_name}</p>
             </div>
             <div className="cardcontentrow-element">
-                <h4>Regular Salary</h4>
+                <p>Regular Salary</p>
             </div>
             <div className="cardcontentrow-element">
-                <h4>{props.payment.user.salary.position}</h4>
+                <p>{props.payment.user.salary.position}</p>
             </div>
             <div className="cardcontentrow-element">
-                <h4>CHF {props.payment.user.salary.gross_month}</h4>
+                <p>CHF {props.payment.user.salary.gross_month}</p>
             </div>
         </div>
     )
