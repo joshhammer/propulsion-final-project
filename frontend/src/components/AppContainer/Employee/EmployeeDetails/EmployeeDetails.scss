@@ -29,12 +29,11 @@
     & svg {
         width: 40px;
         height: 40px;
-        color: var(--mainGreen);
+        color: var(--mainBurgund);
     }
 
     & h1 {
         margin-left: 1rem;
-        text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
         font-weight: 300;
@@ -43,7 +42,7 @@
 
 .profile-title-and-logo {
     display: flex;
-    border-bottom: 1px solid var(--mainGreen);
+    border-bottom: 1px solid var(--mainBurgund);
     padding-top: 1rem;
 }
 
@@ -75,14 +74,15 @@
     & p {
         width: 30%;
         height: 35px;
-        background: var(--mainGreen);
-        color: var(--mainBlue);
+        background: var(--mainBurgund);
+        color: white;
         border-radius: 5px;
         padding-left: 1rem;
         display: flex;
         align-items: center;
         font-size: 1rem;
         letter-spacing: 1px;
+        box-shadow: 0 0 5px black;
     }
 
     // not editable input field
@@ -96,7 +96,7 @@
         width: 60%;
         font-size: 1rem;
         letter-spacing: 1px;
-        box-shadow: 0 0 8px black;
+        box-shadow: 0 0 5px var(--mainBlack);
         background: var(--mainWhite);
         cursor: default;
     }
@@ -119,11 +119,12 @@
 
 
 .profile-edit-btn {
-    background: var(--mainGreen);
-    color: var(--mainWhite);
+    background: var(--mainGrey);
+    color: black;
     height: 35px;
     // width: 50px;
     border-radius: 25px;
+    border: 1px solid var(--mainBurgund);
     // margin-left: 10rem;
     transition: all .3s;
 
@@ -139,7 +140,7 @@
 
 .profile-save-btn {
     border: none;
-    background: var(--mainGreen);
+    background: var(--mainBurgund);
     color: var(--mainWhite);
     height: 35px;
     // width: 50px;
@@ -148,7 +149,7 @@
     transition: all .3s;
 
     &:hover {
-        border: 1px solid var(--mainGreen);
+        border: 1px solid var(--mainBurgund);
         background: var(--mainBlue);
         color: black;
     }

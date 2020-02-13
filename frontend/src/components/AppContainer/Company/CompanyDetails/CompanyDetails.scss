@@ -105,62 +105,62 @@
 }
 
 
-.profile-edit-btn {
-    border: 1px solid var(--mainGreen);
-    background: var(--mainBlue);
-    color: var(--mainWhite);
-    height: 35px;
-    width: 50px;
-    border-radius: 25px;
-    // margin-left: 10rem;
-    transition: all .3s;
+// .profile-edit-btn {
+//     border: 1px solid var(--mainGreen);
+//     background: var(--mainBlue);
+//     color: var(--mainWhite);
+//     height: 35px;
+//     width: 50px;
+//     border-radius: 25px;
+//     // margin-left: 10rem;
+//     transition: all .3s;
 
-    &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
-    }
+//     &:hover {
+//         background: var(--mainGreen);
+//         color: var(--mainBlue);
+//     }
 
-    &:focus {
-        outline: none;
-    }
-}
+//     &:focus {
+//         outline: none;
+//     }
+// }
 
-.profile-save-btn {
-    border: none;
-    background: var(--mainGreen);
-    color: var(--mainBlue);
-    height: 35px;
-    width: 50px;
-    border-radius: 25px;
-    margin-left: 6rem;
-    transition: all .3s;
+// .profile-save-btn {
+//     border: none;
+//     background: var(--mainGreen);
+//     color: var(--mainBlue);
+//     height: 35px;
+//     width: 50px;
+//     border-radius: 25px;
+//     margin-left: 6rem;
+//     transition: all .3s;
 
-    &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
-    }
+//     &:hover {
+//         background: var(--mainGreen);
+//         color: var(--mainBlue);
+//     }
 
-    &:focus {
-        outline: none;
-    }
-}
+//     &:focus {
+//         outline: none;
+//     }
+// }
 
-.profile-cancel-btn {
-    border: none;
-    background: var(--mainGreen);
-    color: var(--mainBlue);
-    height: 35px;
-    width: 50px;
-    border-radius: 25px;
-    margin-left: 1rem;
-    transition: all .3s;
+// .profile-cancel-btn {
+//     border: none;
+//     background: var(--mainGreen);
+//     color: var(--mainBlue);
+//     height: 35px;
+//     width: 50px;
+//     border-radius: 25px;
+//     margin-left: 1rem;
+//     transition: all .3s;
 
-    &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
-    }
+//     &:hover {
+//         background: var(--mainGreen);
+//         color: var(--mainBlue);
+//     }
 
-    &:focus {
-        outline: none;
-    }
-}
+//     &:focus {
+//         outline: none;
+//     }
+// }
