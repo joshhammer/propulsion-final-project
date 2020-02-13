@@ -3,7 +3,7 @@
 @page {
   margin: 3cm;
   @bottom-left {
-    color: #1ee494;
+    color: #14a098;
     font-family: Pacifico;
     content: '♥ Thank you!'; }
   @bottom-right {
@@ -20,7 +20,7 @@ html {
   html body {
     margin: 0; }
   html h1 {
-    color: #1ee494;
+    color: #14a098;
     font-family: Pacifico;
     font-size: 20pt;
     margin: 0; }
@@ -67,7 +67,8 @@ html {
     }
 
       html table td:last-of-type {
-        color: #1ee494;
+        /*color: #1ee494;*/
+        color: #14a098;
         font-weight: bold;
         text-align: right;}
     html table th, html table td {
