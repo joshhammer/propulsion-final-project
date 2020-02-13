@@ -25,11 +25,13 @@
     align-items: center;
     width: 70%;
     height: 20%;
+
     & svg {
         width: 40px;
         height: 40px;
         color: var(--mainGreen);
     }
+
     & h1 {
         margin-left: 1rem;
         text-shadow: 0 0 10px black;
@@ -59,8 +61,7 @@
 .profile-data-section-title {
     padding-top: 1rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 10px black;
-    color: var(--mainWhite);
+    color: black;
     letter-spacing: 1px;
     font-weight: 400;
     font-size: 1.3rem;
@@ -70,10 +71,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+
     & p {
         width: 30%;
         height: 35px;
-        // margin-right: 1rem;
         background: var(--mainGreen);
         color: var(--mainBlue);
         border-radius: 5px;
@@ -81,9 +82,9 @@
         display: flex;
         align-items: center;
         font-size: 1rem;
-        box-shadow: 0 0 10px black;
         letter-spacing: 1px;
     }
+
     // not editable input field
     & input {
         outline: none;
@@ -118,54 +119,61 @@
 
 
 .profile-edit-btn {
-    border: 1px solid var(--mainGreen);
-    background: var(--mainBlue);
+    background: var(--mainGreen);
     color: var(--mainWhite);
     height: 35px;
     // width: 50px;
     border-radius: 25px;
     // margin-left: 10rem;
     transition: all .3s;
+
     &:hover {
-        background: var(--mainGreen);
-        color: var(--mainBlue);
+        background: var(--mainBurgund);
+        color: var(--mainWhite);
     }
+
     &:focus {
         outline: none;
     }
 }
+
 .profile-save-btn {
     border: none;
     background: var(--mainGreen);
-    color: var(--mainBlue);
+    color: var(--mainWhite);
     height: 35px;
     // width: 50px;
     border-radius: 25px;
     margin-left: 6rem;
     transition: all .3s;
+
     &:hover {
         border: 1px solid var(--mainGreen);
         background: var(--mainBlue);
-        color: var(--mainWhite);
+        color: black;
     }
+
     &:focus {
         outline: none;
     }
 }
+
 .profile-cancel-btn {
     border: none;
-    background: var(--mainGreen);
-    color: var(--mainBlue);
+    background: var(--mainBurgund);
+    color: var(--mainWhite);
     height: 35px;
     // width: 50px;
     border-radius: 25px;
     margin-left: 1rem;
     transition: all .3s;
+
     &:hover {
-        border: 1px solid var(--mainGreen);
+        border: 1px solid var(--mainBurgund);
         background: var(--mainBlue);
-        color: var(--mainWhite);
+        color: black;
     }
+
     &:focus {
         outline: none;
     }

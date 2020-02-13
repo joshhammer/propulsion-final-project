@@ -65,7 +65,7 @@
 }
 
 .dashboard-card {
-    background: var(--mainWhite);
+    background: var(--mainGreen);
     width: 45%;
     margin-right: 5%;
     margin-bottom: 5%;
@@ -82,15 +82,14 @@
     & ul {
         list-style-type: none;
         & li {
-            background: var(--mainBlue);
-            color: var(--mainWhite);
+            background: var(--mainWhite);
             padding: 10px;
             margin-bottom: .5rem;
             border-radius: 5px;
             box-shadow: var(--boxShadow);
         }
         & li:nth-child(2n) {
-            background: var(--mainGreen);
+            background: var(--mainGrey);
             color: var(--mainBlue);
         }
     }

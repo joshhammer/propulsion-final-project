@@ -16,11 +16,11 @@
     display: flex;
     align-items: center;
     & h1 {
-        text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
-        font-weight: 300;
+        font-weight: 400;
         letter-spacing: 1px;
         margin-left: 1rem;
+        color: black;
     }
     & svg {
         width: 40px;
@@ -47,7 +47,6 @@
 }
 
 .company-dashboard-welcome-box {
-    text-shadow: 0 0 10px black;
     & h1 {
         margin-bottom: 1rem;
         font-weight: 300;
@@ -66,7 +65,7 @@
 }
 
 .company-dashboard-card {
-    background: var(--mainWhite);
+    background: var(--mainGreen);
     width: 45%;
     margin-right: 5%;
     margin-bottom: 5%;
@@ -83,15 +82,14 @@
     & ul {
         list-style-type: none;
         & li {
-            background: var(--mainBlue);
-            color: var(--mainWhite);
+            background: var(--mainWhite);
             padding: 10px;
             margin-bottom: .5rem;
             border-radius: 5px;
             box-shadow: var(--boxShadow);
         }
         & li:nth-child(2n) {
-            background: var(--mainGreen);
+            background: var(--mainGrey);
             color: var(--mainBlue);
         }
     }
