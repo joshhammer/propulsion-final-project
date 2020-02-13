@@ -15,7 +15,7 @@ export const getPayDatesAction = () => async (dispatch, getState) => {
     const data = await response.json();
     const action = {
         type: GET_PAYDATES,
-        payload: data
+        payload: data.reverse()
     };
     dispatch(action)
 };
