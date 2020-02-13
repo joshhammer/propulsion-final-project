@@ -32,11 +32,10 @@
 #main-subtitle {
     font-family: var(--secondaryFontFamily);
     font-weight: 300;
-    font-style: italic;
+    // font-style: italic;
     font-size: 1.2rem;
     width: 60%;
     text-align: center;
-    // text-shadow: 0 0 5px var(--mainBlue);
 }
 
 .authentication-container {
@@ -71,9 +70,12 @@
 
 .login {
     display: flex;
-    height: 90%;
-    width: 25%;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 30%;
+    padding-top: 1rem;
 
     & form {
         display: flex;
@@ -81,9 +83,35 @@
         justify-content: center;
         align-items: center;
         width: 100%;
+        margin-bottom: 2rem;
         .input-span {
             height: 15px;
         }
+    }
+}
+
+.register-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & p {
+        color: var(--mainWhite);
+        font-family: var(--secondaryFontFamily);
+        text-align: center;
+        font-size: .9rem;
+    }
+    & a {
+        color: var(--mainWhite);
+        font-family: var(--secondaryFontFamily);
+        text-decoration: none;
+        border-bottom: 1px solid var(--mainWhite);
+        font-size: .95rem;
+
+    }
+    & a:hover {
+        color: var(--mainGreen);
+        border-bottom: 1px solid var(--mainGreen);
     }
 }
 

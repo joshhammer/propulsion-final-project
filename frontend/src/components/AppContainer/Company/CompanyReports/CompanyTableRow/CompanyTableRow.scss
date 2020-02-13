@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1%;
+    padding: 10px 15px;;
     border-radius: 4px;
     border-bottom: 1px solid var(--mainBlue);
     background-color: var(--mainWhite);
@@ -32,6 +32,16 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
+    }
+}
+
+.company-report-download-box {
+    width: 25px;
+    height: 25px;
+    & svg {
+        width: 25px;
+        height: 25px;
+        color: var(--mainBlue);
     }
 }
 
