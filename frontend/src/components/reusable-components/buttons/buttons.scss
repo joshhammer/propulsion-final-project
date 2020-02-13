@@ -21,9 +21,9 @@
 .logout-button {
     height: 35px;
     width: 150px;
+    border: 1px solid var(--mainBurgund);
     border-radius: var(--borderRadius);
     font-size: 1rem;
-    border: none;
     outline: none;
     box-shadow: 0 0 5px black;
     transition: all .2s;
@@ -33,6 +33,7 @@
 
     &:hover {
         background-color: #CB2D6F;
+        color: white;
     }
 
     &:active {

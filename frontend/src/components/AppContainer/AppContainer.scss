@@ -13,10 +13,10 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     text-decoration: none;
-    box-shadow: var(--boxShadow);
+    box-shadow: 0 0 5px var(--mainBlack);
     color: black;
-    //background-color: var(--mainBurgund);
-    border: 1px solid var(--mainBlue);
+
+    border: 1px solid var(--mainBurgund);
     border-radius: 8px;
     padding: 5px;
     transition: all 0.25s;
