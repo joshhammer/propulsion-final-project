@@ -1,7 +1,6 @@
 .pages-container {
     width: 75%;
-    background-color: var(--mainBlue);
-    color: var(--mainWhite);
+    background-color: var(--mainGrey);
 }
 
 
@@ -14,24 +13,27 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     text-decoration: none;
-    letter-spacing: 1px;
     box-shadow: var(--boxShadow);
-    color: var(--mainBlue);
+    color: var(--mainWhite);
+    //background-color: var(--mainBurgund);
     border: 1px solid var(--mainBlue);
     border-radius: 8px;
     padding: 5px;
     transition: all 0.25s;
+
     &:hover {
-        background-color: var(--mainBlue);
+        background-color: var(--mainBurgund);
         color: var(--mainWhite);
     }
+
     &:active {
         box-shadow: 0px 0px 0px black;
+        background-color: (--mainBurgund);
     }
 }
 
 #active-sidebar-link {
-    background-color: var(--mainBlue);
+    background-color: var(--mainBurgund);
     color: var(--mainWhite);
 }
 
@@ -47,10 +49,11 @@
     width: 150px;
     height: 150px;
     // margin-top: 3rem;
-    background: var(--mainBlue);
+    background-color: var(--mainBurgund);
     border-radius: 50%;
     box-shadow: 0 0 5px black;
     transition: all .5s ease-in-out;
+
     &:hover {
         transform: rotate(360deg);
         box-shadow: 0 0 15px black;

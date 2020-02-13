@@ -13,6 +13,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
+    & button {
+        //background-color: #CB2D6F;
+
+        &:hover {
+            background-color: #CB2D6F;
+
+        }
+    }
 }
 
 .company-sidebar-links a:nth-child(6n) {
