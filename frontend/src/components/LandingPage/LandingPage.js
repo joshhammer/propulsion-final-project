@@ -65,14 +65,14 @@ const LandingPage = (props) => {
                     One place to run payroll, manage benefits, <br/> and support your team.</h3>
             </div>
             <div className="authentication-container">
-                <div className="register">
+                {/* <div className="register">
                     <form className="register-form" onSubmit={handleSubmit}>
                         <InputField content={"Email"} name={"registrationEmail"} value={state.registrationEmail}
                                     onChange={handleChange}/>
                         <span className="input-span"></span>
                         <AuthenticationButton content={"Register"}/>
                     </form>
-                </div>
+                </div> */}
                 <div className="login">
                     <form onSubmit={handleSubmit}>
                         <InputField content={"Email"} name={"email"} value={state.email} onChange={handleChange}/>
@@ -82,6 +82,10 @@ const LandingPage = (props) => {
                         <span className="input-span"></span>
                         <AuthenticationButton content={"Login"} />
                     </form>
+                    <div className='register-box'>
+                        <p>Don't have an account yet?</p>
+                        <a href="#">Register Here</a>
+                    </div>
                 </div>
             </div>
             <div className="footer">
