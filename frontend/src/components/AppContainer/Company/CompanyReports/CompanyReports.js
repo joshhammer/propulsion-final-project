@@ -37,6 +37,7 @@ const CompanyReports = (props) => {
                         <div className="company-reports-table-header-property-container-element"><h3>Description</h3>
                         </div>
                         <div className="company-reports-table-header-property-container-element"><h3>Debit</h3></div>
+                        <div className='company-reports-helper-box'></div>
                     </div>
                 </div>
                 <div className="company-reports-table-content">

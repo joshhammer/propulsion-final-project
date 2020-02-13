@@ -4,10 +4,11 @@
 }
 
 .landingpage-header {
+
     height: 45%;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    justify-content: center;
     align-items: center;
 
     & h1 {
@@ -16,24 +17,23 @@
 
     & h3 {
         font-family: var(--secondaryFontFamily);
-        // color: var(--mainBlack);
+
     }
 }
 
 #razzpay-main-title {
-    // color: var(--mainBlue);
-    font-size: 5.5rem;
+    font-size: 7rem;
     font-family: 'Dancing Script', cursive;
     margin-bottom: 2rem;
-    margin-top: 2.5rem;
-    text-shadow: 0 0 3px var(--mainBlack);
+    // margin-top: 2.5rem;
+    // text-shadow: 0 0 3px var(--mainBlack);
 }
 
 #main-subtitle {
     font-family: var(--secondaryFontFamily);
     font-weight: 300;
     // font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     width: 60%;
     text-align: center;
 }
@@ -120,9 +120,9 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    // padding-bottom: 15px;
+    // margin-top: 1rem;
     padding: 0 30px 15px 30px;
-    background: var(--mainGreen);
+    // background: var(--mainGreen);
     
     &-left {
         width: 40%;
@@ -162,10 +162,10 @@
     color: white;
     border-radius: var(--borderRadius);
     background-color: var(--mainBurgundy);
-    border: 1px solid white;
+    border: 1px solid var(--mainGreen);
     font-size: 1rem;
     outline: none;
-    box-shadow: var(--boxShadow);
+    // box-shadow: var(--boxShadow);
     transition: all .2s;
     &:hover {
         background: var(--mainGreen); 
@@ -173,8 +173,7 @@
         color: black;
     }
     &:active {
-        // box-shadow: 0 0 0 black;
-        border: none;
+        background: rgb(28, 226, 216);
     }
 }
 
