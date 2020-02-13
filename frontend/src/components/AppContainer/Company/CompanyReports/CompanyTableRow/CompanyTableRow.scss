@@ -38,10 +38,16 @@
 .company-report-download-box {
     width: 25px;
     height: 25px;
+
     & svg {
         width: 25px;
         height: 25px;
         color: var(--mainBurgund);
+
+        &:hover {
+            color: var(--mainGreen);
+
+        }
     }
 }
 
