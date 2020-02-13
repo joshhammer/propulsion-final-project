@@ -73,7 +73,11 @@
 
     &-table-content {
         overflow: scroll;
-        height: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        height: 400px;
 
         & h3 {
             color: var(--mainWhite)

@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {getAllUsersAction} from "../../../../store/actions/getAllUsersAction";
 import AddEmployee from "./AddEmployee/AddEmployee";
 import AddButton from "./AddButton";
+import ReactLoading from "react-loading";
 
 const CompanyPeople = (props) => {
     useEffect(() => {
@@ -45,11 +46,13 @@ const CompanyPeople = (props) => {
                 </div>
                 <div className="company-people-table-content">
                     {
-                        props.users &&
+                        !props.users ? (
+                            <ReactLoading type={"spin"} color={"var(--mainBurgund"}/>
+                            ) : (
                         props.users.map((user, i) => {
                             return <TableRow key={i} firstName={user.first_name} lastName={user.last_name}
                                              position={user.salary.position} email={user.email}/>
-                        })
+                        }))
                     }
                 </div>
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
 import InputField from "../../../../reusable-components/input-fields/InputField";
-import AuthenticationButton from "../../../../reusable-components/buttons/AuthenticationButton";
 import './PayRollConfirm.scss';
 import PopupButtonConfirm from "../../CompanyPeople/AddEmployee/Buttons/PopupButtonConfirm";
 import PopupButtonCancel from "../../CompanyPeople/AddEmployee/Buttons/PopupButtonCancel";
