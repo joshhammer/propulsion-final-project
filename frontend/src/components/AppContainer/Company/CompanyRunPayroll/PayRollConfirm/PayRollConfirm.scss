@@ -1,6 +1,4 @@
 .confirm-dialog-container {
-    // height: 40%;
-    width: 35%;
     width: 450px;
     position: fixed;
     top: 20%;
@@ -40,10 +38,8 @@
         }
 
         & h2 {
-            color: var(--mainBlue);
             text-align: center;
             font-weight: 400;
-            text-shadow: 2px 2px 5px gray;
         }
 
         & form {

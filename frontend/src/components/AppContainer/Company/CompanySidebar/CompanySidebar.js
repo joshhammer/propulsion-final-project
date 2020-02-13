@@ -13,7 +13,7 @@ const CompanySidebar = (props) => {
         window.location.reload();
     };
 
-    const path = props.history.location.pathname
+    const path = props.history.location.pathname;
     return (
         <div className="company-sidebar-container">
             <div className="company-logo">
