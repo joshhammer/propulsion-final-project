@@ -8,9 +8,11 @@
     outline: none;
     box-shadow: var(--boxShadow);
     transition: all .2s;
+
     &:hover {
-        background: var(--lightGreen); 
+        background: var(--lightGreen);
     }
+
     &:active {
         box-shadow: 0 0 0 black;
     }
@@ -20,17 +22,19 @@
     height: 35px;
     width: 150px;
     border-radius: var(--borderRadius);
-    background-color: var(--mainBlue);
     font-size: 1rem;
-    color: var(--mainWhite);
     border: none;
     outline: none;
     box-shadow: 0 0 5px black;
     transition: all .2s;
     letter-spacing: 1px;
+    background-color: var(--mainGreen);
+    color: black;
+
     &:hover {
-        background: red;
+        background-color: #CB2D6F;
     }
+
     &:active {
         box-shadow: 0 0 0 black;
     }

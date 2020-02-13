@@ -43,14 +43,14 @@ class CompanyDashboard extends React.Component {
                                     <li>You edited your bank account</li>
                                 </ul>
                             </div>
-                            <div className='dashboard-card'>
+                            <div className='company-dashboard-card'>
                                 <h3>Reminders</h3>
                                 <ul>
                                     <li>Run Payroll 2020-02</li>
                                     <li>Jorge's Birthday on March 23rd</li>
                                 </ul>
                             </div>
-                            <div className='dashboard-card'>
+                            <div className='company-dashboard-card'>
                                 <h3>Last Payroll Run</h3>
                                 <ul>
                                     {paydates.length > 0 &&
