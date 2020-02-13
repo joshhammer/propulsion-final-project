@@ -8,7 +8,7 @@ export const postPayrollAction = () => async (dispatch, getState) => {
         'Authorization': 'Bearer ' + token,
     });
     const body = {
-        'date_paid': '2020-01-18',
+        'date_paid': '2020-01-21',
         'payperiod_start': '2020-01-01',
         'payperiod_end': '2020-01-31'
     };
