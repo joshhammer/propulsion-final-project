@@ -16,7 +16,6 @@
     display: flex;
     align-items: center;
     & h1 {
-        text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
         font-weight: 300;
@@ -25,13 +24,13 @@
     & svg {
         width: 40px;
         height: 40px;
-        color: var(--mainGreen);
+        color: var(--mainBurgund);
     }
 }
 
 .payslips-title-and-logo {
     display: flex;
-    border-bottom: 1px solid var(--mainGreen);
+    border-bottom: 1px solid var(--mainBurgund);
     padding-top: 1rem;
 }
 
@@ -57,22 +56,26 @@
     border-radius: 5px;
     margin-bottom: 1.25rem;
     padding: 0 2rem;
-    box-shadow: 0 0 8px black;
-    // box-shadow: var(--boxShadow);
+    box-shadow: 0 0 5px var(--mainBlack);
     & svg {
-    color: var(--mainBlue);
-    width: 25px;
-    height: 25px;
+        color: var(--mainBurgund);
+        width: 25px;
+        height: 25px;
+    }
+    & svg:hover {
+        color: var(--mainGreen);
     }
     & p {
         font-size: 1.2rem;
     }
+    
 }
 
 
 
 #payslip-table-head {
-    background: var(--mainGreen);
+    background: var(--mainBurgund);
+    color: white;
     margin-bottom: 2.5rem;
     & h3 {
         font-size: 1.3rem;

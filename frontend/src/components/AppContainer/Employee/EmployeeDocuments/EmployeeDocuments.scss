@@ -20,12 +20,11 @@
     & svg {
         width: 40px;
         height: 40px;
-        color: var(--mainGreen);
-        text-shadow: 0 0 10px black;
+        color: var(--mainBurgund);
+
     }
     & h1 {
         margin-left: 1rem;
-        text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
         font-weight: 300;
@@ -36,11 +35,10 @@
     display: flex;
     align-items: center;
     & svg {
-        color: var(--mainWhite);
+        color: var(--mainBurgund);
     }
     & h3 {
         margin-right: 1rem;
-        text-shadow: 0 0 10px black;
         font-weight: 400;
     }
     & svg:hover {
@@ -50,7 +48,7 @@
 
 .employee-documents-title-and-logo {
     display: flex;
-    border-bottom: 1px solid var(--mainGreen);
+    border-bottom: 1px solid var(--mainBurgund);
 }
 
 .employee-documents-divider {
@@ -64,18 +62,25 @@
     width: 50%;
     overflow: scroll;
     & h3 {
-        text-shadow: 0 0 10px black;
         margin-bottom: 2rem;
         font-weight: 400;
         font-size: 1.3rem;
     }
     & .employee-document-element:nth-child(2n+1) {
-        background: var(--mainGreen);
+        background: var(--mainBurgund);
+        color: white;
+        & svg {
+            color: white;
+        }
+        & svg:hover {
+        color: var(--mainGreen);
+    }
     }
 }
 
 .employee-documents-left-section {
     padding-right: 2rem;
+    padding-left: 5px;
 }
 
 .employee-documents-left-section::-webkit-scrollbar {
@@ -85,6 +90,7 @@
 .employee-documents-right-section {
     border-left: 1px solid var(--mainWhite);
     padding-left: 2rem;
+    padding-right: 5px;
 }
 
 .employee-documents-right-section::-webkit-scrollbar {
@@ -102,13 +108,17 @@
     margin-bottom: 1rem;
     padding-left: 1rem;
     padding-right: 1.5rem;
+    box-shadow: 0 0 5px var(--mainBlack);
     & p {
         color: var(--mainBlue);
     }
     & svg {
-    color: var(--mainBlue);
+    color: var(--mainBurgund);
     width: 20px;
     height: 20px;
+    }
+    & svg:hover {
+        color: var(--mainGreen);
     }
 }
 

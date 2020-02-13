@@ -80,7 +80,8 @@ const LandingPage = (props) => {
                         <InputField content={"Password"} type={"password"} name={"password"} value={state.password}
                                     onChange={handleChange}/>
                         <span className="input-span"></span>
-                        <AuthenticationButton content={"Login"} />
+                        {/* <AuthenticationButton content={"Login"} /> */}
+                        <button className='new-login-button'>Login</button>
                     </form>
                     <div className='register-box'>
                         <p>Don't have an account yet?</p>

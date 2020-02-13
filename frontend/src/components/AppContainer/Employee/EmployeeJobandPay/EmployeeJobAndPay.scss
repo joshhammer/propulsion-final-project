@@ -28,11 +28,10 @@
     & svg {
         width: 40px;
         height: 40px;
-        color: var(--mainGreen);
+        color: var(--mainBurgund);
     }
     & h1 {
         margin-left: 1rem;
-        text-shadow: 0 0 10px black;
         padding-bottom: .75rem;
         letter-spacing: 1px;
         font-weight: 300;
@@ -41,7 +40,7 @@
 
 .job-title-and-logo {
     display: flex;
-    border-bottom: 1px solid var(--mainGreen);
+    border-bottom: 1px solid var(--mainBurgund);
     padding-top: 1rem;
 }
 
@@ -64,15 +63,14 @@
     & p {
         width: 30%;
         height: 35px;
-        // margin-right: 1rem;
-        background: var(--mainGreen);
-        color: var(--mainBlue);
+        background: var(--mainBurgund);
+        color: white;
         border-radius: 5px;
         padding-left: 1rem;
         display: flex;
         align-items: center;
         font-size: 1rem;
-        box-shadow: 0 0 10px black;
+        box-shadow: 0 0 5px black;
         letter-spacing: 1px;
     }
     // not editable input field
@@ -86,7 +84,7 @@
         width: 60%;
         font-size: 1rem;
         letter-spacing: 1px;
-        box-shadow: 0 0 10px black;
+        box-shadow: 0 0 5px var(--mainBlack);
         background: var(--mainWhite);
         &:hover {
             cursor: default;
