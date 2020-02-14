@@ -10,10 +10,6 @@ class JobAndPay extends React.Component {
         this.props.dispatch(getUserAction(token))
     }
 
-    componentDidUpdate() {
-        console.log(this.props)
-    }
-
     render() {
         const user = this.props.user
         return(
@@ -91,7 +87,6 @@ class JobAndPay extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('State from JobandPay ', state)
     return {
         user: state.userReducer.user,
         tokens: state.loginReducer.tokens,

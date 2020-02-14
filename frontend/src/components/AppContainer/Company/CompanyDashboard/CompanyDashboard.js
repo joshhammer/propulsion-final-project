@@ -54,7 +54,7 @@ class CompanyDashboard extends React.Component {
                                 <h3>Last Payroll Run</h3>
                                 <ul>
                                     {paydates.length > 0 &&
-                                    <li>Payroll - {paydates[paydates.length - 1].date_paid.slice(0, 7)}</li>}
+                                    <li>Payroll - {paydates[0].date_paid.slice(0, 7)}</li>}
                                 </ul>
                             </div>
                         </div>
