@@ -13,7 +13,7 @@ export const getRecordsAction = (token) => async (dispatch, getState) => {
     const data = await response.json()
     const action = {
         type: GET_EMPLOYEE_RECORDS,
-        payload: data
+        payload: data.reverse()
     }
     dispatch(action)
 }
