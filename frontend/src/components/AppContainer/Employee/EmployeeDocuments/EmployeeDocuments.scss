@@ -34,8 +34,12 @@
 .employee-document-upload {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid var(--mainBurgund);
+    padding-bottom: 4px;
     & svg {
         color: var(--mainBurgund);
+        width: 35px;
+        height: 35px;
     }
     & h3 {
         margin-right: 1rem;
