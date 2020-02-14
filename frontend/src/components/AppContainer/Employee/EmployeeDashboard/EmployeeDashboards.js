@@ -54,7 +54,7 @@ class EmployeeDashboard extends React.Component {
                                     {
                                         records.length > 0 && 
                                         <a className='dashboard-payslip-link'>
-                                            <li>Lohnabrechnung - {records[records.length - 1].date_paid.slice(0, 7)}</li>
+                                            <li>Lohnabrechnung - {records[0].date_paid.slice(0, 7)}</li>
                                         </a>
                                     }
                                 </ul>
