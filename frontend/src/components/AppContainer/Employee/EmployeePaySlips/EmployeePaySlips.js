@@ -49,7 +49,6 @@ componentDidMount() {
 }
 
 const mapStateToProps = (state) => {
-    console.log('State from Payslips', state)
     return {
         records: state.recordsReducer.records,
         tokens: state.loginReducer.tokens

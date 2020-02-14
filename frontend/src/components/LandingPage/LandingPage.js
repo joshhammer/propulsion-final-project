@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
+// import AuthenticationButton from '../reusable-components/buttons/AuthenticationButton';
 import InputField from "../reusable-components/input-fields/InputField";
 import { ReactComponent as Instagram } from '../../assets/svg/instagram-square-brands.svg';
 import { ReactComponent as Facebook } from '../../assets/svg/facebook.svg';
@@ -98,13 +98,9 @@ const LandingPage = (props) => {
                 </div>
                 <div className="footer-spaceholder"></div>
                 <div className="footer-right">
-                    {/* <img src={instagram} alt="instagram"/> */}
                     <a className='footer-icon' href='#'><Instagram width='25px' height='25px'/></a>
-                    {/* <img src={facebook} alt="facebook"/> */}
                     <a className='footer-icon' href='#'><Facebook width='25px' height='25px'/></a>
-                    {/* <img src={twitter} alt="twitter"/> */}
                     <a className='footer-icon' href='#'><Twitter width='25px' height='25px'/></a>
-                    {/* <img src={linkedin} alt="linkedin"/> */}
                     <a className='footer-icon' href='#'><LinkedIn width='25px' height='25px'/></a>
                 </div>
             </div>
