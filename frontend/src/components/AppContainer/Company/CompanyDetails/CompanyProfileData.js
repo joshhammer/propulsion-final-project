@@ -107,6 +107,6 @@ const mapStateToProps = (state) => {
     return {
         company: state.companyReducer.company,
     }
-}
+};
 
 export default connect(mapStateToProps)(CompanyProfileData)

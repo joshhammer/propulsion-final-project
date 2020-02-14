@@ -27,6 +27,6 @@ const TableRowPayroll = (props) => {
             </div>
         </div>
     )
-}
+};
 
 export default TableRowPayroll

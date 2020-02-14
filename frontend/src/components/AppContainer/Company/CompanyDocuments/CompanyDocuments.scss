@@ -6,7 +6,6 @@
 .company-documents-container {
     height: 100%;
     width: 80%;
-    padding-top: 2rem;
     padding: 0 1rem;
 }
 
@@ -62,9 +61,7 @@
 .company-documents-content {
     padding-left: 1rem;
     padding-right: 1rem;
-    // height: 80%;
-    // overflow: scroll;
-    // position: relative;
+
     & .single-document-element:nth-child(2n+1) {
         background: var(--mainWhite);
 
@@ -95,8 +92,8 @@
     border-radius: 4px;
     margin-bottom: 1.25rem;
     padding: 0 2rem;
-    //box-shadow: 0 0 8px black;
-     box-shadow: var(--boxShadow);
+    box-shadow: var(--boxShadow);
+
     & svg {
         color: var(--mainBurgund);
         width: 25px;

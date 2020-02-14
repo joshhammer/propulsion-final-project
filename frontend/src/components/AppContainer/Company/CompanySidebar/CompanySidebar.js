@@ -17,7 +17,6 @@ const CompanySidebar = (props) => {
     return (
         <div className="company-sidebar-container">
             <div className="company-logo">
-                {/* <img src={logo} alt="logo"/> */}
                 <div className='logo-circle'>
                     <h1 className='company-logo-title'>R</h1>
                 </div>
@@ -39,6 +38,6 @@ const CompanySidebar = (props) => {
             </div>
         </div>
     )
-}
+};
 
 export default withRouter(connect()(CompanySidebar));
