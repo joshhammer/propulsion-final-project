@@ -74,7 +74,6 @@ class EmployeeDetails extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('User: ', state.userReducer.user)
     return {
         user: state.userReducer.user,
         tokens: state.loginReducer.tokens
