@@ -1,7 +1,6 @@
 import React from "react";
 import './CompanyDocuments.scss';
 import SingleDocument from "./SingleDocument";
-// import CompanyDropzone from "../../../reusable-components/CompanyDropzone/CompanyDropzone";
 
 const CompanyDocuments = () => {
     return (
@@ -26,10 +25,7 @@ const CompanyDocuments = () => {
                         <div className='document-helper-div'>
                             <h3>Date Uploaded</h3>
                         </div>
-                        <div className='document-helper-div'>
-                            <h3></h3>
-                        </div>
-                        
+                        <div className='document-helper-div'/>
                     </div>
                     <SingleDocument name='Spesenformular.xls' upload_date='2020-01-20'/>
                     <SingleDocument name='Verhalten_am_Arbeitsplatz.doc' upload_date='2019-07-05'/>

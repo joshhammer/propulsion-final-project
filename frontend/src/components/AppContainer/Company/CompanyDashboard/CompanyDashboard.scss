@@ -72,7 +72,6 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px black;
-    // box-shadow: var(--boxShadow);
     color: var(--mainBlue);
     overflow: scroll;
     & h3 {
@@ -98,55 +97,3 @@
 .company-dashboard-card::-webkit-scrollbar {
     display: none;
 }
-
-// .company-dashboard-user {
-//     border-bottom: 2px solid var(--mainWhite);
-//     margin-top: 15%;
-//     padding-bottom: 3%;
-
-//     & h1 {
-//         font-family: var(--mainFontFamily);
-//         color: var(--mainWhite);
-//     }
-// }
-
-// .company-dashboard-bottom {
-//     display: flex;
-//     justify-content: space-evenly;
-//     height: 65%;
-//     margin-top: 7%;
-
-//     & h2 {
-//         color: var(--mainWhite);
-//         margin-bottom: 5%;
-//         margin-top: 3%;
-//     }
-
-//     &-left {
-//         border: 1px solid var(--mainWhite);
-//         border-radius: 8px;
-//         display: flex;
-//         align-items: center;
-//         flex-direction: column;
-//         width: 45%;
-//         height: 50%;
-
-//         & li {
-//             margin: 10%;
-//         }
-//     }
-
-//     &-right {
-//         border: 1px solid var(--mainWhite);
-//         border-radius: 8px;
-//         display: flex;
-//         align-items: center;
-//         flex-direction: column;
-//         width: 45%;
-//         height: 50%;
-
-//         & li {
-//             margin: 10%;
-//         }
-//     }
-// }
