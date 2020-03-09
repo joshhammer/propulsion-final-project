@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/propulsion-final-project/static/css/main.fb81f51e.chunk.css",
+    "main.js": "/propulsion-final-project/static/js/main.74e6e8eb.chunk.js",
+    "main.js.map": "/propulsion-final-project/static/js/main.74e6e8eb.chunk.js.map",
+    "runtime-main.js": "/propulsion-final-project/static/js/runtime-main.2ed3daa2.js",
+    "runtime-main.js.map": "/propulsion-final-project/static/js/runtime-main.2ed3daa2.js.map",
+    "static/js/2.b3c73fde.chunk.js": "/propulsion-final-project/static/js/2.b3c73fde.chunk.js",
+    "static/js/2.b3c73fde.chunk.js.map": "/propulsion-final-project/static/js/2.b3c73fde.chunk.js.map",
+    "index.html": "/propulsion-final-project/index.html",
+    "precache-manifest.1441b69c9239f3a6c6ece8db81d1428f.js": "/propulsion-final-project/precache-manifest.1441b69c9239f3a6c6ece8db81d1428f.js",
+    "service-worker.js": "/propulsion-final-project/service-worker.js",
+    "static/css/main.fb81f51e.chunk.css.map": "/propulsion-final-project/static/css/main.fb81f51e.chunk.css.map",
+    "static/js/2.b3c73fde.chunk.js.LICENSE": "/propulsion-final-project/static/js/2.b3c73fde.chunk.js.LICENSE",
+    "static/media/facebook.4afd3778.svg": "/propulsion-final-project/static/media/facebook.4afd3778.svg",
+    "static/media/folder-minus.9667157d.svg": "/propulsion-final-project/static/media/folder-minus.9667157d.svg",
+    "static/media/folder-open.1c9bf5ce.svg": "/propulsion-final-project/static/media/folder-open.1c9bf5ce.svg",
+    "static/media/folder-plus.b187ed66.svg": "/propulsion-final-project/static/media/folder-plus.b187ed66.svg",
+    "static/media/instagram-square-brands.3302b02b.svg": "/propulsion-final-project/static/media/instagram-square-brands.3302b02b.svg",
+    "static/media/linkedin.128097fb.svg": "/propulsion-final-project/static/media/linkedin.128097fb.svg",
+    "static/media/success.c1f8074b.svg": "/propulsion-final-project/static/media/success.c1f8074b.svg",
+    "static/media/twitter.fa8822b3.svg": "/propulsion-final-project/static/media/twitter.fa8822b3.svg",
+    "static/media/user-plus.2d0f9924.svg": "/propulsion-final-project/static/media/user-plus.2d0f9924.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ed3daa2.js",
+    "static/js/2.b3c73fde.chunk.js",
+    "static/css/main.fb81f51e.chunk.css",
+    "static/js/main.74e6e8eb.chunk.js"
+  ]
+}
